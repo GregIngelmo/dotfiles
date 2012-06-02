@@ -4,9 +4,12 @@ setopt INC_APPEND_HISTORY           # append to history file incrementally, as c
 setopt CORRECT                      # spelling correction... >pee /foofolder ... did you mean pe?
 setopt HIST_REDUCE_BLANKS           # remove useless blanks from history
 setopt NO_BEEP                      # don't beep 
+setopt AUTO_CD                      # cd into directories by just typing them out, ex: /foo intead of cd /foo
 setopt AUTO_PUSHD                   # automatically call pushd on call to cd
+setopt PUSHD_IGNORE_DUPS            # don't add dupes to the pushd stack
 setopt HIST_IGNORE_ALL_DUPS         # ignore dupes
-setopt EXTENDED_GLOB                # adds 3 more glob characters (#,~,^), for example, negation w/ ^*.c, 
+setopt EXTENDED_GLOB                # adds 3 more glob characters (#,~,^), ex: to exclude .c files ^*.c, 
+setopt RM_STAR_WAIT                 # confirm before executing rm *
 unsetopt CASE_GLOB                  # make globbing case insensitive by default
 
 # Completion system (copy pasta from the internet)
@@ -21,6 +24,7 @@ zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:manuals.(^1*)' insert-sections true
 zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
+zstyle ':completion:*' list-dirs-first true                 # Separate directories from files.
 
 # Custom keybindings  
 # Hit ctrl-v at the command line and then any key to see the control code for any key
@@ -40,11 +44,20 @@ export LC_CTYPE=en_US.UTF-8			        # so SVN doesn't shit itself on non-ascii 
 # Environment variables for colored man pages (affect less)
 #export LESS_TERMCAP_DEBUG='1'
 export LESS_TERMCAP_ti=$'\E[01;37m'         # white   
-export LESS_TERMCAP_mb=$'\E[01;34m'         # blue
-export LESS_TERMCAP_md=$'\E[01;34m'         # blue
+export LESS_TERMCAP_mb=$'[38;5;117m'      # light blue
+export LESS_TERMCAP_md=$'[38;5;117m'      # light blue 
 export LESS_TERMCAP_me=$'\E[0m'             # color reset
 export LESS_TERMCAP_us=$'\E[01;33m'         # yellow
 export LESS_TERMCAP_ue=$'\E[0m'             # color reset
+
+# Environment variables for printing process stats if a command takes > n seconds
+export REPORTTIME=1
+export TIMEFMT='
+> %J
+  | Time:   [38;5;159m%E[0m total time, %U user time + %S kernel time
+  | Disk:   [38;5;159m%F[0m major page faults (pages loaded from disk)  
+  | System: [38;5;159m%P[0m max CPU used, [38;5;159m%M[0m KB max memory used'
+
 
 # Useful zsh functions and modules
 autoload -U colors && colors    # zsh function that loads colors w/ names into 'fg' & 'bg' arrays
@@ -59,7 +72,7 @@ if [[ `uname` == "Darwin" ]] then
     # the 'g' prefix is added by homebrew to avoid naming collisions, gls, gcat etc...
     if (( $+commands[gls] )) ; then
         # remove date entirely for day-to-day usage
-        alias ls='gls -AlFh --color --time-style="+—" --group-directories-first'                            
+        alias ls='gls -AlFh --color --time-style="+[38;5;100m—[00m" --group-directories-first'                            
         # use English sentence style date when needed ex: [Tue, Jan 11 2011 @ 11:01 am]
         # format specifiers @ http://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation 
         alias lsd='gls -AlFh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first'  
@@ -86,12 +99,12 @@ function precmd {
     # change the color of the username from green to red
     if [ $EUID -eq 0 ]
     then
-        local USER_COLOR=red
+        local USER_COLOR='[01;38;5;124m'
     else
-        local USER_COLOR=green 
+        local USER_COLOR='[38;5;70m'
     fi
         
-    local p_user_at_host="%{$fg[$USER_COLOR]%}%B%n%b@%m%{$reset_color%}" 
+    local p_user_at_host="%{$USER_COLOR%}%B%n%b@%m%{$reset_color%}" 
     
     PROMPT="${p_cwd}
 ${p_user_at_host} [${p_ret_status}] ${p_delim} "
@@ -104,7 +117,7 @@ if [[ -e "$HOME/.zshrc.local" ]] then
     source $HOME/.zshrc.local
 fi
 
-# Badass ZSH script that adds syntax highlighting to command arguments as they are typed
+# Badass ZSH script that adds live syntax highlighting to command arguments r
 # https://github.com/zsh-users/zsh-syntax-highlighting 
 if [[ -e "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
     source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -116,5 +129,7 @@ if [[ -e "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
     # change some the zsh-highlighing default colors
     ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
     ZSH_HIGHLIGHT_STYLES[path]='bold'
+    ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
 fi
 
