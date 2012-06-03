@@ -9,7 +9,7 @@ setopt AUTO_PUSHD                   # automatically call pushd on call to cd
 setopt PUSHD_IGNORE_DUPS            # don't add dupes to the pushd stack
 setopt HIST_IGNORE_ALL_DUPS         # ignore dupes
 setopt EXTENDED_GLOB                # adds 3 more glob characters (#,~,^), ex: to exclude .c files ^*.c, 
-setopt RM_STAR_WAIT                 # confirm before executing rm *
+setopt RM_STAR_WAIT                 # confirm before executing rm *, sanity check
 unsetopt CASE_GLOB                  # make globbing case insensitive by default
 
 # Completion system (copy pasta from the internet)
@@ -30,7 +30,7 @@ zstyle ':completion:*' list-dirs-first true                 # Separate directori
 # Hit ctrl-v at the command line and then any key to see the control code for any key
 bindkey "^[[5D" backward-word	                    # ctrl-leftarrow jump backward word
 bindkey "^[[5C" forward-word	                    # ctrl-rightarrow jump forward word
-bindkey "^[[3~" delete-char	                        # delete key
+bindkey "^[[3~" delete-char                         # delete key
 bindkey '^R'    history-incremental-search-backward # ctrl -R search history
 bindkey "^[[A"  up-line-or-search                   # up arrow go through history
 bindkey "^[[B"  down-line-or-search                 # down arrow go through history
@@ -39,7 +39,7 @@ bindkey "^[[B"  down-line-or-search                 # down arrow go through hist
 export HISTFILE="$HOME/.history"            # history file path
 export HISTSIZE=500                         # number of history lines to keep in memory
 export SAVEHIST=500                         # number of history lines to keep on disk
-export LC_CTYPE=en_US.UTF-8			        # so SVN doesn't shit itself on non-ascii files
+export LC_CTYPE=en_US.UTF-8                 # so SVN doesn't shit itself on non-ascii files
 
 # Environment variables for colored man pages (affect less)
 #export LESS_TERMCAP_DEBUG='1'
