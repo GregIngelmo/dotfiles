@@ -41,7 +41,7 @@ export HISTSIZE=500                         # number of history lines to keep in
 export SAVEHIST=500                         # number of history lines to keep on disk
 export LC_CTYPE=en_US.UTF-8                 # so SVN doesn't shit itself on non-ascii files
 
-# Environment variables for colored man pages (affect less)
+# Environment variables for colored man pages (affect less), escape code syntax below
 #export LESS_TERMCAP_DEBUG='1'
 export LESS_TERMCAP_ti=$'\E[01;37m'         # white   
 export LESS_TERMCAP_mb=$'[38;5;117m'      # light blue
@@ -57,7 +57,6 @@ export TIMEFMT='
   | Time:   [38;5;159m%E[0m total time, %U user time + %S kernel time
   | Disk:   [38;5;159m%F[0m major page faults (pages loaded from disk)  
   | System: [38;5;159m%P[0m max CPU used, [38;5;159m%M[0m KB max memory used'
-
 
 # Useful zsh functions and modules
 autoload -U colors && colors    # zsh function that loads colors w/ names into 'fg' & 'bg' arrays
@@ -80,19 +79,18 @@ if [[ `uname` == "Darwin" ]] then
         alias ls='ls -AlFhg'
     fi
 else
-    # we're prob running on linux so assume GNU ls is available
+    # assume GNU ls is available
     alias ls='ls -AlFh --color --time-style="+—" --group-directories-first'                                 
     alias lsd='ls -AlFh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first'   
 fi
 
 # custom prompt
 # %{ ... %} tells zsh to disregard the contained characters when calculating the length of the prompt (in order correctly position the cursor)
-# Anatomy of the color code system below
 local p_cwd="%{[38;5;180m%}%~%{$reset_color%}"        # current working dir
 local p_ret_status="%{$fg[white]%}%?%{$reset_color%}"   # last command return code
 local p_delim="%{$fg[red]%}>%{$reset_color%}"           # > as a delimiter
 
-# Dyanmic prompt customization point, precmd gets called just before every command prompt
+# Dynamic prompt customization point, precmd gets called just before every command prompt
 function precmd {
     
     # if $EUID is zero then we're running as root,
@@ -117,7 +115,7 @@ if [[ -e "$HOME/.zshrc.local" ]] then
     source $HOME/.zshrc.local
 fi
 
-# Badass ZSH script that adds live syntax highlighting to command arguments r
+# Badass ZSH script that adds live syntax highlighting to command arguments
 # https://github.com/zsh-users/zsh-syntax-highlighting 
 if [[ -e "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
     source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -133,3 +131,27 @@ if [[ -e "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
     ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
 fi
 
+# The 256 color escape code syntax
+# The #'s noted are adjustable, everything else must remain untouched
+# Once a color is set it must be unset using ^[[00
+# http://lucentbeing.com/blog/that-256-color-thing/
+#
+# print '[01;38;05;50;48;05;100m poop [00'  don't forget it must end in m!
+#        |/ |/       |/       |/___________ dark yellow background color (100)
+#        |  |        |_____________________ aqua foreground color (50)
+#        |  |______________________________ bold text attribute (01) 
+#        |_________________________________ hit ctrl-v then esc to start escape sequence*
+#
+# * In most cases the escape sequence can also be written as \E or \033, but you must
+#   enable backslash escapes for that to work.
+#
+# Shortcut to change just the foreground to aqua (50)
+# print '[38;05;50m poop [00 '
+# 
+# text attributes
+#   0=RESET     1=BOLD              4=underline 24=not underline, 
+#   5=blinking  25=notblinking      7=inverse   27=notinverse    
+#   22=not bold
+# 
+# colors
+#   1-255    
