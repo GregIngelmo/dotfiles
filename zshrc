@@ -117,8 +117,8 @@ fi
 
 # Badass ZSH script that adds live syntax highlighting to command arguments
 # https://github.com/zsh-users/zsh-syntax-highlighting 
-if [[ -e "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
-    source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -e "$HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
+    source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
     # enable colored braces/parens & custom patterns
     # seeing colored parens is especially great when using zcalc
