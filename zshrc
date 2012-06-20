@@ -13,18 +13,32 @@ setopt RM_STAR_WAIT                 # confirm before executing rm *, sanity chec
 unsetopt CASE_GLOB                  # make globbing case insensitive by default
 
 # Completion system (copy pasta from the internet)
-autoload -U compinit
-compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
-zstyle ':completion:*:corrections' format "- %d - (errors %e})"
-zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*:manuals' separate-sections true
-zstyle ':completion:*:manuals.(^1*)' insert-sections true
-zstyle ':completion:*' menu select
-zstyle ':completion:*' verbose yes
+#autoload -U compinit
+#compinit
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+#zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
+#zstyle ':completion:*:corrections' format "- %d - (errors %e})"
+#zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+#zstyle ':completion:*' group-name ''
+#zstyle ':completion:*:manuals' separate-sections true
+#zstyle ':completion:*:manuals.(^1*)' insert-sections true
+#zstyle ':completion:*' menu select
+#zstyle ':completion:*' verbose yes
+
+# The following lines were added by compinstall
+
+#zstyle ':completion:*' auto-description '%d'
+zstyle ':completion:*' completer _complete _ignored _correct _approximate
+zstyle ':completion:*' format '%d'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**'
+#zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle :compinstall filename '/Users/greg/.zshrc'
 zstyle ':completion:*' list-dirs-first true                 # Separate directories from files.
+
+autoload -Uz compinit
+compinit
 
 # Custom keybindings  
 # Hit ctrl-v at the command line and then any key to see the control code for any key
@@ -54,7 +68,7 @@ export LESS_TERMCAP_ue=$'\E[0m'             # color reset
 export REPORTTIME=1
 export TIMEFMT='
 > %J
-  | Time:   [38;5;159m%E[0m total time, %U user time + %S kernel time
+  | Time:   [38;5;159m%E[0m total time, %U user time, %S kernel time
   | Disk:   [38;5;159m%F[0m major page faults (pages loaded from disk)  
   | System: [38;5;159m%P[0m max CPU used, [38;5;159m%M[0m KB max memory used'
 
@@ -62,6 +76,8 @@ export TIMEFMT='
 autoload -U colors && colors    # zsh function that loads colors w/ names into 'fg' & 'bg' arrays
 autoload zcalc                  # calculator
 autoload zmv                    # zsh batch file renamer ex: zmv '(*).txt' '$1.md'
+
+grepr() {grep -iIr --color "$1" *}  # grep recursive(r), ignore case (i), ignore binary files(I). ex: grepr searchstring
 
 # Command aliases for different systems
 # Darwin means we're running on a Mac
@@ -74,7 +90,7 @@ if [[ `uname` == "Darwin" ]] then
         alias ls='gls -AlFh --color --time-style="+[38;5;100m—[00m" --group-directories-first'                            
         # use English sentence style date when needed ex: [Tue, Jan 11 2011 @ 11:01 am]
         # format specifiers @ http://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation 
-        alias lsd='gls -AlFh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first'  
+        alias lsd='gls -AlFh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first; Today is `date "+%a, %b %_d %Y @ %l:%M %p"`'  
     else
         alias ls='ls -AlFhg'
     fi
@@ -120,23 +136,31 @@ fi
 if [[ -e "$HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
     source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-    # enable colored braces/parens & custom patterns
-    # seeing colored parens is especially great when using zcalc
+    # enable colored braces/parens & custom patterns, great when using zcalc
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
-    # change some the zsh-highlighing default colors
+    # change the zsh-highlighing default colors
     ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
     ZSH_HIGHLIGHT_STYLES[path]='bold'
     ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=cyan'
     ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
 fi
 
+# ESC '  Quote the current line; that is, put a `'' character at the beginning and the end, and convert all `'' characters to `'\'''  
+# ^ a    Move to beginnging of line
+# ^ e    Move to end of line
+# ^ XF   Move to next typed character
+# ESC U  Uppercase a word
+# ESC c  Uppercase a character
+# ^ l    Clear screen
+# ^ @    Set Mark
+
 # The 256 color escape code syntax
 # The #'s noted are adjustable, everything else must remain untouched
 # Once a color is set it must be unset using ^[[00
 # http://lucentbeing.com/blog/that-256-color-thing/
 #
-# print '[01;38;05;50;48;05;100m poop [00'  don't forget it must end in m!
+# print '[01;38;05;50;48;05;100m poop [00'  don't forget the m...
 #        |/ |/       |/       |/___________ dark yellow background color (100)
 #        |  |        |_____________________ aqua foreground color (50)
 #        |  |______________________________ bold text attribute (01) 
