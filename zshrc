@@ -17,7 +17,7 @@
 # New session summary
 if [[ -o interactive ]]; then
   
-    uptime=$(uptime uptime 2>/dev/null | awk '{print $3 " " $4}' | cut -d"," -f1)     
+    uptime=$(uptime 2>/dev/null | awk '{print $3 " " $4}' | cut -d"," -f1)     
     loadAverages=$(uptime 2>/dev/null | awk '{print $10 " " $11 " " $12 }') #1 minute, 5 minute, and 15 minute load averages
     longDate=$(date "+%a, %b %_d %Y @[00m [36m%I:%M %p %Z %z")
 
