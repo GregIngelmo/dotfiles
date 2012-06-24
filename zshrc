@@ -1,3 +1,19 @@
+#
+#       .-'\  
+#    .-'  `/\    Greg's kick ass ZSH Prompt
+# .-'      `/\                      
+# \   ZSH   `/\                     
+#  \         `/\            
+#   \    _-   `/\       _.--.
+#    \    _-   `/`-..--\     )  
+#     \    _-   `,','  /    ,')   
+#      `-_   -   ` -- ~   ,','
+#       `-              ,','     
+#        \,--.    ____==-~   __   __     
+#         \   \_-~\         (  \,/  )
+#          `_-~_.-'          \_ | _/  <-- Your mom
+#           \-~              (_/ \_)      
+      
 # ZSH Options
 setopt APPEND_HISTORY               # append to history file
 setopt INC_APPEND_HISTORY           # append to history file incrementally, as commands are typed in 
