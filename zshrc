@@ -106,7 +106,7 @@ if [[ `uname` == "Darwin" ]] then
         alias ls='gls -AlFh --color --time-style="+[38;5;100m—[00m" --group-directories-first'                            
         # use English sentence style date when needed ex: [Tue, Jan 11 2011 @ 11:01 am]
         # format specifiers @ http://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation 
-        alias lsd='gls -AlFh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first; Today is `date "+%a, %b %_d %Y @ %l:%M %p"`'  
+        alias lsd='gls -AlFh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first; echo Today is `date "+%a, %b %_d %Y @ %l:%M %p"`'  
     else
         alias ls='ls -AlFhg'
     fi
