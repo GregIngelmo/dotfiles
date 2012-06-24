@@ -11,9 +11,22 @@
 #       `-              ,','     
 #        \,--.    ____==-~   __   __     
 #         \   \_-~\         (  \,/  )
-#          `_-~_.-'          \_ | _/  <-- Your mom
+#          `_-~_.-'          \_ | _/  <-- Your mom!
 #           \-~              (_/ \_)      
       
+# New session summary
+if [[ -o interactive ]]; then
+  
+    uptime=$(uptime uptime 2>/dev/null | awk '{print $3 " " $4}' | cut -d"," -f1)     
+    loadAverages=$(uptime 2>/dev/null | awk '{print $10 " " $11 " " $12 }') #1 minute, 5 minute, and 15 minute load averages
+    longDate=$(date "+%a, %b %_d %Y @[00m [36m%I:%M %p %Z %z")
+
+    print "[38;5;117mHost[00m [36m$HOST[00m [38;5;117mup for[00m [36m$uptime"
+    print "[38;5;117mDate[00m [36m$longDate[00m"
+    print "[38;5;117mLoad[00m [36m$loadAverages[00m"
+
+fi  #  [[ -o interactive ]]
+
 # ZSH Options
 setopt APPEND_HISTORY               # append to history file
 setopt INC_APPEND_HISTORY           # append to history file incrementally, as commands are typed in 
@@ -31,33 +44,33 @@ unsetopt CASE_GLOB                  # make globbing case insensitive by default
 # Completion system (copy pasta from the internet)
 #autoload -U compinit
 #compinit
-#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-#zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
-#zstyle ':completion:*:corrections' format "- %d - (errors %e})"
-#zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-#zstyle ':completion:*' group-name ''
-#zstyle ':completion:*:manuals' separate-sections true
-#zstyle ':completion:*:manuals.(^1*)' insert-sections true
-#zstyle ':completion:*' menu select
-#zstyle ':completion:*' verbose yes
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
+zstyle ':completion:*:corrections' format "- %d - (errors %e})"
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*:manuals.(^1*)' insert-sections true
+zstyle ':completion:*' menu select
+zstyle ':completion:*' verbose yes
 
 # The following lines were added by compinstall
 
 #zstyle ':completion:*' auto-description '%d'
-zstyle ':completion:*' completer _complete _ignored _correct _approximate
-zstyle ':completion:*' format '%d'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**'
+#zstyle ':completion:*' completer _complete _ignored _correct _approximate
+#zstyle ':completion:*' format '%d'
+#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**'
 #zstyle ':completion:*' menu select=1
-zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-zstyle :compinstall filename '/Users/greg/.zshrc'
+#zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+#zstyle :compinstall filename '/Users/greg/.zshrc'
 zstyle ':completion:*' list-dirs-first true                 # Separate directories from files.
 
 autoload -Uz compinit
 compinit
 
 # Custom keybindings  
-# Hit ctrl-v at the command line and then any key to see the control code for any key
+# Hit ctrl-v at the command line and then any key to see the control code 
 bindkey "^[[5D" backward-word	                    # ctrl-leftarrow jump backward word
 bindkey "^[[5C" forward-word	                    # ctrl-rightarrow jump forward word
 bindkey "^[[3~" delete-char                         # delete key
@@ -73,12 +86,12 @@ export LC_CTYPE=en_US.UTF-8                 # so SVN doesn't shit itself on non-
 
 # Environment variables for colored man pages (affect less), escape code syntax below
 #export LESS_TERMCAP_DEBUG='1'
-export LESS_TERMCAP_ti=$'\E[01;37m'         # white   
-export LESS_TERMCAP_mb=$'[38;5;117m'      # light blue
-export LESS_TERMCAP_md=$'[38;5;117m'      # light blue 
-export LESS_TERMCAP_me=$'\E[0m'             # color reset
-export LESS_TERMCAP_us=$'\E[01;33m'         # yellow
-export LESS_TERMCAP_ue=$'\E[0m'             # color reset
+export LESS_TERMCAP_ti=$'\E[01;37m'         # white         
+export LESS_TERMCAP_mb=$'[38;5;117m'      # light blue    [0m 
+export LESS_TERMCAP_md=$'[38;5;117m'      # light blue    [0m 
+export LESS_TERMCAP_me=$'\E[0m'             # color reset   
+export LESS_TERMCAP_us=$'\E[01;33m'         # yellow        
+export LESS_TERMCAP_ue=$'\E[0m'             # color reset 
 
 # Environment variables for printing process stats if a command takes > n seconds
 export REPORTTIME=1
