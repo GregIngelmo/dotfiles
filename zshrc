@@ -11,7 +11,7 @@
 #       `-              ,','     
 #        \,--.    ____==-~   __   __     
 #         \   \_-~\         (  \,/  )
-#          `_-~_.-'          \_ | _/  <-- Your mom!
+#          `_-~_.-'          \_ | _/  <- Your mom
 #           \-~              (_/ \_)      
       
 # New session summary
@@ -108,11 +108,9 @@ autoload zmv                    # zsh batch file renamer ex: zmv '(*).txt' '$1.m
 
 grepr() {grep -iIr --color "$1" *}  # grep recursive(r), ignore case (i), ignore binary files(I). ex: grepr searchstring
 
-# Command aliases for different systems
-# Darwin means we're running on a Mac
+# Command aliases for different systems (Darwin == Mac)
 if [[ `uname` == "Darwin" ]] then
-    # if the command gls exists
-    # gls is part of the GNU standard version of ls that can be installed on a Mac (brew install coreutils)
+    # if the command gls exists, gls is part of the GNU standard version of ls that can be installed on a Mac (brew install coreutils)
     # the 'g' prefix is added by homebrew to avoid naming collisions, gls, gcat etc...
     if (( $+commands[gls] )) ; then
         # remove date entirely for day-to-day usage
@@ -135,30 +133,36 @@ local p_cwd="%{[38;5;180m%}%~%{$reset_color%}"        # current working dir
 local p_ret_status="%{$fg[white]%}%?%{$reset_color%}"   # last command return code
 local p_delim="%{$fg[red]%}>%{$reset_color%}"           # > as a delimiter
 
-# Dynamic prompt customization point, precmd gets called just before every command prompt
-function precmd {
-    
-    # if $EUID is zero then we're running as root,
-    # change the color of the username from green to red
-    if [ $EUID -eq 0 ]
-    then
-        local USER_COLOR='[01;38;5;124m'
-    else
-        local USER_COLOR='[38;5;70m'
-    fi
-        
-    local p_user_at_host="%{$USER_COLOR%}%B%n%b@%m%{$reset_color%}" 
-    
-    PROMPT="${p_cwd}
-${p_user_at_host} [${p_ret_status}] ${p_delim} "
-
-}
-
-# If .zshrc.local exists include it. .zshrc.local should contain system 
+# If .zshrc.local exists include it. It's should contain system 
 # specific settings such as aliases, exports, a custom $PATH, etc...
 if [[ -e "$HOME/.zshrc.local" ]] then
     source $HOME/.zshrc.local
 fi
+
+# Dynamic prompt customization point, precmd gets called just before every command prompt
+function precmd {
+    
+     # if $EUID is zero then we're running as root,
+    # change the color of the username from green to red
+    if [ $EUID -eq 0 ]; then
+        local USER_COLOR='[01;38;5;124m'
+    else
+        local USER_COLOR='[38;5;70m'
+    fi
+
+    # p_hostname is defined in .zshrc.local It's useful for creating a friendly 
+    # name in our prompt when we can't actually edit the hostname 
+    if [[ -z "$p_hostName" ]]; then
+        local p_user_at_host="%{$USER_COLOR%}%B%n%b@%m%{$reset_color%}" 
+    else
+        local p_user_at_host="%{$USER_COLOR%}%B%n%b@$p_hostName%{$reset_color%}" 
+    fi
+        
+        
+    PROMPT="${p_cwd}
+${p_user_at_host} [${p_ret_status}] ${p_delim} "
+
+}
 
 # Badass ZSH script that adds live syntax highlighting to command arguments
 # https://github.com/zsh-users/zsh-syntax-highlighting 
