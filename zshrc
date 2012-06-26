@@ -42,8 +42,6 @@ setopt RM_STAR_WAIT                 # confirm before executing rm *, sanity chec
 unsetopt CASE_GLOB                  # make globbing case insensitive by default
 
 # Completion system (copy pasta from the internet)
-#autoload -U compinit
-#compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
 zstyle ':completion:*:corrections' format "- %d - (errors %e})"
