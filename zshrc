@@ -138,6 +138,10 @@ if [[ -e "$HOME/.zshrc.local" ]] then
     source $HOME/.zshrc.local
 fi
 
+# Pastel-ish colors for GNU LS_COLORS
+# di=directory (blue), ln=sym link (coral), ex=executable (orange)
+export LS_COLORS='di=38;5;110:ln=38;5;175:ex=38;5;166'
+
 # Dynamic prompt customization point, precmd gets called just before every command prompt
 function precmd {
    
