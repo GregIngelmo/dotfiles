@@ -51,9 +51,9 @@ zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:manuals.(^1*)' insert-sections true
 zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
+zstyle ':completion:*' list-dirs-first true                 # Separate directories from files.
 
 # The following lines were added by compinstall
-
 #zstyle ':completion:*' auto-description '%d'
 #zstyle ':completion:*' completer _complete _ignored _correct _approximate
 #zstyle ':completion:*' format '%d'
@@ -62,7 +62,6 @@ zstyle ':completion:*' verbose yes
 #zstyle ':completion:*' menu select=1
 #zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 #zstyle :compinstall filename '/Users/greg/.zshrc'
-zstyle ':completion:*' list-dirs-first true                 # Separate directories from files.
 
 autoload -Uz compinit
 compinit
