@@ -25,7 +25,7 @@ if [[ -o interactive ]]; then
     print "[38;5;117mDate[00m [36m$longDate[00m"
     print "[38;5;117mLoad[00m [36m$loadAverages[00m"
 
-fi  #  [[ -o interactive ]]
+fi
 
 # ZSH Options
 setopt APPEND_HISTORY               # append to history file
@@ -140,7 +140,7 @@ fi
 # Dynamic prompt customization point, precmd gets called just before every command prompt
 function precmd {
     
-     # if $EUID is zero then we're running as root,
+    # if $EUID is zero then we're running as root,
     # change the color of the username from green to red
     if [ $EUID -eq 0 ]; then
         local USER_COLOR='[01;38;5;124m'
