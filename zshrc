@@ -21,9 +21,12 @@ if [[ -o interactive ]]; then
     loadAverages=$(uptime 2>/dev/null | awk '{print $10 " " $11 " " $12 }') #1 minute, 5 minute, and 15 minute load averages
     longDate=$(date "+%a, %b %_d %Y @[00m [36m%I:%M %p %Z %z")
 
-    print "[38;5;117mHost[00m [36m$HOST[00m [38;5;117mup for[00m [36m$uptime"
-    print "[38;5;117mDate[00m [36m$longDate[00m"
-    print "[38;5;117mLoad[00m [36m$loadAverages[00m"
+    local key_color='[38;5;117m'
+    local value_color='[36m'
+    
+    print "${key_color}Host[00m ${value_color}$HOST[00m ${key_color}up for[00m [36m$uptime"
+    print "${key_color}Date[00m [36m$longDate[00m"
+    print "${key_color}Load[00m [36m$loadAverages[00m"
 
 fi
 
