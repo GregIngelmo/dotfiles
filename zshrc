@@ -126,7 +126,6 @@ fi
 
 # custom prompt
 # %{ ... %} tells zsh to disregard the contained characters when calculating the length of the prompt (in order correctly position the cursor)
-local p_cwd="%{[38;5;180m%}%~%{$reset_color%}"        # current working dir
 local p_ret_status="%{$fg[white]%}%?%{$reset_color%}"   # last command return code
 local p_delim="%{$fg[red]%}>%{$reset_color%}"           # > as a delimiter
 
@@ -138,6 +137,9 @@ fi
 
 # Dynamic prompt customization point, precmd gets called just before every command prompt
 function precmd {
+   
+    # current working dir
+    local p_cwd="%{[38;5;180m%}$PWD%{$reset_color%}"        
     
     # if $EUID is zero then we're running as root,
     # change the color of the username from green to red
