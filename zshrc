@@ -151,10 +151,11 @@ function precmd {
     # name in our prompt when we can't actually edit the hostname 
     if [[ -z "$p_hostName" ]]; then
         local p_user_at_host="%{$USER_COLOR%}%B%n%b@%m%{$reset_color%}" 
+        printf "\e]1;$HOST\a"
     else
         local p_user_at_host="%{$USER_COLOR%}%B%n%b@$p_hostName%{$reset_color%}" 
+        printf "\e]1;$p_hostName\a"
     fi
-        
         
     PROMPT="${p_cwd}
 ${p_user_at_host} [${p_ret_status}] ${p_delim} "
