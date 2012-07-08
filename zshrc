@@ -84,8 +84,15 @@ export HISTSIZE=500                         # number of history lines to keep in
 export SAVEHIST=500                         # number of history lines to keep on disk
 export LC_CTYPE=en_US.UTF-8                 # so SVN doesn't shit itself on non-ascii files
 
-# Environment variables for colored man pages (affect less), escape code syntax below
 #export LESS_TERMCAP_DEBUG='1'
+# Custom less behaviors. 
+# X prevents less from clearing screen on quit (osx)
+# -P customizes prompt to ex: .zshrc lines 1-47/228 20%
+# -R print control chacters, allows colors to flow through less
+export LESS="X -R -P ?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L. :
+            byte %bB?s/%s. .?e(END) ?x- Next\: %x.:?pB%pB\%..%t"  
+
+# Environment variables for colored man pages (affect less), escape code syntax below
 export LESS_TERMCAP_ti=$'\E[01;37m'         # white         
 export LESS_TERMCAP_mb=$'[38;5;117m'      # light blue    [0m 
 export LESS_TERMCAP_md=$'[38;5;117m'      # light blue    [0m 
