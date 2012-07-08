@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/Greg/Dropbox/Documents/Temp/usenet'
+let g:netrw_dirhist_2='/Users/greg'
+let g:netrw_dirhist_3='/Users/greg/Dropbox/Work/Code/slipknot/slipknot_env/web_service'
+let g:netrw_dirhist_4='/usr/bin'
+let g:netrw_dirhist_5='/Users/greg/Dropbox/Work/Code/slipknot/slipknot_env/web_service'
+let g:netrw_dirhist_6='/Users/greg/Dropbox/Work/Code/slipknot'
+let g:netrw_dirhist_7='/Users/greg/Dropbox/Public/dotfiles/vim/bundle'
