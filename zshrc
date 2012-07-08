@@ -160,7 +160,7 @@ function precmd {
     if [ $EUID -eq 0 ]; then
         local USER_COLOR='[01;38;5;124m'
     else
-        local USER_COLOR='[38;5;70m'
+        local USER_COLOR='[38;5;146m'
     fi
 
     # p_hostname is defined in .zshrc.local It's useful for creating a friendly 
