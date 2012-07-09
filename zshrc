@@ -71,8 +71,8 @@ compinit
 
 # Custom keybindings  
 # Hit ctrl-v at the command line and then any key to see the control code 
-bindkey "^[[5D" backward-word	                    # ctrl-leftarrow jump backward word
-bindkey "^[[5C" forward-word	                    # ctrl-rightarrow jump forward word
+bindkey "^[[1;5D" backward-word	                    # ctrl-leftarrow jump backward word
+bindkey "^[[1;5C" forward-word	                    # ctrl-rightarrow jump forward word
 bindkey "^[[3~" delete-char                         # delete key
 bindkey '^R'    history-incremental-search-backward # ctrl -R search history
 bindkey "^[[A"  up-line-or-search                   # up arrow go through history
