@@ -85,7 +85,9 @@ export HISTFILE="$HOME/.history"            # history file path
 export HISTSIZE=500                         # number of history lines to keep in memory
 export SAVEHIST=500                         # number of history lines to keep on disk
 export LC_CTYPE=en_US.UTF-8                 # so SVN doesn't shit itself on non-ascii files
-
+export WORDCHARS='*?_[]~=&;!#$%^(){}'       # Remove slash, period, angle brackets and dash from valid word characters
+                                            # It's so that delete-word (ctrl-w) doesn't eat an entire path
+                                            # and ctrl-arrow jumps between parts of a path
 #export LESS_TERMCAP_DEBUG='1'
 # Custom less behaviors. 
 # X prevents less from clearing screen on quit (osx)
