@@ -22,7 +22,7 @@ if [[ -o interactive ]]; then
 
     uptime=$(uptime 2>/dev/null | awk '{print $3 " " $4}' | cut -d"," -f1)     
     loadAverages=$(uptime 2>/dev/null | awk '{print $10 " " $11 " " $12 }') #1 minute, 5 minute, and 15 minute load averages
-    longDate=$(date "+%a, %b %_d %Y @[00m ${value_color}$%I:%M %p %Z %z")
+    longDate=$(date "+%a, %b %_d %Y @[00m ${value_color}%I:%M %p (%Z %z)")
     
     print "${key_color}Host[00m ${value_color}$HOST[00m ${key_color}up for[00m ${value_color}$uptime"
     print "${key_color}Date[00m ${value_color}$longDate[00m"
