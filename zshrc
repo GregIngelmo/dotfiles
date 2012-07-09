@@ -77,6 +77,8 @@ bindkey "^[[3~" delete-char                         # delete key
 bindkey '^R'    history-incremental-search-backward # ctrl -R search history
 bindkey "^[[A"  up-line-or-search                   # up arrow go through history
 bindkey "^[[B"  down-line-or-search                 # down arrow go through history
+bindkey "\ed"   delete-word                         # esc d is only used when mapping ctrl-del in iterm
+bindkey "\ez"   backward-delete-word                # esc z is only used when mapping ctrl-back in iterm
 
 # Environment variables. printenv to print all terminal variables, unset to delete one
 export HISTFILE="$HOME/.history"            # history file path
