@@ -200,7 +200,7 @@ fi
 # ESC '  Quote the current line; that is, put a `'' character at the beginning and the end, and convert all `'' characters to `'\'''  
 # ^ a    Move to beginnging of line
 # ^ e    Move to end of line
-# ^ XF   Move to next typed character
+# ^ xf   Move to next typed character
 # ESC U  Uppercase a word
 # ESC c  Uppercase a character
 # ^ l    Clear screen
