@@ -16,9 +16,8 @@ set ignorecase	" Ignore case when searching
 set smartcase	" Ignore case when searching lowercase
 
 " Colors **********************************************************************
-colorscheme ir_black
-"set background=dark "must manually set otherwise VIM commandline looks like crap (black on black)
 syntax on	"sytnax highlighting
+colorscheme  xoria256-ingelmo  " ingelmo
 
 " Code folding ****************************************************************
 set foldmethod=indent   "fold based on indent
