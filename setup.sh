@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #
-# Symlink dot files into the home directory
+# Symlink dot files into your home directory
 #
 
 pathsToSymlink="zshrc vimrc gvimrc gitignore vim"
