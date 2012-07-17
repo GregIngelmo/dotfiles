@@ -83,7 +83,7 @@ hi Constant     ctermfg=66  guifg=#5a9a77   " Strings in green
 hi Identifier   ctermfg=137 guifg=#b87a41   " Keywords in orange
 hi Ignore       ctermfg=238 guifg=#444444
 hi Number       ctermfg=180 guifg=#d6c895   " Numbers is yellow
-hi PreProc      ctermfg=150 guifg=#afdf87
+hi PreProc      ctermfg=150 guifg=#95b576
 hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
 hi Statement    ctermfg=110 guifg=#8fb0d7                           
 hi Type         ctermfg=146 guifg=#afafdf   " 
