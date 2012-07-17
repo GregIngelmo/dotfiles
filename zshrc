@@ -69,34 +69,36 @@ zstyle ':completion:*' list-dirs-first true                 # Separate directori
 autoload -Uz compinit
 compinit
 
-# Custom keybindings  
+# Custom keybindings. These enable ctrl-arrow, ctrl-backspace, & ctrl-del
 # Hit ctrl-v at the command line and then any key to see the control code 
-bindkey "^[[1;5D" backward-word	                    # ctrl-leftarrow jump backward word
-bindkey "^[[1;5C" forward-word	                    # ctrl-rightarrow jump forward word
+bindkey "^[[1;5D" backward-word	                    # ctrl-leftarrow jump backward word for iTerm
+bindkey "^[[1;5C" forward-word	                    # ctrl-rightarrow jump forward word for iTerm
+bindkey "^[[5D" backward-word	                    # ctrl-leftarrow jump backward word for Terminal
+bindkey "^[[5C" forward-word	                    # ctrl-rightarrow jump forward word for Terminal
 bindkey "^[[3~" delete-char                         # delete key
 bindkey '^R'    history-incremental-search-backward # ctrl -R search history
 bindkey "^[[A"  up-line-or-search                   # up arrow go through history
 bindkey "^[[B"  down-line-or-search                 # down arrow go through history
-bindkey "\ed"   delete-word                         # esc d is only used when mapping ctrl-del in iterm
-bindkey "\ez"   backward-delete-word                # esc z is only used when mapping ctrl-back in iterm
+bindkey "\ed"   delete-word                         # esc d is only used when mapping ctrl-del in iTerm
+bindkey "\ez"   backward-delete-word                # esc z is only used when mapping ctrl-back in iTerm
 
-# Environment variables. printenv to print all terminal variables, unset to delete one
+# Environment variables. Use printenv to print all terminal variables, unset to delete one
 export HISTFILE="$HOME/.history"            # history file path
 export HISTSIZE=500                         # number of history lines to keep in memory
 export SAVEHIST=500                         # number of history lines to keep on disk
 export LC_CTYPE=en_US.UTF-8                 # so SVN doesn't shit itself on non-ascii files
 export WORDCHARS='*?_[]~=&;!#$%^(){}'       # Remove slash, period, angle brackets and dash from valid word characters
-                                            # It's so that delete-word (ctrl-w) doesn't eat an entire path
-                                            # and ctrl-arrow jumps between parts of a path
-#export LESS_TERMCAP_DEBUG='1'
+                                            # This allows delete-word (ctrl-w) to delete a piece of a path,
+                                            # and ctrl-arrow to jumps between parts of a path
+
 # Custom less behaviors. 
-# X prevents less from clearing screen on quit (osx)
+# X prevents less from clearing screen on quit
 # -P customizes prompt to ex: .zshrc lines 1-47/228 20%
 # -R print control chacters, allows colors to flow through less
 export LESS="X -R -P ?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L. :
             byte %bB?s/%s. .?e(END) ?x- Next\: %x.:?pB%pB\%..%t"  
 
-# Environment variables for colored man pages (affect less), escape code syntax below
+# Environment variables for colored man pages, escape code syntax below
 export LESS_TERMCAP_ti=$'\E[01;37m'         # white         
 export LESS_TERMCAP_mb=$'[38;5;117m'      # light blue    [0m 
 export LESS_TERMCAP_md=$'[38;5;117m'      # light blue    [0m 
@@ -160,7 +162,7 @@ function precmd {
     local p_cwd="%{[38;5;180m%}$PWD%{$reset_color%}"        
     
     # if $EUID is zero then we're running as root,
-    # change the color of the username from green to red
+    # change the color of the username from purple to red
     if [ $EUID -eq 0 ]; then
         local USER_COLOR='[01;38;5;124m'
     else
