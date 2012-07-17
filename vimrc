@@ -17,7 +17,7 @@ set smartcase	" Ignore case when searching lowercase
 
 " Colors **********************************************************************
 syntax on	"sytnax highlighting
-colorscheme  xoria256-ingelmo  " ingelmo
+colorscheme  ingelmo  
 
 " Code folding ****************************************************************
 set foldmethod=indent   "fold based on indent
