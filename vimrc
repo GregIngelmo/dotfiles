@@ -51,8 +51,8 @@ if has("gui_macvim")
     let macvim_hig_shift_movement = 1
 endif
 
-" Show syntax highlighting groups for word under cursor
-" CTRL+S CTRL+P
+" Show syntax highlighting groups for word under cursor CTRL+P
+" See http://vimcasts.org/episodes/creating-colorschemes-for-vim/
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
