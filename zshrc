@@ -59,8 +59,10 @@ zstyle ':completion:*:manuals.(^1*)' insert-sections true
 zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' list-dirs-first true                 # Separate directories from files.
+zstyle ':vcs_info:*' enable git cvs svn                     # Only enable version control info for the 3 big ones
 
 autoload -Uz compinit
+autoload -Uz vcs_info
 compinit
 
 # Custom keybindings. These enable ctrl-arrow, ctrl-backspace, & ctrl-del
@@ -151,7 +153,8 @@ export LS_COLORS='di=38;5;110:ln=38;5;175:ex=38;5;166'
 
 # Dynamic prompt customization point, precmd gets called just before every command prompt
 function precmd {
-   
+    vcs_info
+
     # current working dir
     local p_cwd="%{[38;5;180m%}$PWD%{$reset_color%}"        
     
@@ -173,7 +176,11 @@ function precmd {
         printf "\e]1;$p_hostName\a"
     fi
         
-    PROMPT="${p_cwd}
+    if [[ -n "$vcs_info_msg_0_" ]]; then
+        local vcs="%{[38;5;180m%}${vcs_info_msg_0_}%{$reset_color%}"
+    fi
+
+    PROMPT="${p_cwd}${vcs}
 ${p_user_at_host} [${p_ret_status}] ${p_delim} "
 
 }
