@@ -1,19 +1,24 @@
 #
-#        .-'\  
-#     .-'  `/\    Greg's kick ass ZSH Prompt
-#  .-'      `/\                      
-#  \   ZSH   `/\                     
-#   \         `/\            
-#    \    _-   `/\       _.--.
-#     \    _-   `/`-..--\     )  
-#      \    _-   `,','  /    ,')   
-#       `-_   -   ` -- ~   ,','
-#        `-              ,','     
-#         \,--.    ____==-~   __   __     
-#          \   \_-~\         (  \,/  )
-#           `_-~_.-'          \_ | _/  <- Your mom
-#            \-~              (_/ \_)      
-      
+# Ingelmo's bash smashin              _///_,  
+# Zsh console                        / ` ' '>
+#                                   ఠ'  __/_'>    
+#                                  /  _/  )_\'>i    
+#                                 (^(_/   /_/\_>   
+#                               ,/|   ____/_/_/_/    <- Zsh
+#                             ,//('  /,---, _/ / 
+#                           ( ( ')  ""  /_/_/_/
+#                         -)) )) (     /_(_(_(_                 \
+#                       ,/,'//( (     (   \_\_\\_               )\
+#                     ,( ( ((, )       \'__\_\_\_\__            )0\
+#                    ~/  )` ) /        //____|___\__)           )_/2
+#                  _-~//( )/ )         |  _  \'___'_(           /'4
+#                  '( ')/ ,(/           \_ (-'\'___'_\      __,'_'
+#                   '                 __) \  \\___(_   __/.__,'
+#  Bash ->   .-"--.ಠ,ಠ             ,((,-,__\  '", __\_/. __,'
+#           '->>>--'﹏          ---------------'"./_._._-'--
+#             `  `         -----------------------------------
+#-----------------------------------------------------------------       
+
 # New session summary
 if [[ -o interactive ]]; then
   
@@ -27,7 +32,6 @@ if [[ -o interactive ]]; then
     print "${key_color}Host[00m ${value_color}$HOST[00m ${key_color}up for[00m ${value_color}$uptime"
     print "${key_color}Date[00m ${value_color}$longDate[00m"
     print "${key_color}Load[00m ${value_color}$loadAverages[00m"
-
 fi
 
 # ZSH Options
@@ -55,16 +59,6 @@ zstyle ':completion:*:manuals.(^1*)' insert-sections true
 zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' list-dirs-first true                 # Separate directories from files.
-
-# The following lines were added by compinstall
-#zstyle ':completion:*' auto-description '%d'
-#zstyle ':completion:*' completer _complete _ignored _correct _approximate
-#zstyle ':completion:*' format '%d'
-#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-#zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**'
-#zstyle ':completion:*' menu select=1
-#zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-#zstyle :compinstall filename '/Users/greg/.zshrc'
 
 autoload -Uz compinit
 compinit
