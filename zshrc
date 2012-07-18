@@ -62,7 +62,6 @@ zstyle ':completion:*' list-dirs-first true                 # Separate directori
 zstyle ':vcs_info:*' enable git cvs svn                     # Only enable version control info for the 3 big ones
 
 autoload -Uz compinit
-autoload -Uz vcs_info
 compinit
 
 # Custom keybindings. These enable ctrl-arrow, ctrl-backspace, & ctrl-del
@@ -151,9 +150,26 @@ fi
 # di=directory (blue), ln=sym link (coral), ex=executable (orange)
 export LS_COLORS='di=38;5;110:ln=38;5;175:ex=38;5;166'
 
+# Tests whether a function exsists, used primarily when an old version of ZSH
+# doesn't have vcs_info
+function function_exists () {
+    local -a files
+    # This expands occurrences of $1 anywhere in $fpath,
+    # removing files that don't exist.
+    files=(${^fpath}/$1(N))
+    # Success if any files exist.
+    (( ${#files} ))
+}
+
+if function_exists vcs_info; then
+    autoload -Uz vcs_info
+fi
+
 # Dynamic prompt customization point, precmd gets called just before every command prompt
 function precmd {
-    vcs_info
+    if function_exists vcs_info; then
+        vcs_info
+    fi 
 
     # current working dir
     local p_cwd="%{[38;5;180m%}$PWD%{$reset_color%}"        
