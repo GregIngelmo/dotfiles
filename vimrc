@@ -39,9 +39,10 @@ set nowrap
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 let python_highlight_all = 1
-
+"let g:Powerline_symbols = 'fancy'
 " Mappings  **********************************************************************
 :imap ii <Esc> 
+:inoremap jk <esc>
 
 " Always show the status line
 set laststatus=2
@@ -60,14 +61,3 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
-" Status Line Format **********************************************************************
-set statusline=\ %{IsDirty()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L:%c
-
-function! IsDirty()
-    if &paste
-        return 'PASTE MODE  '
-    else
-        return ''
-    endif
-endfunction
