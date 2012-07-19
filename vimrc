@@ -41,7 +41,6 @@ set nowrap
 let python_highlight_all = 1
 "let g:Powerline_symbols = 'fancy'
 " Mappings  **********************************************************************
-:imap ii <Esc> 
 :inoremap jk <esc>
 
 " Always show the status line
