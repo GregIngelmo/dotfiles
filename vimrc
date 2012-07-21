@@ -10,14 +10,14 @@ autocmd BufRead,BufNewFile *.json setfiletype javascript
 autocmd BufRead,BufEnter *.py,*.html,*.haml,*.css,*.js :Rooter
 
 " Searching *******************************************************************
-set hlsearch	" highlight search term 
+set hlsearch	" highlight search term
 set incsearch	" Incremental search, search as you type
 set ignorecase	" Ignore case when searching
 set smartcase	" Ignore case when searching lowercase
 
 " Colors **********************************************************************
 syntax on	"sytnax highlighting
-colorscheme  ingelmo  
+colorscheme  ingelmo
 
 " Code folding ****************************************************************
 set foldmethod=indent   "fold based on indent
@@ -28,7 +28,7 @@ set foldlevel=1         "this is just what i use
 " Vim UI **********************************************************************
 set number 	"line numbers
 set ruler	"show the cursor position bottomr right (row/col)
-
+set showtabline=2   "Always ctrl
 " Other  **********************************************************************
 set smartindent
 set encoding=utf-8
@@ -38,15 +38,17 @@ set expandtab           "Use spaces not tabs
 set nowrap
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
-let python_highlight_all = 1
+"let python_highlight_all = 1
 "let g:Powerline_symbols = 'fancy'
 " Mappings  **********************************************************************
 :inoremap jk <esc>
+:inoremap <C-BS> 
+:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Always show the status line
 set laststatus=2
 
-" Allow shift key selection of text 
+" Allow shift key selection of text
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
 endif
