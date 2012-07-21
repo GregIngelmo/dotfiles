@@ -43,7 +43,7 @@ hi CursorLine                             ctermbg=237 guibg=#3a3a3a cterm=none g
 hi Error        ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
 hi ErrorMsg     ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
 hi FoldColumn   ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
-hi Folded       ctermfg=255 guifg=#eeeeee ctermbg=60  guibg=#5f5f87
+hi Folded       ctermfg=255 guifg=#d0d0d0 ctermbg=60  guibg=#000000
 hi IncSearch    ctermfg=0   guifg=#000000 ctermbg=223 guibg=#ffdfaf cterm=none gui=none
 hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
 hi MatchParen   ctermfg=188 guifg=#a50922 ctermbg=0   guibg=#0d0d0d cterm=bold gui=bold
@@ -85,7 +85,7 @@ hi Ignore       ctermfg=238 guifg=#444444
 hi Number       ctermfg=180 guifg=#d6c895   " Numbers is yellow
 hi PreProc      ctermfg=150 guifg=#95b576
 hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
-hi Statement    ctermfg=110 guifg=#8fb0d7                           
+hi Statement    ctermfg=110 guifg=#8fb0d7   " Blue 
 hi Type         ctermfg=146 guifg=#afafdf   " 
 hi link Conditional Identifier
 hi link Command Conditional
