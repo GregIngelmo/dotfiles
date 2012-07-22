@@ -42,7 +42,6 @@ set nowrap
 "let g:Powerline_symbols = 'fancy'
 " Mappings  **********************************************************************
 :inoremap jk <esc>
-:inoremap <C-BS> 
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Always show the status line
