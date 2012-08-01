@@ -40,6 +40,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab           "Use spaces not tabs
 set nowrap
+let g:NERDTreeWinSize = 40  
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
