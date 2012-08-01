@@ -4,19 +4,19 @@
 # Symlink dot files into your home directory
 #
 
-pathsToSymlink="zshrc vimrc gvimrc gitignore vim"
+pathsToSymlink="zshrc vimrc gvimrc gitignore gitconfig vim"
 
-keyColor='[38;5;117m' # light blue [0m 
-valColor='[01;33m'    # yellow     [0m 
+keyColor='[38;5;110m' # light blue [0m 
+valColor='[38;5;175m' # coral      [0m 
 noColor='[0m'
 
 for fileName in $pathsToSymlink
 do
-    # If a symlink (-L) doesn't exist in the users home folder then 
-    # symlink it a from the current directory
-    if [ ! -L "$HOME/.$fileName" ]
-    then
-        echo "Linking ${keyColor}$PWD/$fileName${noColor} -> ${valColor}$HOME/.$fileName${noColor}"
+    # If the file exists (-a) then skip it, otherwise symlink it a from the current directory
+    if [ -a "$HOME/.$fileName" ]; then
+        echo "Skipped $PWD/$fileName" 
+    else
+        echo "Linked  ${keyColor}$PWD/$fileName${noColor} to ${valColor}$HOME/.$fileName${noColor}"
         
         ln -s $PWD/$fileName $HOME/.$fileName
     fi
