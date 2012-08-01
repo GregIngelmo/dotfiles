@@ -9,6 +9,9 @@ autocmd BufRead,BufNewFile *.json setfiletype javascript
 " Execute Rooter when opening these types of files. Rooter cds to the directory of the file
 autocmd BufRead,BufEnter *.py,*.html,*.haml,*.css,*.js :Rooter
 
+" Always cd using the active buffers directory
+autocmd BufEnter * lcd %:p:h
+
 " Searching *******************************************************************
 set hlsearch	" highlight search term
 set incsearch	" Incremental search, search as you type
@@ -29,6 +32,7 @@ set foldlevel=1         "this is just what i use
 set number 	"line numbers
 set ruler	"show the cursor position bottomr right (row/col)
 set showtabline=2   "Always ctrl
+
 " Other  **********************************************************************
 set smartindent
 set encoding=utf-8
@@ -40,14 +44,14 @@ set nowrap
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
 "let g:Powerline_symbols = 'fancy'
+
 " Mappings  **********************************************************************
 :inoremap jk <esc>
-:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Always show the status line
 set laststatus=2
 
-" Allow shift key selection of text
+" Allow shift key selection of text in insert mode
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
 endif
