@@ -1,18 +1,12 @@
 " Vim color file
 "
-" Name:       xoria256.vim
-" Version:    1.5
-" Maintainer:	Dmitriy Y. Zotikov (xio) <xio@ungrund.org>
+" Name:         ingelmo.vim
+" Version:      1.0
+" Maintainer:   Greg Ingelmo
 "
-" Should work in recent 256 color terminals.  88-color terms like urxvt are
-" NOT supported.
-"
-" Don't forget to install 'ncurses-term' and set TERM to xterm-256color or
-" similar value.
-"
-" Color numbers (0-255) see:
-" http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-"
+" Custom color scheme based on xoria-256
+" Base palette is inluded as part of ColorSchemer scheme (ingelmo-vim.cs)
+"  
 " For a specific filetype highlighting rules issue :syntax list when a file of
 " that type is opened.
 
@@ -32,10 +26,8 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "xoria256"
-"}}}
-" Colours {{{1
-"" General {{{2
+let colors_name = "ingelmo"
+
 hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=0   guibg=#000000 cterm=none gui=none
 hi Cursor                                 ctermbg=214 guibg=#ffaf00
 hi CursorColumn                           ctermbg=238 guibg=#444444
