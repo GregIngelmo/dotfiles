@@ -79,8 +79,8 @@ bindkey "\ez"   backward-delete-word                # esc z is only used when ma
 
 # Environment variables. Use printenv to print all terminal variables, unset to delete one
 export HISTFILE="$HOME/.history"            # history file path
-export HISTSIZE=500                         # number of history lines to keep in memory
-export SAVEHIST=500                         # number of history lines to keep on disk
+export HISTSIZE=10000                         # number of history lines to keep in memory
+export SAVEHIST=10000                         # number of history lines to keep on disk
 export LC_CTYPE=en_US.UTF-8                 # so SVN doesn't shit itself on non-ascii files
 export WORDCHARS='*?_[]~=&;!#$%^(){}'       # Remove slash, period, angle brackets and dash from valid word characters
                                             # This allows delete-word (ctrl-w) to delete a piece of a path,
