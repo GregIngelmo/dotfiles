@@ -10,7 +10,7 @@
 " For a specific filetype highlighting rules issue :syntax list when a file of
 " that type is opened.
 
-" Initialization {{{
+" Initialization 
 if &t_Co != 256 && ! has("gui_running")
   echomsg ""
   echomsg "err: please use GUI or a 256-color terminal (so that t_Co=256 could be set)"
@@ -70,14 +70,14 @@ hi VisualNOS    ctermfg=255 guifg=#eeeeee ctermbg=60  guibg=#5f5f87
 hi WildMenu     ctermfg=0   guifg=#000000 ctermbg=150 guibg=#afdf87 cterm=bold gui=bold
 
 "" Syntax highlighting {{{2
-hi Comment      ctermfg=244 guifg=#666666
+hi Comment      ctermfg=244 guifg=#666666   " Gray
 hi Constant     ctermfg=66  guifg=#5a9a77   " Strings in green
 hi Identifier   ctermfg=137 guifg=#b87a41   " Keywords in orange
-hi Ignore       ctermfg=238 guifg=#444444
-hi Number       ctermfg=180 guifg=#d6c895   " Numbers is yellow
-hi PreProc      ctermfg=150 guifg=#95b576
+hi Ignore       ctermfg=238 guifg=#444444   " Dark gray
+hi Number       ctermfg=180 guifg=#d6c895   " Numbers in yellow
+hi PreProc      ctermfg=150 guifg=#95b576   " Light green
 hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
-hi Statement    ctermfg=110 guifg=#8fb0d7   " Blue 
+hi Statement    ctermfg=110 guifg=#8fb0d7   " Built in keywords in blue 
 hi Type         ctermfg=146 guifg=#afafdf   " 
 hi link Conditional Identifier
 hi link Command Conditional
@@ -93,9 +93,15 @@ hi link pythonDecorator Identifier
 
 """ ZSH
 hi link vimOption Type
-
-""" ZSH
 hi link zshCommands Identifier
+
+""" Bufexplorer, remove all unecessary colors
+hi link bufExplorerHelp Normal  
+hi link bufExplorerSortBy Normal  
+hi link bufExplorerCurBuf PreProc 
+hi link bufExplorerAltBuf Normal  
+hi link bufExplorerActBuf Normal  
+hi link bufExplorerBufNbr Normal  
 
 """ Javascript
 hi link javascript Normal
