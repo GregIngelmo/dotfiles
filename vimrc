@@ -46,7 +46,6 @@ set noswapfile          "Disable the swap file
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
-"let g:Powerline_symbols = 'fancy'
 
 " Mappings  *****************************************************************
 :inoremap jk <esc>
@@ -57,6 +56,12 @@ set laststatus=2
 " Allow shift key selection of text in insert mode
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
+endif
+
+if has('gui_running')
+    " set guifont=Inconsolata-dz:h11
+    set guifont=Inconsolata-dz\ for\ Powerline:h11                                    
+    let g:Powerline_symbols = 'fancy'
 endif
 
 " Show syntax highlighting groups for word under cursor CTRL+P
