@@ -1,0 +1,40 @@
+# Cusom Colors
+[color]
+	ui = true
+[color "diff"]
+	plain = normal
+	meta = yellow 
+	frag = white bold
+	old = red bold
+	new = green bold
+	commit = yellow
+    whitespace = normal 
+[color "branch"]
+	current = green bold reverse
+	local = normal
+	remote = yellow bold
+	plain = normal
+[color "status"]
+	header = normal
+	added = cyan bold
+	updated = green bold
+	changed = yellow bold
+	untracked = red bold
+	nobranch = red bold
+[color "grep"]
+	match = normal
+[color "interactive"]
+	prompt = normal
+	header = normal
+	help = normal
+	error = normal   
+
+[apply]
+	whitespace = nowarn
+
+[core]
+	excludesfile = ~/.gitignore
+
+# The include directive requires git 7.10 or greater otherwise it's ignored.
+[include]
+    path = .gitconfig.local
