@@ -6,9 +6,6 @@ autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.json setfiletype javascript
 
-" Execute Rooter when opening these types of files. Rooter cds to the directory of the file
-autocmd BufRead,BufEnter *.py,*.html,*.haml,*.css,*.js :Rooter
-
 " Always cd using the active buffers directory
 autocmd BufEnter * lcd %:p:h
 
