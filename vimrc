@@ -9,6 +9,10 @@ autocmd BufRead,BufNewFile *.json setfiletype javascript
 " Always cd using the active buffers directory
 autocmd BufEnter * lcd %:p:h
 
+" Open Nerd tree on start and set focus to the empty buffer
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
 " Searching *******************************************************************
 set hlsearch	" highlight search term
 set incsearch	" Incremental search, search as you type
@@ -26,9 +30,9 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
 " Vim UI **********************************************************************
-set number 	"line numbers
-set ruler	"show the cursor position bottomr right (row/col)
-set showtabline=2   "Always ctrl
+set number 	        " Enable Line numbers
+set showtabline=2   " Show the tab bar
+set laststatus=2    " Show the status
 
 " Other  **********************************************************************
 set smartindent
@@ -38,12 +42,13 @@ set shiftwidth=4
 set expandtab           "Use spaces not tabs
 set nowrap
 let g:NERDTreeWinSize = 40  
+set noswapfile          "Disable the swap file
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
 "let g:Powerline_symbols = 'fancy'
 
-" Mappings  **********************************************************************
+" Mappings  *****************************************************************
 :inoremap jk <esc>
 
 " Always show the status line
