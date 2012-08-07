@@ -79,10 +79,10 @@ bindkey "\ez"   backward-delete-word                # esc z is only used when ma
 
 # Environment variables. Use printenv to print all terminal variables, unset to delete one
 export HISTFILE="$HOME/.history"            # history file path
-export HISTSIZE=10000                         # number of history lines to keep in memory
-export SAVEHIST=10000                         # number of history lines to keep on disk
+export HISTSIZE=10000                       # number of history lines to keep in memory
+export SAVEHIST=10000                       # number of history lines to keep on disk
 export LC_CTYPE=en_US.UTF-8                 # so SVN doesn't shit itself on non-ascii files
-export WORDCHARS='*?_[]~=&;!#$%^(){}'       # Remove slash, period, angle brackets and dash from valid word characters
+export WORDCHARS='*?_[]~&;!#$%^(){}'        # Remove slash, period, angle brackets, dash and equal from valid word characters
                                             # This allows delete-word (ctrl-w) to delete a piece of a path,
                                             # and ctrl-arrow to jumps between parts of a path
 
@@ -107,7 +107,7 @@ export TIMEFMT='
 > %J
   | Time:   [38;5;159m%E[0m total time, %U user time, %S kernel time
   | Disk:   [38;5;159m%F[0m major page faults (pages loaded from disk)  
-  | System: [38;5;159m%P[0m max CPU used, [38;5;159m%M[0m KB max memory used'
+  | System: [38;5;159m%P[0m CPU used, [38;5;159m%M[0m KB max memory used'
 
 # Useful zsh functions and modules
 autoload -U colors && colors    # zsh function that loads colors w/ names into 'fg' & 'bg' arrays
@@ -122,7 +122,7 @@ if [[ `uname` == "Darwin" ]] then
     # the 'g' prefix is added by homebrew to avoid naming collisions, gls, gcat etc...
     if (( $+commands[gls] )) ; then
         # remove date entirely for day-to-day usage
-        alias ls='gls -AlFh --color --time-style="+[38;5;100m—[00m" --group-directories-first'                            
+        alias ls='gls -AlFh --color --time-style="+" --group-directories-first'                            
         # use English sentence style date when needed ex: [Tue, Jan 11 2011 @ 11:01 am]
         # format specifiers @ http://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation 
         alias lsd='gls -AlFh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first; echo Today is `date "+%a, %b %_d %Y @ %l:%M %p"`'  
@@ -135,10 +135,6 @@ else
     alias lsd='ls -AlFh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first'   
 fi
 
-# custom prompt
-# %{ ... %} tells zsh to disregard the contained characters when calculating the length of the prompt (in order correctly position the cursor)
-local p_ret_status="%{$fg[white]%}%?%{$reset_color%}"   # last command return code
-local p_delim="%{$fg[red]%}>%{$reset_color%}"           # > as a delimiter
 
 # If .zshrc.local exists include it. It's should contain system 
 # specific settings such as aliases, exports, a custom $PATH, etc...
@@ -148,7 +144,9 @@ fi
 
 # Pastel-ish colors for GNU LS_COLORS
 # di=directory (blue), ln=sym link (coral), ex=executable (orange)
-export LS_COLORS='di=38;5;110:ln=38;5;175:ex=38;5;166'
+# mi=orphaned symlinks (red), 
+# tw=directory w/ sticky bit & 'other writable', means it can be written to by anyone, but deletes only by owner (dark blue)
+export LS_COLORS='di=38;5;110:ln=38;5;175:ex=38;5;166:mi=38;5;88:tw=38;5;25'
 
 # Tests whether a function exsists, used primarily when an old version of ZSH
 # doesn't have vcs_info
@@ -165,6 +163,11 @@ if function_exists vcs_info; then
     autoload -Uz vcs_info
 fi
 
+# custom prompt
+# %{ ... %} tells zsh to disregard the contained characters when calculating the length of the prompt (in order correctly position the cursor)
+local p_ret_status="[%?]"                               # last command return code
+local p_delim="%{[38;5;244m%}>%{$reset_color%}"       # > as a delimiter
+
 # Dynamic prompt customization point, precmd gets called just before every command prompt
 function precmd {
     if function_exists vcs_info; then
@@ -173,31 +176,28 @@ function precmd {
 
     # current working dir
     local p_cwd="%{[38;5;180m%}$PWD%{$reset_color%}"        
+    local p_userColor='[38;5;147m'
     
-    # if $EUID is zero then we're running as root,
-    # change the color of the username from purple to red
+    # if $EUID is zero then we're running as root, change the color of the username from purple to red
     if [ $EUID -eq 0 ]; then
-        local USER_COLOR='[01;38;5;124m'
-    else
-        local USER_COLOR='[38;5;146m'
-    fi
+        local p_userColor='[01;38;5;124m'
 
     # p_hostname is defined in .zshrc.local It's useful for creating a friendly 
     # name in our prompt when we can't actually edit the hostname 
     if [[ -z "$p_hostName" ]]; then
-        local p_user_at_host="%{$USER_COLOR%}%B%n%b@%m%{$reset_color%}" 
+        local p_user_at_host="%{$p_userColor%}%n%{$reset_color%}@%m" 
         printf "\e]1;$HOST\a"
     else
-        local p_user_at_host="%{$USER_COLOR%}%B%n%b@$p_hostName%{$reset_color%}" 
+        local p_user_at_host="%{$p_userColor%}%n%{$reset_color%}@$p_hostName" 
         printf "\e]1;$p_hostName\a"
     fi
         
     if [[ -n "$vcs_info_msg_0_" ]]; then
-        local vcs="%{[38;5;180m%}${vcs_info_msg_0_}%{$reset_color%}"
+        local p_vcs="%{[38;5;180m%}${vcs_info_msg_0_}%{$reset_color%}"
     fi
 
-    PROMPT="${p_cwd}${vcs}
-${p_user_at_host} [${p_ret_status}] ${p_delim} "
+    PROMPT="${p_cwd}${p_vcs}
+${p_user_at_host} ${p_ret_status} ${p_delim} "
 
 }
 
