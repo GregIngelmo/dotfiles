@@ -181,6 +181,7 @@ function precmd {
     # if $EUID is zero then we're running as root, change the color of the username from purple to red
     if [ $EUID -eq 0 ]; then
         local p_userColor='[01;38;5;124m'
+    fi
 
     # p_hostname is defined in .zshrc.local It's useful for creating a friendly 
     # name in our prompt when we can't actually edit the hostname 
