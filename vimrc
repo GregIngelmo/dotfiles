@@ -43,6 +43,7 @@ set expandtab           "Use spaces not tabs
 set nowrap
 let g:NERDTreeWinSize = 40  
 set noswapfile          "Disable the swap file
+set mouse=a             " Let's you use the mouse in a terminal session
 
 " ConqueTerm  ****************************************************************
 let g:ConqueTerm_ReadUnfocused = 1
