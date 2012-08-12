@@ -48,7 +48,7 @@ set noswapfile          "Disable the swap file
 let g:ConqueTerm_ReadUnfocused = 1
 "let g:ConqueTerm_InsertOnEnter = 1
 set updatetime=200  "uptime (ms) is how often vim runs its internal timer (don't set this any lower) 
-let g:ConqueTerm_TERM='xterm'
+"let g:ConqueTerm_TERM='xterm'
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
 
