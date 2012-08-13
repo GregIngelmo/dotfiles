@@ -11,5 +11,6 @@ Thumbs.db
 # Compiled source
 *.pyc
 
-# Logs, swap files, dbs, etc...
+# Logs, swap files, dbs, utilities, etc...
 *.swp
+tags
