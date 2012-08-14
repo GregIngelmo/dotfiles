@@ -61,8 +61,18 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*' list-dirs-first true                 # Separate directories from files.
 zstyle ':vcs_info:*' enable git cvs svn                     # Only enable version control info for the 3 big ones
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+
+autoload -U is-at-least
+
+# Use cdr, a zsh native function that replaces pushd/popd
+# cdr <tab> to see an MRU of directories <3
+if is-at-least 4.3.11; then
+    autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+    add-zsh-hook chpwd chpwd_recent_dirs
+    zstyle ':chpwd:*' recent-dirs-default true
+    zstyle ':completion:*:*:cdr:*:*' menu selection # enable tab completion
+fi
 
 # Custom keybindings. These enable ctrl-arrow, ctrl-backspace, & ctrl-del
 # Hit ctrl-v at the command line and then any key to see the control code 
