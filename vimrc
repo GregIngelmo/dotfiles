@@ -44,6 +44,8 @@ set nowrap
 let g:NERDTreeWinSize = 40  
 set noswapfile          " Disable the swap file
 set mouse=a             " Let's you use the mouse in a terminal session
+set tags=tags;/         " look for tags file in any folder (ctags)
+let g:tagbar_left = 1   " Tagbar will open a window on the left
 
 " ConqueTerm  ****************************************************************
 let g:ConqueTerm_ReadUnfocused = 1
