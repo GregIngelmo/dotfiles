@@ -56,6 +56,17 @@ set updatetime=200  "uptime (ms) is how often vim runs its internal timer (don't
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
 
+" Change the cursor from Block to Ibeam when switching betwen select/insert mode. 
+" iTerm provides a special escape sequence which makes this possible. 
+if &term =~ "xterm\\|rxvt"
+    let &t_SI = "\e]50;CursorShape=1\x7"
+    let &t_EI = "\e]50;CursorShape=0\x7"
+    
+    " When entering/exiting vim make sure to restore the state of the cursor by running a shell command 
+    autocmd VimLeave * silent! :!echo -n "\e]50;CursorShape=1\x7"
+    autocmd VimEnter * silent! :!echo -n "\e]50;CursorShape=0\x7"
+endif
+
 " Mappings  *****************************************************************
 :inoremap jk <esc>
 
