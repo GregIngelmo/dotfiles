@@ -28,14 +28,14 @@ endif
 
 let colors_name = "ingelmo"
 
-hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=0   guibg=#000000 cterm=none gui=none
+hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=black guibg=#000000 
 hi Cursor                                 ctermbg=214 guibg=#ffaf00
 hi CursorColumn                           ctermbg=238 guibg=#444444
 hi CursorLine                             ctermbg=237 guibg=#3a3a3a cterm=none gui=none
 hi Error        ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
 hi ErrorMsg     ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
-hi FoldColumn   ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
-hi Folded       ctermfg=234 guifg=#2e2e2e ctermbg=0  guibg=#000000
+hi FoldColumn   ctermfg=247 guifg=#9e9e9e ctermbg=0   guibg=#000000
+hi Folded       ctermfg=234 guifg=#2e2e2e ctermbg=0   guibg=#000000
 hi IncSearch    ctermfg=0   guifg=#000000 ctermbg=223 guibg=#ffdfaf cterm=none gui=none
 hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
 hi MatchParen   ctermfg=188 guifg=#a50922 ctermbg=0   guibg=#0d0d0d cterm=bold gui=bold
@@ -103,6 +103,10 @@ hi link bufExplorerAltBuf Normal
 hi link bufExplorerActBuf Normal  
 hi link bufExplorerBufNbr Normal  
 
+""" Shell scripts
+hi shOption ctermfg=110 guifg=#78b3d0  " light cyan to match zsh highlighting
+hi link shLoop Identifier
+ 
 """ Javascript
 hi link javascript Normal
 hi link htmlLInk Normal
