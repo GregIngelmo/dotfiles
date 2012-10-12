@@ -46,7 +46,7 @@ set noswapfile          " Disable the swap file
 set mouse=a             " Let's you use the mouse in a terminal session
 set tags=tags;/         " look for tags file in any folder (ctags)
 let g:tagbar_left = 1   " Tagbar will open a window on the left
-let mapleader=","
+let mapleader=","       " Changed leader to comma
 
 " ConqueTerm  ****************************************************************
 let g:ConqueTerm_ReadUnfocused = 1
@@ -63,8 +63,8 @@ if &term =~ "xterm\\|rxvt"
     let &t_EI = "\e]50;CursorShape=0\x7"
     
     " When entering/exiting vim make sure to restore the state of the cursor by running a shell command 
-    autocmd VimLeave * silent! :!echo -n "\e]50;CursorShape=1\x7"
-    autocmd VimEnter * silent! :!echo -n "\e]50;CursorShape=0\x7"
+    autocmd VimLeave * silent! :!echo -e -n "\e]50;CursorShape=1\x7"
+    autocmd VimEnter * silent! :!echo -e -n "\e]50;CursorShape=0\x7"
 endif
 
 " Mappings  *****************************************************************
