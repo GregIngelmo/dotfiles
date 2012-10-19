@@ -114,6 +114,10 @@ hi link htmlLInk Normal
 hi htmlString guifg=#9992d4
 hi link htmlValue htmlString
 
+""" Nerdtree
+hi NERDTreeExecFile ctermfg=166 guifg=#d75f00
+hi NERDTreeLink     ctermfg=175 guifg=#d787af
+
 "" Special {{{2
 """ .diff {{{3
 hi diffAdded    ctermfg=150 guifg=#afdf87
