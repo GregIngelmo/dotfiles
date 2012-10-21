@@ -1,25 +1,105 @@
-dotfiles
-===============
-### Requirements
-* **zsh** - The latest version of zsh 
+#Greg's dotfiles 
 
-		brew install zsh
-		
-* **Core Utils** - Text manipulation utilities  used by most flavors of GNU Linux, `ls`, `cp` etc… Many OS X variants of these basic tools have remained stagnant for years while their GNU counterparts have amassed new features.
+These are my dotfiles. There are many like them, but these are mine.
 
-		brew install coreutils
+## Required
 
-* **Fonts** - Inconsolata-dz & "Inconsolata-dz for Powerline". The powerline variant is used by the Powerline vim plugin.
+* **[Zsh ](http://www.zsh.org/)** - An awesome shell 
+* **[Ctags](http://ctags.sourceforge.net/)** - Source code tokenizer, slicer and dicer
+* **[Homebrew](http://mxcl.github.com/homebrew/)** - Package manager for OS X, sorry Macports :(
+* **[GNU coreutils](http://www.gnu.org/software/coreutils/)** - The latest file and text manipulation utilities. ls, cat, etc…
+
+
+
+## Recommended
+
+* **[iTerm2](http://www.iterm2.com)** -  The terminal of terminals
+* **[Inconsolata-dz](http://media.nodnod.net/Inconsolata-dz.otf.zip)** & **[Inconsolata-dz Powerline](https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/Inconsolata-dz-Powerline.otf)** - A nice monospaced font based on Consolas
+
+
+
+## Installation
+
+**OS X**
 	
-	http://media.nodnod.net/Inconsolata-dz.otf.zip  
-	 https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/Inconsolata-dz-Powerline.otf
+Download and install [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)  
+Download and install [Homebrew](http://mxcl.github.com/homebrew/)
 
-### Vim
-* **Powerline** - The ultimate vim status bar plugin
-* **Conque Term** - An interactive terminal right inside vim
-* **Buf Explorer** - Quickly switch between open files
-* **Easy Motion** - A method of navigating within a file
-* **Nerd Tree** - The gold standard in tree-view functionality
+	brew install coreutils zsh ctags git
+	brew tap homebrew/dupes
+	brew install grep
+
+Download and install [Inconsolata-dz](http://media.nodnod.net/Inconsolata-dz.otf.zip) & [Inconsolata-dz Powerline](https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/Inconsolata-dz-Powerline.otf)  
+Download and Install [iTerm2](http://www.iterm2.com/#/section/home)
+
+**Ubuntu**
+
+	sudo apt-get install zsh ctags git    
+
+**Cent**
+
+	sudo yum install zsh ctags git -y
+
+To install the dotfiles run `setup.sh`, it'll symlink the files to your home directory. It won't overwrite any dotfiles that you've already created.
+
+	chsh -s `which zsh`
+	git clone --recursive http://github.com/kemist/dotfiles
+	cd dotfiles
+	./setup.sh
+	cd..
+	zsh
+
+...or be a manly-man and use a one-liner
+
+	chsh -s `which zsh` && git clone --recursive http://github.com/kemist/dotfiles && cd dotfiles && ./setup.sh
 
 
-### zsh
+## ZSH
+
+#### Command syntax highlighting
+
+![fish](/Users/greg/Desktop/fish.png)
+
+#### Long running command summary
+
+![time](/Users/greg/Desktop/time.png)
+
+#### No dates by default, baller ls_colors
+	
+![ls](/Users/greg/Desktop/ls.png)	
+
+#### English sentence style dates when needed
+	
+![ls](/Users/greg/Desktop/lsd.png)
+
+#### Running as root reminder
+
+![root](/Users/greg/Desktop/root.png)
+
+#### New session summary 
+
+![root](/Users/greg/Desktop/newshell.png)
+
+#### Fancier `less` status bar info
+
+![root](/Users/greg/Desktop/less.png)
+
+#### Recent directory tracking (better than pushd/popd)
+
+![](/Users/greg/Desktop/cdr.png)
+
+#### And of course... Tetris
+
+![tetris](/Users/greg/Desktop/tetris.png)
+
+
+## Vim
+* **[Tagbar](http://majutsushi.github.com/tagbar/)** - Just like the class view in XCode/Visual Studio
+* **[Powerline](https://github.com/Lokaltog/vim-powerline)** - Everyone stopped writing status bars after this one
+* **[NERD tree](https://github.com/scrooloose/nerdtree)** - The 700bhp muscle car of Treeviews
+* **[Bufexplorer](http://www.vim.org/scripts/script.php?script_id=42)** - Quickly switch between open files
+* **[Easy Motion](https://github.com/Lokaltog/vim-easymotion#readme)** - Quickly jump around inside a file
+* **[Conque Term](https://code.google.com/p/conque/)** - Interactive terminal right inside vim. Why? Because you can.
+
+    
+
