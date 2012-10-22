@@ -1,5 +1,5 @@
 #
-# Ingelmo's bash smashin              _///_,  
+# A bash smashin                      _///_,  
 # Zsh console                        / ` ' '>
 #                                   ఠ'  __/_'>    
 #                                  /  _/  )_\'>i    
@@ -48,7 +48,7 @@ setopt EXTENDED_GLOB                # adds 3 more glob characters (#,~,^), ex: t
 setopt RM_STAR_WAIT                 # confirm before executing rm *, sanity check
 unsetopt CASE_GLOB                  # make globbing case insensitive by default
 
-# Completion system (copy pasta from the internet)
+# Completion system (copy pasta from McMaster)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
 zstyle ':completion:*:corrections' format "- %d - (errors %e})"
@@ -93,6 +93,7 @@ bindkey "\ed"   delete-word                         # esc d is only used when ma
 bindkey "\ez"   backward-delete-word                # esc z is only used when mapping ctrl-back in iTerm
 
 # Environment variables. Use printenv to print all terminal variables, unset to delete one
+export EDITOR=vim
 export HISTFILE="$HOME/.history"            # history file path
 export HISTSIZE=10000                       # number of history lines to keep in memory
 export SAVEHIST=10000                       # number of history lines to keep on disk
