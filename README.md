@@ -58,39 +58,39 @@ To install the dotfiles run `setup.sh`, it'll symlink the files to your home dir
 
 #### Command syntax highlighting
 
-![fish](/Users/greg/Desktop/fish.png)
+![fish](http://23.21.137.87/static//fish.png)
 
 #### Long running command summary
 
-![time](/Users/greg/Desktop/time.png)
+![time](http://23.21.137.87/static//time.png)
 
 #### No dates by default, baller ls_colors
 	
-![ls](/Users/greg/Desktop/ls.png)	
+![ls](http://23.21.137.87/static//ls.png)	
 
 #### English sentence style dates when needed
 	
-![ls](/Users/greg/Desktop/lsd.png)
+![ls](http://23.21.137.87/static//lsd.png)
 
 #### Running as root reminder
 
-![root](/Users/greg/Desktop/root.png)
+![root](http://23.21.137.87/static//root.png)
 
 #### New session summary 
 
-![root](/Users/greg/Desktop/newshell.png)
+![root](http://23.21.137.87/static//newshell.png)
 
 #### Fancier `less` status bar info
 
-![root](/Users/greg/Desktop/less.png)
+![root](http://23.21.137.87/static//less.png)
 
 #### Recent directory tracking (better than pushd/popd)
 
-![](/Users/greg/Desktop/cdr.png)
+![foo](http://23.21.137.87/static//cdr.png)
 
 #### And of course... Tetris
 
-![tetris](/Users/greg/Desktop/tetris.png)
+![tetris](http://23.21.137.87/static//tetris.png)
 
 
 ## Vim
