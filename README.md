@@ -15,7 +15,7 @@ Required
 Recommended
 -----------
 
-* **[iTerm2](http://www.iterm2.com)** - The terminals were kicks iTerm is a head kick
+* **[iTerm2](http://www.iterm2.com)** - If terminals were kicks iTerm is a head kick
 * **[Inconsolata-dz](http://media.nodnod.net/Inconsolata-dz.otf.zip)** & **[Inconsolata-dz Powerline](https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/Inconsolata-dz-Powerline.otf)** - A nice monospaced font based on Consolas
 
 
