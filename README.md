@@ -18,9 +18,9 @@ These are my dotfiles. There are many like them, but these are mine.
 
 
 
-## Installation
+## Install dependencies
 
-**OS X**
+#### OS X
 	
 Download and install [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)  
 Download and install [Homebrew](http://mxcl.github.com/homebrew/)
@@ -32,15 +32,18 @@ Download and install [Homebrew](http://mxcl.github.com/homebrew/)
 Download and install [Inconsolata-dz](http://media.nodnod.net/Inconsolata-dz.otf.zip) & [Inconsolata-dz Powerline](https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/Inconsolata-dz-Powerline.otf)  
 Download and Install [iTerm2](http://www.iterm2.com/#/section/home)
 
-**Ubuntu**
+#### Ubuntu
 
 	sudo apt-get install zsh ctags git    
 
-**Cent**
+#### CentOS
 
 	sudo yum install zsh ctags git -y
 
-To install the dotfiles run `setup.sh`, it'll symlink the files to your home directory. It won't overwrite any dotfiles that you've already created.
+
+## Configure dotfiles
+
+Run `setup.sh`. It'll symlink the files to your home directory, it won't overwrite anything. 
 
 	chsh -s `which zsh`
 	git clone --recursive http://github.com/kemist/dotfiles
@@ -49,9 +52,11 @@ To install the dotfiles run `setup.sh`, it'll symlink the files to your home dir
 	cd..
 	zsh
 
-...or be a manly-man and use a one-liner
+...or be a *manly man* and use a one-liner
 
 	chsh -s `which zsh` && git clone --recursive http://github.com/kemist/dotfiles && cd dotfiles && ./setup.sh
+
+
 
 
 ## ZSH
