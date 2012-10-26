@@ -2,24 +2,26 @@
 
 These are my dotfiles. There are many like them, but these are mine.
 
-## Required
+Required
+--------
 
 * **[Zsh ](http://www.zsh.org/)** - An awesome shell 
 * **[Ctags](http://ctags.sourceforge.net/)** - Source code tokenizer, slicer and dicer
-* **[Homebrew](http://mxcl.github.com/homebrew/)** - Package manager for OS X, sorry Macports :(
+* **[Homebrew](http://mxcl.github.com/homebrew/)** - A package manager for OS X (sorry Macports)
 * **[GNU coreutils](http://www.gnu.org/software/coreutils/)** - The latest file and text manipulation utilities. ls, cat, etc…
 
 
 
-## Recommended
+Recommended
+-----------
 
-* **[iTerm2](http://www.iterm2.com)** -  The terminal of terminals
+* **[iTerm2](http://www.iterm2.com)** - The terminals were kicks iTerm is a head kick
 * **[Inconsolata-dz](http://media.nodnod.net/Inconsolata-dz.otf.zip)** & **[Inconsolata-dz Powerline](https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/Inconsolata-dz-Powerline.otf)** - A nice monospaced font based on Consolas
 
 
 
-## Install dependencies
-
+Install
+-------
 #### OS X
 	
 Download and install [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)  
@@ -41,9 +43,10 @@ Download and Install [iTerm2](http://www.iterm2.com/#/section/home)
 	sudo yum install zsh ctags git -y
 
 
-## Configure dotfiles
+Configure
+---------
 
-Run `setup.sh`. It'll symlink the files to your home directory, it won't overwrite anything. 
+Run `setup.sh` which will symlink the files into your home directory, it won't overwrite anything.
 
 	chsh -s `which zsh`
 	git clone --recursive http://github.com/kemist/dotfiles
@@ -54,53 +57,58 @@ Run `setup.sh`. It'll symlink the files to your home directory, it won't overwri
 
 ...or be a *manly man* and use a one-liner
 
-	chsh -s `which zsh` && git clone --recursive http://github.com/kemist/dotfiles && cd dotfiles && ./setup.sh
+	chsh -s `which zsh` && git clone --recursive http://github.com/kemist/dotfiles && cd dotfiles && ./setup.sh && zsh
 
 
+Terminal features
+-----------------
 
+#### Syntax highlighting
 
-## ZSH
-
-#### Command syntax highlighting
-
-![fish](http://23.21.137.87/static//fish.png)
+![fish](http://23.21.137.87/static/fish.png)
 
 #### Long running command summary
 
-![time](http://23.21.137.87/static//time.png)
+![time](http://23.21.137.87/static/time.png)
 
-#### No dates by default, baller ls_colors
+#### Low contrast `ls` colors, no dates by default
 	
-![ls](http://23.21.137.87/static//ls.png)	
+![ls](http://23.21.137.87/static/ls.png)	
 
-#### English sentence style dates when needed
+#### English sentence style dates when you want them
 	
-![ls](http://23.21.137.87/static//lsd.png)
+![ls](http://23.21.137.87/static/lsd.png)
 
-#### Running as root reminder
+#### Root reminder
 
-![root](http://23.21.137.87/static//root.png)
+![root](http://23.21.137.87/static/root.png)
 
 #### New session summary 
 
-![root](http://23.21.137.87/static//newshell.png)
+![root](http://23.21.137.87/static/newshell.png)
 
-#### Fancier `less` status bar info
+#### Fancier `less` status bar
 
-![root](http://23.21.137.87/static//less.png)
+![statusbar](http://23.21.137.87/static//lessstatusbar.png)
 
-#### Recent directory tracking (better than pushd/popd)
+#### `less` colors
 
-![foo](http://23.21.137.87/static//cdr.png)
+![less](http://23.21.137.87/static/lesscolors.png)
 
-#### And of course... Tetris
+#### Recent directory tracking
+
+![cdr](http://23.21.137.87/static//cdr.png)
+
+#### Tetris
 
 ![tetris](http://23.21.137.87/static//tetris.png)
 
 
-## Vim
+Vim
+---
+
 * **[Tagbar](http://majutsushi.github.com/tagbar/)** - Just like the class view in XCode/Visual Studio
-* **[Powerline](https://github.com/Lokaltog/vim-powerline)** - Everyone stopped writing status bars after this one
+* **[Powerline](https://github.com/Lokaltog/vim-powerline)** - I'm think everyone stopped writing status bars after this one
 * **[NERD tree](https://github.com/scrooloose/nerdtree)** - The 700bhp muscle car of Treeviews
 * **[Bufexplorer](http://www.vim.org/scripts/script.php?script_id=42)** - Quickly switch between open files
 * **[Easy Motion](https://github.com/Lokaltog/vim-easymotion#readme)** - Quickly jump around inside a file
