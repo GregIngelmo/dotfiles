@@ -3,7 +3,7 @@
 	ui = true
 [color "diff"]
 	plain = normal
-	meta = yellow 
+	meta = blue 
 	frag = white bold
 	old = red bold
 	new = green bold
