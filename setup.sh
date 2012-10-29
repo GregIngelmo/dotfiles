@@ -10,20 +10,17 @@ keyColor='[38;5;110m' # light blue [0m
 valColor='[38;5;175m' # coral      [0m 
 noColor='[0m'
 
-for fileName in $pathsToSymlink
+for pathName in $pathsToSymlink
 do
-    # If the file exists (-a) then skip it, otherwise symlink it a from the current directory
-    if [ -a "$HOME/.$fileName" ]; then
-        echo "Skipped $PWD/$fileName" 
+    # If the file exists then skip it, otherwise symlink it a from the current directory
+    if [ -e "$HOME/.$pathName" ]; then
+        echo "File exists, skipping $PWD/$pathName" 
     else
-        echo "Linked  ${keyColor}$PWD/$fileName${noColor} to ${valColor}$HOME/.$fileName${noColor}"
+        echo "Linked  ${keyColor}$PWD/$pathName${noColor} to ${valColor}$HOME/.$pathName${noColor}"
         
-        ln -s $PWD/$fileName $HOME/.$fileName
+        ln -s $PWD/$pathName $HOME/.$pathName
     fi
 done
 
-# 
 # Configure global git settings for colors & gitignore
-#
-
 git config --global core.excludesfile '~/.gitignore'
