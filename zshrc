@@ -76,8 +76,10 @@ fi
 
 # iTerm escape sequences that allow us to change the color of the cursor 
 # http://www.iterm2.com/#/section/documentation/escape_codes
-echo -e -n "\e]Pm000000\e\\"   # black text
-echo -e -n "\e]Plffaf00\e\\"   # orange cursor
+if (( ${+TMUX} )); then
+    echo -e -n "\e]Pm000000\e\\"   # black text
+    echo -e -n "\e]Plffaf00\e\\"   # orange cursor
+fi
 
 # Custom keybindings. These enable ctrl-arrow, ctrl-backspace, & ctrl-del
 # Hit ctrl-v at the command line and then any key to see the control code 
