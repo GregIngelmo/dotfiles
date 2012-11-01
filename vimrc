@@ -58,13 +58,24 @@ set updatetime=200  "uptime (ms) is how often vim runs its internal timer (don't
 
 " Change the cursor from Block to Ibeam when switching betwen select/insert mode. 
 " iTerm provides a special escape sequence which makes this possible. 
-if &term =~ "xterm\\|rxvt"
-    let &t_SI = "\e]50;CursorShape=1\x7"
-    let &t_EI = "\e]50;CursorShape=0\x7"
-    
-    " When entering/exiting vim make sure to restore the state of the cursor by running a shell command 
-    autocmd VimLeave * silent! :!echo -e -n "\e]50;CursorShape=1\x7"
-    autocmd VimEnter * silent! :!echo -e -n "\e]50;CursorShape=0\x7"
+if exists('$ITERM_PROFILE')
+    if exists('$TMUX')
+        " tmux eates escape codes unless they too are escaped...
+        " https://raw.github.com/sjl/vitality.vim/master/doc/vitality.txt
+        let &t_SI = "\ePtmux;\e\e]50;CursorShape=1\x7\e\\"
+        let &t_EI = "\ePtmux;\e\e]50;CursorShape=0\x7\e\\"
+        
+        " When entering/exiting vim make sure to restore the state of the cursor by running a shell command 
+        autocmd VimLeave * silent! :!echo -e -n "\ePtmux;\e\e]50;CursorShape=1\x7\e\\"
+        autocmd VimEnter * silent! :!echo -e -n "\ePtmux;\e\e]50;CursorShape=0\x7\e\\"
+    else
+        let &t_SI = "\e]50;CursorShape=1\x7"
+        let &t_EI = "\e]50;CursorShape=0\x7"
+        
+        " When entering/exiting vim make sure to restore the state of the cursor by running a shell command 
+        autocmd VimLeave * silent! :!echo -e -n "\e]50;CursorShape=1\x7"
+        autocmd VimEnter * silent! :!echo -e -n "\e]50;CursorShape=0\x7"
+    endif
 endif
 
 " Mappings  *****************************************************************
