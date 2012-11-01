@@ -75,8 +75,8 @@ if is-at-least 4.3.11; then
 fi
 
 # iTerm escape sequences that allow us to change the color of the cursor 
-# http://www.iterm2.com/#/section/documentation/escape_codes
-if (( ${+TMUX} )); then
+# Smart cursor must be turned OFF (http://www.iterm2.com/#/section/documentation/escape_codes)
+if (( ${+ITERM_PROFILE} )); then
     echo -e -n "\e]Pm000000\e\\"   # black text
     echo -e -n "\e]Plffaf00\e\\"   # orange cursor
 fi
