@@ -112,12 +112,12 @@ export LESS="X -R -P ?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L. :
             byte %bB?s/%s. .?e(END) ?x- Next\: %x.:?pB%pB\%..%t"  
 
 # Environment variables for colored man pages, escape code syntax below
-export LESS_TERMCAP_ti=$'\E[01;37m'         # white         
-export LESS_TERMCAP_mb=$'[38;5;117m'      # light blue    [0m 
-export LESS_TERMCAP_md=$'[38;5;117m'      # light blue    [0m 
-export LESS_TERMCAP_me=$'\E[0m'             # color reset   
-export LESS_TERMCAP_us=$'\E[01;33m'         # yellow        
-export LESS_TERMCAP_ue=$'\E[0m'             # color reset 
+export LESS_TERMCAP_ti=$'\e[01;37m'         # white
+export LESS_TERMCAP_mb=$'\e[38;5;117m'      # light blue
+export LESS_TERMCAP_md=$'\e[38;5;117m'      # light blue
+export LESS_TERMCAP_me=$'\e[0m'             # color reset
+export LESS_TERMCAP_us=$'\e[01;33m'         # yellow
+export LESS_TERMCAP_ue=$'\e[0m'             # color reset
 
 # Environment variables for printing process stats if a command takes > n seconds
 export REPORTTIME=1
