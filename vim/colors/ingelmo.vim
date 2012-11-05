@@ -107,6 +107,18 @@ hi link bufExplorerBufNbr Normal
 hi shOption ctermfg=110 guifg=#78b3d0  " light cyan to match zsh highlighting
 hi link shLoop Identifier
  
+""" Markdown
+hi link markdownH1 Statement
+hi link markdownH2 Statement
+hi link markdownH3 Statement
+hi link markdownH4 Statement
+hi link markdownH5 Statement
+hi link markdownHeadingRule Statement
+hi link markdownHeadingDelimiter Statement
+hi link markdownListMarker Identifier
+hi link markdownUrl Identifier
+hi link markdownCodeBlock Constant
+
 """ Javascript
 hi link javascript Normal
 hi link htmlLInk Normal
