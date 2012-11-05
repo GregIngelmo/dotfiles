@@ -6,6 +6,12 @@ autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.json setfiletype javascript
 
+" Configure supertab autocompletion
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabClosePreviewOnPopupClose = 1
+set completeopt=menuone,longest,preview
+
 " Always cd using the active buffers directory
 autocmd BufEnter * lcd %:p:h
 
@@ -47,6 +53,7 @@ set mouse=a             " Let's you use the mouse in a terminal session
 set tags=tags;/         " look for tags file in any folder (ctags)
 let g:tagbar_left = 1   " Tagbar will open a window on the left
 let mapleader=","       " Changed leader to comma
+set backspace=indent,eol,start   " fix for homebrew vim backspace not working
 
 " ConqueTerm  ****************************************************************
 let g:ConqueTerm_ReadUnfocused = 1
