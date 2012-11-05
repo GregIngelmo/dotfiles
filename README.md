@@ -1,4 +1,5 @@
-#Greg's dotfiles 
+Greg's dotfiles 
+===============
 
 These are my dotfiles. There are many like them, but these are mine.
 
@@ -10,15 +11,11 @@ Required
 * **[Homebrew](http://mxcl.github.com/homebrew/)** - A package manager for OS X (sorry Macports)
 * **[GNU coreutils](http://www.gnu.org/software/coreutils/)** - The latest file and text manipulation utilities. ls, cat, etc…
 
-
-
 Recommended
 -----------
 
 * **[iTerm2](http://www.iterm2.com)** - If terminals were kicks iTerm is a head kick
 * **[Inconsolata-dz](http://media.nodnod.net/Inconsolata-dz.otf.zip)** & **[Inconsolata-dz Powerline](https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/Inconsolata-dz-Powerline.otf)** - A nice monospaced font based on Consolas
-
-
 
 Install
 -------
@@ -42,7 +39,6 @@ Download and Install [iTerm2](http://www.iterm2.com/#/section/home)
 
 	sudo yum install zsh ctags git -y
 
-
 Configure
 ---------
 
@@ -58,7 +54,6 @@ Run `setup.sh` which will symlink the files into your home directory, it won't o
 ...or be a *manly man* and use a one-liner
 
 	chsh -s `which zsh` && git clone --recursive http://github.com/kemist/dotfiles && cd dotfiles && ./setup.sh && zsh
-
 
 Terminal features
 -----------------
@@ -102,7 +97,6 @@ Terminal features
 #### Tetris
 
 ![tetris](http://23.21.137.87/static//tetris.png)
-
 
 Vim
 ---
