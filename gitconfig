@@ -7,7 +7,7 @@
 	frag = white bold
 	old = red bold
 	new = green bold
-	commit = yellow
+	commit = blue
     whitespace = normal 
 [color "branch"]
 	current = green bold reverse
