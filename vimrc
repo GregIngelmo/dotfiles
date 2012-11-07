@@ -54,6 +54,7 @@ set tags=tags;/         " look for tags file in any folder (ctags)
 let g:tagbar_left = 1   " Tagbar will open a window on the left
 let mapleader=","       " Changed leader to comma
 set backspace=indent,eol,start   " fix for homebrew vim backspace not working
+set clipboard=unnamed
 
 " ConqueTerm  ****************************************************************
 let g:ConqueTerm_ReadUnfocused = 1
