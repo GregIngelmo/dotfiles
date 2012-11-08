@@ -140,17 +140,17 @@ if [[ `uname` == "Darwin" ]] then
     # the 'g' prefix is added by homebrew to avoid naming collisions, gls, gcat etc...
     if (( $+commands[gls] )) ; then
         # remove date entirely for day-to-day usage
-        alias ls='gls -AlFh --color --time-style="+" --group-directories-first'                            
+        alias ls='gls -Alh --color --time-style="+" --group-directories-first'                            
         # use English sentence style date when needed ex: [Tue, Jan 11 2011 @ 11:01 am]
         # format specifiers @ http://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation 
-        alias lsd='gls -AlFh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first; echo Today is `date "+%a, %b %_d %Y @ %l:%M %p"`'  
+        alias lsd='gls -Alh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first; echo Today is `date "+%a, %b %_d %Y @ %l:%M %p"`'  
     else
-        alias ls='ls -AlFhg'
+        alias ls='ls -Alhg'
     fi
 else
     # assume GNU ls is available
-    alias ls='ls -AlFh --color --time-style="+—" --group-directories-first'                                 
-    alias lsd='ls -AlFh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first'   
+    alias ls='ls -Alh --color --time-style="+—" --group-directories-first'                                 
+    alias lsd='ls -Alh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first'   
 fi
 
 
