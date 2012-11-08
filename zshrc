@@ -60,9 +60,9 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' list-dirs-first true                 # Separate directories from files.
 zstyle ':vcs_info:*' enable git cvs svn                     # Only enable version control info for the 3 big ones
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 autoload -Uz compinit && compinit
-
 autoload -U is-at-least
 
 # Use cdr, a zsh native function that replaces pushd/popd
