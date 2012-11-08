@@ -160,11 +160,11 @@ if [[ -e "$HOME/.zshrc.local" ]] then
     source $HOME/.zshrc.local
 fi
 
-# Pastel-ish colors for GNU LS_COLORS
-# di=directory (blue), ln=sym link (coral), ex=executable (orange)
-# mi=orphaned symlinks (red), 
-# tw=directory w/ sticky bit & 'other writable', means it can be written to by anyone, but deletes only by owner (dark blue)
-export LS_COLORS='di=38;5;110:ln=38;5;175:ex=38;5;166:mi=38;5;88:tw=38;5;25'
+# Sensible ls_colors
+# di=directory (dark blue/purple), ln=sym link (light blue), ex=executable (orange)
+# mi=orphaned symlinks (red), tw=directory that allows r/w by all, deletes only by owner (dark blue)
+# st=directory that allows deletes only by owner (cyan)
+export LS_COLORS='di=38;5;61:ln=38;5;110:ex=38;5;72:mi=38;5;88:tw=38;5;25:st=38;5;38'
 
 # Tests whether a function exsists, used primarily when an old version of ZSH
 # doesn't have vcs_info
