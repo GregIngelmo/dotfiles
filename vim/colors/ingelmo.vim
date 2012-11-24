@@ -38,7 +38,7 @@ hi FoldColumn   ctermfg=247 guifg=#9e9e9e ctermbg=0   guibg=#000000
 hi Folded       ctermfg=234 guifg=#2e2e2e ctermbg=0   guibg=#000000
 hi IncSearch    ctermfg=0   guifg=#000000 ctermbg=223 guibg=#ffdfaf cterm=none gui=none
 hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
-hi MatchParen   ctermfg=188 guifg=#a50922 ctermbg=0   guibg=#0d0d0d cterm=bold gui=bold
+hi MatchParen   ctermfg=124 guifg=#af0000 ctermbg=0   guibg=#000000 cterm=bold gui=bold
 " TODO
 " hi MoreMsg
 hi NonText      ctermfg=247 guifg=#000000 ctermbg=0   guibg=#121212 cterm=bold gui=bold
