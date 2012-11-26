@@ -33,7 +33,7 @@ Download and Install [iTerm2](http://www.iterm2.com/#/section/home)
 
 #### Ubuntu
 
-	sudo apt-get install zsh ctags git    
+	sudo apt-get install zsh ctags git ncurses-term
 
 #### CentOS
 
