@@ -127,8 +127,12 @@ hi htmlString guifg=#9992d4
 hi link htmlValue htmlString
 
 """ Nerdtree
-hi NERDTreeExecFile ctermfg=166 guifg=#d75f00
-hi NERDTreeLink     ctermfg=175 guifg=#d787af
+hi NERDTreeExecFile ctermfg=72  guifg=#d75f00
+hi NERDTreeDir      ctermfg=61  guifg=#d75f00
+hi NERDTreeLink     ctermfg=110 guifg=#d787af
+hi NERDTreeCWD      ctermfg=180 guifg=#d787af
+hi link NERDTreeUp NERDTreeDir
+hi link NERDTreeDirSlash NERDTreeDir
 
 "" Special {{{2
 """ .diff {{{3
