@@ -100,6 +100,7 @@ export HISTFILE="$HOME/.history"            # history file path
 export HISTSIZE=10000                       # number of history lines to keep in memory
 export SAVEHIST=10000                       # number of history lines to keep on disk
 export LC_CTYPE=en_US.UTF-8                 # so SVN doesn't shit itself on non-ascii files
+export GREP_OPTIONS='--color'               # always show color with grep
 export WORDCHARS='*?_[]~&;!#$%^(){}'        # Remove slash, period, angle brackets, dash and equal from valid word characters
                                             # This allows delete-word (ctrl-w) to delete a piece of a path,
                                             # and ctrl-arrow to jumps between parts of a path
