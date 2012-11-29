@@ -48,6 +48,7 @@ set shiftwidth=4
 set expandtab           " Use spaces not tabs
 set nowrap
 let g:NERDTreeWinSize = 40  
+let NERDTreeIgnore = ['\.pyc$']
 set noswapfile          " Disable the swap file
 set mouse=a             " Let's you use the mouse in a terminal session
 set tags=tags;/         " look for tags file in any folder (ctags)
