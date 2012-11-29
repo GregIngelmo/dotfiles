@@ -133,6 +133,7 @@ hi NERDTreeLink     ctermfg=110 guifg=#d787af
 hi NERDTreeCWD      ctermfg=180 guifg=#d787af
 hi link NERDTreeUp NERDTreeDir
 hi link NERDTreeDirSlash NERDTreeDir
+hi link NERDTreeHelpTitle Normal
 
 "" Special {{{2
 """ .diff {{{3
@@ -160,15 +161,6 @@ hi djangoVarBlock ctermfg=180
 hi djangoTagBlock ctermfg=150
 hi djangoStatement ctermfg=146
 hi djangoFilter ctermfg=174
-
-""" NERDTree {{{3
-hi Directory      ctermfg=110  guifg=#87afdf
-hi treeCWD        ctermfg=180  guifg=#dfaf87
-hi treeClosable   ctermfg=174  guifg=#df8787
-hi treeOpenable   ctermfg=150  guifg=#afdf87
-hi treePart       ctermfg=244  guifg=#808080
-hi treeDirSlash   ctermfg=244  guifg=#808080
-hi treeLink       ctermfg=182  guifg=#dfafdf
 
 """ VimDebug {{{3
 " FIXME
