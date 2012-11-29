@@ -6,11 +6,8 @@ autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.json setfiletype javascript
 
-" Configure supertab autocompletion
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
-set completeopt=menuone,longest,preview
 
 " Always cd using the active buffers directory
 autocmd BufEnter * lcd %:p:h
@@ -18,6 +15,9 @@ autocmd BufEnter * lcd %:p:h
 " Open Nerd tree on start and set focus to the empty buffer
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+
+" Enables omnicomplete and indent settings for the detected fileype
+filetype plugin indent on
 
 " Searching *******************************************************************
 set hlsearch	" highlight search term
