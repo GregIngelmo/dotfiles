@@ -92,6 +92,10 @@ endif
 
 " Mappings  *****************************************************************
 :inoremap jk <esc>
+map <C-h> <C-w>h    " window movement
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Allow shift key selection of text in insert mode
 if has("gui_macvim")
