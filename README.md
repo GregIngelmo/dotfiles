@@ -109,4 +109,7 @@ Vim
 * **[Conque Term](https://code.google.com/p/conque/)** - Interactive terminal right inside vim. Why? Because you can.
 
     
+Credit
+------
 
+http://nvie.com/posts/how-i-boosted-my-vim/
