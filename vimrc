@@ -6,7 +6,7 @@ autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.json setfiletype javascript
 
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Always cd using the active buffers directory
