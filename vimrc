@@ -98,6 +98,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 nmap <silent> ,/ :nohlsearch<CR>   " Clear search results w/ ,/ instead of typing /asdfljasdkf
 cmap w!! w !sudo tee % >/dev/null  " Forgot to use sudo? w!! to the rescue
+nnoremap <C-e> 2<C-e>   " Scroll up & down 2 lines at a time 
+nnoremap <C-y> 2<C-y>   " 
 
 " Allow shift key selection of text in insert mode
 if has("gui_macvim")
