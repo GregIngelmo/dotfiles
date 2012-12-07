@@ -56,6 +56,9 @@ let g:tagbar_left = 1   " Tagbar will open a window on the left
 let mapleader=","       " Changed leader to comma
 set backspace=indent,eol,start   " fix for homebrew vim backspace not working
 set clipboard=unnamed
+set pastetoggle=<F2>
+set history=1000        " save 1000 of the last commands
+set scrolloff=3         " leaves 3 lines before top & bottom when scrolling
 
 " ConqueTerm  ****************************************************************
 let g:ConqueTerm_ReadUnfocused = 1
