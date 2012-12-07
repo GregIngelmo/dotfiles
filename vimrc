@@ -114,7 +114,7 @@ endif
 
 " Show syntax highlighting groups for word under cursor CTRL+P
 " See http://vimcasts.org/episodes/creating-colorschemes-for-vim/
-nmap <C-S-P> :call <SID>SynStack()<CR>
+nmap <C-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
