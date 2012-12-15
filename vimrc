@@ -59,9 +59,10 @@ set clipboard=unnamed
 set pastetoggle=<F2>
 set history=1000        " save 1000 of the last commands
 set scrolloff=3         " leaves 3 lines before top & bottom when scrolling
+set completeopt=menuone,preview,longest
 
 " ConqueTerm  ****************************************************************
-let g:ConqueTerm_ReadUnfocused = 1
+"let g:ConqueTerm_ReadUnfocused = 1
 "let g:ConqueTerm_InsertOnEnter = 1
 set updatetime=200  "uptime (ms) is how often vim runs its internal timer (don't set this any lower) 
 "let g:ConqueTerm_TERM='xterm'
