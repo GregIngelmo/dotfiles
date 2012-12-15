@@ -32,14 +32,12 @@ hi Normal       ctermfg=250 guifg=#d0d0d0 ctermbg=black guibg=#000000
 hi Cursor                                 ctermbg=214 guibg=#ffaf00
 hi CursorColumn                           ctermbg=238 guibg=#444444
 hi CursorLine                             ctermbg=237 guibg=#3a3a3a cterm=none gui=none
-hi Error        ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
-hi ErrorMsg     ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
+hi ErrorMsg     ctermfg=124 guifg=#ffffff ctermbg=0   guibg=#800000
 hi FoldColumn   ctermfg=247 guifg=#9e9e9e ctermbg=0   guibg=#000000
 hi Folded       ctermfg=234 guifg=#2e2e2e ctermbg=0   guibg=#000000
 hi IncSearch    ctermfg=0   guifg=#000000 ctermbg=223 guibg=#ffdfaf cterm=none gui=none
 hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
-hi MatchParen   ctermfg=124 guifg=#af0000 ctermbg=0   guibg=#000000 cterm=bold gui=bold
-" TODO
+hi MatchParen   ctermfg=82 guifg=#5fff00 ctermbg=0   guibg=#000000 cterm=bold gui=bold
 " hi MoreMsg
 hi NonText      ctermfg=247 guifg=#000000 ctermbg=0   guibg=#121212 cterm=bold gui=bold
 hi Pmenu        ctermfg=0   guifg=#000000 ctermbg=250 guibg=#bcbcbc
@@ -57,7 +55,6 @@ hi StatusLine   ctermfg=15  guifg=#ffffff ctermbg=239 guibg=#4e4e4e cterm=bold g
 hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
 hi TabLine      ctermfg=fg  guifg=fg      ctermbg=242 guibg=#666666 cterm=none gui=none
 hi TabLineFill  ctermfg=fg  guifg=fg      ctermbg=237 guibg=#3a3a3a cterm=none gui=none
-" FIXME
 hi Title        ctermfg=225 guifg=#ffdfff
 hi Todo         ctermfg=0   guifg=#000000 ctermbg=184 guibg=#dfdf00
 hi Underlined   ctermfg=39  guifg=#00afff                           cterm=underline gui=underline
@@ -69,31 +66,40 @@ hi Visual       ctermfg=255 guifg=#eeeeee ctermbg=96  guibg=#875f87
 hi VisualNOS    ctermfg=255 guifg=#eeeeee ctermbg=60  guibg=#5f5f87
 hi WildMenu     ctermfg=0   guifg=#000000 ctermbg=150 guibg=#afdf87 cterm=bold gui=bold
 
-"" Syntax highlighting {{{2
-hi Comment      ctermfg=244 guifg=#666666   " Gray
+"" Syntax highlighting 
+hi Comment      ctermfg=244 guifg=#666666   " Comments in gray
 hi Constant     ctermfg=66  guifg=#5a9a77   " Strings in green
 hi Identifier   ctermfg=137 guifg=#b87a41   " Keywords in orange
 hi Ignore       ctermfg=238 guifg=#444444   " Dark gray
 hi Number       ctermfg=180 guifg=#d6c895   " Numbers in yellow
 hi PreProc      ctermfg=150 guifg=#95b576   " Light green
 hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
-hi Statement    ctermfg=110 guifg=#8fb0d7   " Built in keywords in blue 
-hi Type         ctermfg=146 guifg=#afafdf   " 
+hi Statement    ctermfg=67  guifg=#5f87af   " Keywords in blue 
+hi Type         ctermfg=146 guifg=#afafd7   " Type in purple blue 
+hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
 hi link Conditional Identifier
 hi link Command Conditional
 
-""" python {{{3
+""" python 
 hi link pythonFunction Statement
 hi link pythonStatement Identifier
 hi link pythonRepeat Identifier
 hi link pythonConditional Identifier
 hi link pythonInclude Identifier
 hi link pythonOperator Identifier
-hi link pythonDecorator Identifier
+hi link pythonException Identifier
+hi link pythonExceptions Error
+
+""" Django
+hi link djangoTagBlock Statement
+hi link djangoStatement Identifier
+hi link djangoVarBlock Type
 
 """ ZSH
 hi link vimOption Type
 hi link zshCommands Identifier
+hi link zshKeyword Identifier
+hi link zshKSHFunction Statement
 
 """ Bufexplorer, remove all unecessary colors
 hi link bufExplorerHelp Normal  
@@ -119,6 +125,9 @@ hi link markdownListMarker Identifier
 hi link markdownUrl Identifier
 hi link markdownCodeBlock Constant
 
+""" HTML
+hi link htmlString Constant
+
 """ Javascript
 hi link javascript Normal
 hi link htmlLInk Normal
@@ -135,6 +144,17 @@ hi link NERDTreeUp NERDTreeDir
 hi link NERDTreeDirSlash NERDTreeDir
 hi link NERDTreeHelpTitle Normal
 
+""" Tagbar
+highlight default link TagbarComment    Comment
+highlight default link TagbarKind       Identifier
+highlight default link TagbarNestedKind TagbarKind
+highlight default link TagbarScope      Statement
+highlight default link TagbarType       Type
+highlight default link TagbarSignature  SpecialKey
+highlight default link TagbarPseudoID   NonText
+highlight default link TagbarFoldIcon   NERDTreeDir
+highlight default link TagbarHighlight  Search
+
 "" Special {{{2
 """ .diff {{{3
 hi diffAdded    ctermfg=150 guifg=#afdf87
@@ -145,22 +165,6 @@ hi diffAdd      ctermfg=bg  guifg=bg      ctermbg=151 guibg=#afdfaf
 hi diffDelete   ctermfg=bg  guifg=bg      ctermbg=246 guibg=#949494 cterm=none gui=none
 hi diffChange   ctermfg=bg  guifg=bg      ctermbg=181 guibg=#dfafaf
 hi diffText     ctermfg=bg  guifg=bg      ctermbg=174 guibg=#df8787 cterm=none gui=none
-""" HTML {{{3
-" hi htmlTag      ctermfg=146  guifg=#afafdf
-" hi htmlEndTag   ctermfg=146  guifg=#afafdf
-hi htmlTag      ctermfg=244
-hi htmlEndTag   ctermfg=244
-hi link htmlArg	 Statement
-hi htmlValue	ctermfg=187  guifg=#dfdfaf
-hi htmlTitle	ctermfg=254  ctermbg=95
-" hi htmlArg	ctermfg=146
-" hi htmlTagName	ctermfg=146
-" hi htmlString	ctermfg=187
-""" django {{{3
-hi djangoVarBlock ctermfg=180
-hi djangoTagBlock ctermfg=150
-hi djangoStatement ctermfg=146
-hi djangoFilter ctermfg=174
 
 """ VimDebug {{{3
 " FIXME
