@@ -28,7 +28,7 @@ endif
 
 let colors_name = "ingelmo"
 
-hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=black guibg=#000000 
+hi Normal       ctermfg=250 guifg=#d0d0d0 ctermbg=black guibg=#000000 
 hi Cursor                                 ctermbg=214 guibg=#ffaf00
 hi CursorColumn                           ctermbg=238 guibg=#444444
 hi CursorLine                             ctermbg=237 guibg=#3a3a3a cterm=none gui=none
