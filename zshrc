@@ -19,7 +19,7 @@
 #             `  `         -----------------------------------
 #-----------------------------------------------------------------       
 
-# New session summary
+# new session summary
 if [[ -o interactive ]]; then
   
     local key_color='[38;5;117m'
@@ -34,13 +34,13 @@ if [[ -o interactive ]]; then
     print "${key_color}Load[00m ${value_color}$loadAverages[00m"
 fi
 
-# ZSH Options
+# zsh Options
 setopt APPEND_HISTORY               # append to history file
 setopt INC_APPEND_HISTORY           # append to history file incrementally, as commands are typed in 
 setopt CORRECT                      # spelling correction... >pee /foofolder ... did you mean pe?
 setopt HIST_REDUCE_BLANKS           # remove useless blanks from history
 setopt NO_BEEP                      # don't beep 
-setopt AUTO_CD                      # cd into directories by just typing them out, ex: /foo intead of cd /foo
+setopt AUTO_CD                      # cd into directories by just typing them out, ex: /foo instead of cd /foo
 setopt AUTO_PUSHD                   # automatically call pushd on call to cd
 setopt PUSHD_IGNORE_DUPS            # don't add dupes to the pushd stack
 setopt HIST_IGNORE_ALL_DUPS         # ignore dupes
@@ -48,7 +48,7 @@ setopt EXTENDED_GLOB                # adds 3 more glob characters (#,~,^), ex: t
 setopt RM_STAR_WAIT                 # confirm before executing rm *, sanity check
 unsetopt CASE_GLOB                  # make globbing case insensitive by default
 
-# Completion system (copy pasta from McMaster)
+# completion system
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
 zstyle ':completion:*:corrections' format "- %d - (errors %e})"
@@ -58,14 +58,14 @@ zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:manuals.(^1*)' insert-sections true
 zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
-zstyle ':completion:*' list-dirs-first true                 # Separate directories from files.
-zstyle ':vcs_info:*' enable git cvs svn                     # Only enable version control info for the 3 big ones
+zstyle ':completion:*' list-dirs-first true                 # separate directories from files.
+zstyle ':vcs_info:*' enable git cvs svn                     # only enable version control info for the 3 big ones
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 autoload -Uz compinit && compinit
 autoload -U is-at-least
 
-# Use cdr, a zsh native function that replaces pushd/popd
+# use cdr, a zsh native function that replaces pushd/popd
 # cdr <tab> to see an MRU of directories <3
 if is-at-least 4.3.11; then
     autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -74,8 +74,8 @@ if is-at-least 4.3.11; then
     zstyle ':completion:*:*:cdr:*:*' menu selection # enable tab completion
 fi
 
-# iTerm escape sequences that allow us to change the color of the cursor 
-# Smart cursor must be turned OFF (http://www.iterm2.com/#/section/documentation/escape_codes)
+# iTerm escape sequences that allow us to change the color & shape of the cursor 
+# smart cursor must be turned OFF (http://www.iterm2.com/#/section/documentation/escape_codes)
 if (( ${+ITERM_PROFILE} )); then
     echo -e -n "\e]Pm000000\e\\"   # black text
     echo -e -n "\e]Plffaf00\e\\"   # orange cursor
@@ -88,11 +88,11 @@ bindkey "^[[1;5C" forward-word	                    # ctrl-rightarrow jump forwar
 bindkey "^[[5D" backward-word	                    # ctrl-leftarrow jump backward word for Terminal
 bindkey "^[[5C" forward-word	                    # ctrl-rightarrow jump forward word for Terminal
 bindkey "^[[3~" delete-char                         # delete key
-bindkey '^R'    history-incremental-search-backward # ctrl -R search history
-bindkey "^[[A"  up-line-or-search                   # up arrow go through history
-bindkey "^[[B"  down-line-or-search                 # down arrow go through history
-bindkey "\ed"   delete-word                         # esc d is only used when mapping ctrl-del in iTerm
-bindkey "\ez"   backward-delete-word                # esc z is only used when mapping ctrl-back in iTerm
+bindkey '^R'    history-incremental-search-backward # ctrl-r search history
+bindkey "^[[A"  up-line-or-search                   # up through history
+bindkey "^[[B"  down-line-or-search                 # down through history
+bindkey "\ed"   delete-word                         # esc-d is mapped to ctrl-del in iTerm
+bindkey "\ez"   backward-delete-word                # esc-z is mapped to ctrl-backspace in iTerm
 
 # Environment variables. Use printenv to print all terminal variables, unset to delete one
 export EDITOR=vim
@@ -105,14 +105,14 @@ export WORDCHARS='*?_[]~&;!#$%^(){}'        # Remove slash, period, angle bracke
                                             # This allows delete-word (ctrl-w) to delete a piece of a path,
                                             # and ctrl-arrow to jumps between parts of a path
 
-# Custom less behaviors. 
+# custom less behaviors. 
 # X prevents less from clearing screen on quit
 # -P customizes prompt to ex: .zshrc lines 1-47/228 20%
 # -R print control chacters, allows colors to flow through less
 export LESS="X -R -P ?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L. :
             byte %bB?s/%s. .?e(END) ?x- Next\: %x.:?pB%pB\%..%t"  
 
-# Environment variables for colored man pages, escape code syntax below
+# environment variables for colored man pages, escape code syntax below
 export LESS_TERMCAP_ti=$'\e[01;37m'         # white
 export LESS_TERMCAP_mb=$'\e[38;5;117m'      # light blue
 export LESS_TERMCAP_md=$'\e[38;5;117m'      # light blue
@@ -120,7 +120,7 @@ export LESS_TERMCAP_me=$'\e[0m'             # color reset
 export LESS_TERMCAP_us=$'\e[01;33m'         # yellow
 export LESS_TERMCAP_ue=$'\e[0m'             # color reset
 
-# Environment variables for printing process stats if a command takes > n seconds
+# environment variables for printing process stats if a command takes > n seconds
 export REPORTTIME=1
 export TIMEFMT='
 > %J
@@ -133,9 +133,10 @@ autoload -U colors && colors    # zsh function that loads colors w/ names into '
 autoload zcalc                  # calculator
 autoload zmv                    # zsh batch file renamer ex: zmv '(*).txt' '$1.md'
 
-grepr() {grep -iIr --color "$1" *}  # grep recursive(r), ignore case (i), ignore binary files(I). ex: grepr searchstring
+# grep (r)ecursive, (i)gnore case, (I)gnore binary files 
+grepr() {grep -iIr --color "$1" *} 
 
-# Command aliases for different systems (Darwin == Mac)
+# command aliases for different systems (Darwin = Mac)
 if [[ `uname` == "Darwin" ]] then
     # if the command gls exists, gls is part of the GNU standard version of ls that can be installed on a Mac (brew install coreutils)
     # the 'g' prefix is added by homebrew to avoid naming collisions, gls, gcat etc...
@@ -154,21 +155,18 @@ else
     alias lsd='ls -Alh --color --time-style="+[%a, %b %_d %Y @ %l:%M %P]" --group-directories-first'   
 fi
 
-
-# If .zshrc.local exists include it. It's should contain system 
-# specific settings such as aliases, exports, a custom $PATH, etc...
+# .zshrc.local should contain system specific settings, aliases, exports, custom $PATH, etc...
 if [[ -e "$HOME/.zshrc.local" ]] then
     source $HOME/.zshrc.local
 fi
 
-# Sensible ls_colors
-# di=directory (dark blue/purple), ln=sym link (light blue), ex=executable (orange)
+# sensible ls_colors
+# di=directory (dark blue/purple), ln=sym link (light blue), ex=executable (green)
 # mi=orphaned symlinks (red), tw=directory that allows r/w by all, deletes only by owner (dark blue)
 # st=directory that allows deletes only by owner (cyan)
 export LS_COLORS='di=38;5;61:ln=38;5;110:ex=38;5;72:mi=38;5;88:tw=38;5;25:st=38;5;38'
 
-# Tests whether a function exsists, used primarily when an old version of ZSH
-# doesn't have vcs_info
+# tests whether a function exists, used when an old version of ZSH doesn't have vcs_info
 function function_exists () {
     local -a files
     # This expands occurrences of $1 anywhere in $fpath,
@@ -183,11 +181,12 @@ if function_exists vcs_info; then
 fi
 
 # custom prompt
-# %{ ... %} tells zsh to disregard the contained characters when calculating the length of the prompt (in order correctly position the cursor)
+# %{ ... %} tells zsh to disregard the contained characters when calculating the length of the prompt 
+# (in order correctly position the cursor)
 local p_ret_status="[%?]"                               # last command return code
 local p_delim="%{[38;5;244m%}>%{$reset_color%}"       # > as a delimiter
 
-# Dynamic prompt customization point, precmd gets called just before every command prompt
+# dynamic prompt customization point, precmd gets called just before every command prompt
 function precmd {
     if function_exists vcs_info; then
         vcs_info
@@ -221,7 +220,7 @@ ${p_user_at_host} ${p_ret_status} ${p_delim} "
 
 }
 
-# Badass ZSH script that adds live syntax highlighting to command arguments
+# badass ZSH script that adds live syntax highlighting to command arguments
 # https://github.com/zsh-users/zsh-syntax-highlighting 
 if [[ -e "$HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
     source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -237,7 +236,7 @@ if [[ -e "$HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]
 fi
 
 # ESC '  Quote the current line; that is, put a `'' character at the beginning and the end, and convert all `'' characters to `'\'''  
-# ^ a    Move to beginnging of line
+# ^ a    Move to beginning of line
 # ^ e    Move to end of line
 # ^ xf   Move to next typed character
 # ESC U  Uppercase a word
