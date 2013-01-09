@@ -1,0 +1,9 @@
+# .zshrc.local
+# Imported by zshrc to override or add system specific settings
+
+# override the hostname in the prompt 
+#p_hostName=""
+
+# append to environment variables
+#export PATH=/some/path:$PATH
+#export MANPATH=/some/path:$MANPATH 
