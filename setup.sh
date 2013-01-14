@@ -17,7 +17,7 @@ do
         echo "File exists, skipping $PWD/$pathName" 
     else
         # .local files shouldn't be linked, they're just templates for convenience
-        if [ "${fileName#*.}"=="local" ]; then
+        if [ "${pathName#*.}" == "local" ]; then
             cp $PWD/$pathName $HOME/.$pathName
             echo "Copied  ${keyColor}$PWD/$pathName${noColor} to ${valColor}$HOME/.$pathName${noColor}"
         else
