@@ -16,9 +16,14 @@ do
     if [ -e "$HOME/.$pathName" ]; then
         echo "File exists, skipping $PWD/$pathName" 
     else
-        echo "Linked  ${keyColor}$PWD/$pathName${noColor} to ${valColor}$HOME/.$pathName${noColor}"
-        
-        ln -s $PWD/$pathName $HOME/.$pathName
+        # .local files shouldn't be linked, they're just templates for convenience
+        if [ "${fileName#*.}"=="local" ]; then
+            cp $PWD/$pathName $HOME/.$pathName
+            echo "Copied  ${keyColor}$PWD/$pathName${noColor} to ${valColor}$HOME/.$pathName${noColor}"
+        else
+            ln -s $PWD/$pathName $HOME/.$pathName
+            echo "Linked  ${keyColor}$PWD/$pathName${noColor} to ${valColor}$HOME/.$pathName${noColor}"
+        fi
     fi
 done
 
