@@ -112,7 +112,12 @@ hi link bufExplorerBufNbr Normal
 """ Shell scripts
 hi shOption ctermfg=110 guifg=#78b3d0  " light cyan to match zsh highlighting
 hi link shLoop Identifier
- 
+
+""" Restructred text
+hi link rstSections Statement
+hi link rstInterpretedTextOrHyperlinkReference Identifier
+hi link rstEmphasis Type
+
 """ Markdown
 hi link markdownH1 Statement
 hi link markdownH2 Statement
@@ -154,6 +159,10 @@ highlight default link TagbarSignature  SpecialKey
 highlight default link TagbarPseudoID   NonText
 highlight default link TagbarFoldIcon   NERDTreeDir
 highlight default link TagbarHighlight  Search
+
+""" Json
+highlight default link jsonBraces Statement
+
 
 "" Special {{{2
 """ .diff {{{3
