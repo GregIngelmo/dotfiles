@@ -1,59 +1,56 @@
+
 Greg's dotfiles 
 ===============
 
 These are my dotfiles. There are many like them, but these are mine.
 
-Required
---------
-
-* **[Zsh ](http://www.zsh.org/)** - An awesome shell 
-* **[Ctags](http://ctags.sourceforge.net/)** - Source code tokenizer, slicer and dicer
-* **[Homebrew](http://mxcl.github.com/homebrew/)** - A package manager for OS X (sorry Macports)
-* **[GNU coreutils](http://www.gnu.org/software/coreutils/)** - The latest file and text manipulation utilities. ls, cat, etc…
-
-Recommended
------------
-
-* **[iTerm2](http://www.iterm2.com)** - If terminals were kicks iTerm is a head kick
-* **[Inconsolata-dz](http://media.nodnod.net/Inconsolata-dz.otf.zip)** & **[Inconsolata-dz Powerline](https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/Inconsolata-dz-Powerline.otf)** - A nice monospaced font based on Consolas
-
 Install
 -------
-#### OS X
+#### On OS X
+
+Recommended
+* **[iTerm2](http://www.iterm2.com)** - Better terminal than Terminal
+* **[Inconsolata-dz](http://media.nodnod.net/Inconsolata-dz.otf.zip)** & **[Inconsolata-dz Powerline](https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/Inconsolata-dz-Powerline.otf)** - Monospaced font based on Microsoft Consolas
+
 	
-Download and install [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)  
-Download and install [Homebrew](http://mxcl.github.com/homebrew/)
+Required
+* **[Xcode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)**
+* **[Homebrew](http://mxcl.github.com/homebrew/)** - OS X package manager
+* **[Zsh](http://www.zsh.org/)** - The best shell ever
+* **[Ctags](http://ctags.sourceforge.net/)** - Source code tokenizer, slicer and dicer for vim
+* **[GNU coreutils](http://www.gnu.org/software/coreutils/)** - The GNU versions of standard file/text manipulation tools (ls, cat, etc). 
+
+Run
 
 	brew install coreutils zsh ctags git
 	brew tap homebrew/dupes
-	brew install grep
+	brew install grep less
 
-Download and install [Inconsolata-dz](http://media.nodnod.net/Inconsolata-dz.otf.zip) & [Inconsolata-dz Powerline](https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/Inconsolata-dz-Powerline.otf)  
-Download and Install [iTerm2](http://www.iterm2.com/#/section/home)
+#### On Ubuntu
 
-#### Ubuntu
+**ncurses-term** will enable our 256 color terminal
 
 	sudo apt-get install zsh ctags git ncurses-term
 
-#### CentOS
-
+#### On Cent
 	sudo yum install zsh ctags git -y
 
 Configure
 ---------
 
-Run `setup.sh` which will symlink the files into your home directory, it won't overwrite anything.
+Run `setup.sh`. It will symlink the files into your home directory, don't worry it won't overwrite anything.
 
-	chsh -s `which zsh`
+	cd ~/
+    chsh -s `which zsh`
 	git clone --recursive http://github.com/kemist/dotfiles
 	cd dotfiles
 	./setup.sh
 	cd..
 	zsh
 
-...or be a *manly man* and use a one-liner
+Or you can be a *manly man* and use a one-liner
 
-	chsh -s `which zsh` && git clone --recursive http://github.com/kemist/dotfiles && cd dotfiles && ./setup.sh && zsh
+	cd ~/ && chsh -s `which zsh` && git clone --recursive http://github.com/kemist/dotfiles && cd dotfiles && ./setup.sh && cd .. && zsh
 
 Terminal features
 -----------------
@@ -101,15 +98,16 @@ Terminal features
 Vim
 ---
 
-* **[Tagbar](http://majutsushi.github.com/tagbar/)** - Just like the class view in XCode/Visual Studio
-* **[Powerline](https://github.com/Lokaltog/vim-powerline)** - I'm think everyone stopped writing status bars after this one
+* **[Tagbar](http://majutsushi.github.com/tagbar/)** - Class view
+* **[Powerline](https://github.com/Lokaltog/vim-powerline)** - Everyone stopped writing status bars after this one
 * **[NERD tree](https://github.com/scrooloose/nerdtree)** - The 700bhp muscle car of Treeviews
 * **[Bufexplorer](http://www.vim.org/scripts/script.php?script_id=42)** - Quickly switch between open files
 * **[Easy Motion](https://github.com/Lokaltog/vim-easymotion#readme)** - Quickly jump around inside a file
-* **[Conque Term](https://code.google.com/p/conque/)** - Interactive terminal right inside vim. Why? Because you can.
+* **[Conque Term](https://code.google.com/p/conque/)** - Interactive terminal right inside vim… Because you can.
 
     
 Credit
 ------
 
-http://nvie.com/posts/how-i-boosted-my-vim/
+http://nvie.com/posts/how-i-boosted-my-vim/  
+https://github.com/moolicious/dotfiles
