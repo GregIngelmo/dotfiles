@@ -132,13 +132,16 @@ hi link markdownCodeBlock Constant
 
 """ HTML
 hi link htmlString Constant
+hi link htmlTitle Normal
+hi link htmlTag Normal
+hi link htmlTagN Normal
+
+""" CSS
+hi link cssClassName Statement
+hi link cssFunction Normal
 
 """ Javascript
 hi link javascript Normal
-hi link htmlLInk Normal
-"hi link htmlTag Comment
-hi htmlString guifg=#9992d4
-hi link htmlValue htmlString
 
 """ Nerdtree
 hi NERDTreeExecFile ctermfg=72  guifg=#d75f00
