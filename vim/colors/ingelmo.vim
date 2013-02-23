@@ -71,14 +71,29 @@ hi Comment      ctermfg=244 guifg=#666666   " Comments in gray
 hi Constant     ctermfg=66  guifg=#5a9a77   " Strings in green
 hi Identifier   ctermfg=137 guifg=#b87a41   " Keywords in orange
 hi Ignore       ctermfg=238 guifg=#444444   " Dark gray
-hi Number       ctermfg=180 guifg=#d6c895   " Numbers in yellow
+hi Number       ctermfg=144 guifg=#d6c895   " Numbers in yellow
 hi PreProc      ctermfg=150 guifg=#95b576   " Light green
 hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
 hi Statement    ctermfg=67  guifg=#5f87af   " Keywords in blue 
-hi Type         ctermfg=146 guifg=#afafd7   " Type in purple blue 
+hi Type         ctermfg=110 guifg=#afafd7   " Type in purple blue 
 hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
+hi LinkText ctermfg=25
 hi link Conditional Identifier
 hi link Command Conditional
+
+""" Javascript
+hi link javaScriptStatement Identifier
+
+""" vim
+hi link vimHiGroup Statement
+hi link vimHighlight Identifier
+hi link vimCommand Identifier
+
+""" Vim help pages
+hi link helpSpecial Identifier
+hi link helpHyperTextEntry LinkText
+hi link helpSectionDelim Statement
+hi link helpHeader Statement
 
 """ python 
 hi link pythonFunction Statement
@@ -134,11 +149,24 @@ hi link markdownCodeBlock Constant
 hi link htmlString Constant
 hi link htmlTitle Normal
 hi link htmlTag Normal
-hi link htmlTagN Normal
+hi link htmlEndTag Normal
+hi link htmlArg Identifier
+hi link htmlLink LinkText
 
 """ CSS
 hi link cssClassName Statement
 hi link cssFunction Normal
+"""hi link cssPaddingProp Identifier
+"""hi link cssMarginProp Identifier
+hi link cssColor Number
+hi link cssSelectorOp Normal
+hi link cssBraces Normal
+hi link cssTagName Identifier
+hi link cssPseudoClassId Identifier
+
+""" Less
+hi link lessVariable Statement
+hi link lessVariableValue Type
 
 """ Javascript
 hi link javascript Normal
@@ -165,7 +193,6 @@ highlight default link TagbarHighlight  Search
 
 """ Json
 highlight default link jsonBraces Statement
-
 
 "" Special {{{2
 """ .diff {{{3
