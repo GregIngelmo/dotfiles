@@ -63,7 +63,7 @@ c = get_config()
 # c.TerminalIPythonApp.code_to_run = ''
 
 # The IPython profile to use.
-# c.TerminalIPythonApp.profile = u''
+c.TerminalIPythonApp.profile = u'ingelmo'
 
 # Set the log level by value or name.
 # c.TerminalIPythonApp.log_level = 30
