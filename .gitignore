@@ -1,3 +1,4 @@
 # vim history file
 .netrwhist
+*.sqlite
 *.local
