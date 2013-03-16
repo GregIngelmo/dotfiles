@@ -35,8 +35,7 @@ hi CursorLine                             ctermbg=237 guibg=#3a3a3a cterm=none g
 hi ErrorMsg     ctermfg=124 guifg=#ffffff ctermbg=0   guibg=#800000
 hi FoldColumn   ctermfg=247 guifg=#9e9e9e ctermbg=0   guibg=#000000
 hi Folded       ctermfg=234 guifg=#2e2e2e ctermbg=0   guibg=#000000
-hi IncSearch    ctermfg=0   guifg=#000000 ctermbg=223 guibg=#ffdfaf cterm=none gui=none
-hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
+hi LineNr       ctermfg=247 guifg=#9e9e9e ctermbg=0 guibg=#121212
 hi MatchParen   ctermfg=82 guifg=#5fff00 ctermbg=0   guibg=#000000 cterm=bold gui=bold
 " hi MoreMsg
 hi NonText      ctermfg=247 guifg=#000000 ctermbg=0   guibg=#121212 cterm=bold gui=bold
@@ -44,7 +43,8 @@ hi Pmenu        ctermfg=0   guifg=#000000 ctermbg=250 guibg=#bcbcbc
 hi PmenuSel     ctermfg=255 guifg=#eeeeee ctermbg=243 guibg=#767676
 hi PmenuSbar                              ctermbg=252 guibg=#d0d0d0
 hi PmenuThumb   ctermfg=243 guifg=#767676
-hi Search       ctermfg=0   guifg=#000000 ctermbg=149 guibg=#afdf5f
+hi Search       ctermfg=0   ctermbg=62 
+hi IncSearch    ctermfg=255 ctermbg=62 cterm=bold
 hi SignColumn   ctermfg=248 guifg=#a8a8a8
 hi SpecialKey   ctermfg=77  guifg=#5fdf5f
 hi SpellBad     ctermfg=160 guifg=fg      ctermbg=bg                cterm=underline               guisp=#df0000
@@ -77,7 +77,7 @@ hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
 hi Statement    ctermfg=67  guifg=#5f87af   " Keywords in blue 
 hi Type         ctermfg=110 guifg=#afafd7   " Type in purple blue 
 hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
-hi LinkText ctermfg=25
+hi Hyperlink    ctermfg=25
 hi link Conditional Identifier
 hi link Command Conditional
 
@@ -91,7 +91,7 @@ hi link vimCommand Identifier
 
 """ Vim help pages
 hi link helpSpecial Identifier
-hi link helpHyperTextEntry LinkText
+hi link helpHyperTextEntry Hyperlink
 hi link helpSectionDelim Statement
 hi link helpHeader Statement
 
@@ -142,6 +142,8 @@ hi link GitGutterChangeDeleteLine DiffDelete
 hi link rstSections Statement
 hi link rstInterpretedTextOrHyperlinkReference Identifier
 hi link rstEmphasis Type
+hi link rstStandaloneHyperlink Hyperlink
+hi link rstStrongEmphasis Normal
 
 """ Markdown
 hi link markdownH1 Statement
@@ -161,7 +163,7 @@ hi link htmlTitle Normal
 hi link htmlTag Normal
 hi link htmlEndTag Normal
 hi link htmlArg Identifier
-hi link htmlLink LinkText
+hi link htmlLink Hyperlink
 
 """ CSS
 hi link cssClassName Statement
