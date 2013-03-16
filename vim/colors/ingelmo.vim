@@ -128,6 +128,16 @@ hi link bufExplorerBufNbr Normal
 hi shOption ctermfg=110 guifg=#78b3d0  " light cyan to match zsh highlighting
 hi link shLoop Identifier
 
+""" Git gutter
+hi GitGutterAdd ctermfg=64
+hi GitGutterChange ctermfg=55
+hi link GitGutterChangeDelete Error
+hi link GitGutterDelete Error
+hi link GitGutterAddLine DiffAdd
+hi link GitGutterChangeLine DiffChange
+hi link GitGutterDeleteLine DiffDelete
+hi link GitGutterChangeDeleteLine DiffDelete
+
 """ Restructred text
 hi link rstSections Statement
 hi link rstInterpretedTextOrHyperlinkReference Identifier
@@ -191,19 +201,19 @@ highlight default link TagbarPseudoID   NonText
 highlight default link TagbarFoldIcon   NERDTreeDir
 highlight default link TagbarHighlight  Search
 
+""" vim
+hi! link SignColumn LineNr
+
 """ Json
 highlight default link jsonBraces Statement
 
-"" Special {{{2
-""" .diff {{{3
 hi diffAdded    ctermfg=150 guifg=#afdf87
 hi diffRemoved  ctermfg=174 guifg=#df8787
 """ vimdiff {{{3
-hi diffAdd      ctermfg=bg  guifg=bg      ctermbg=151 guibg=#afdfaf
-"hi diffDelete   ctermfg=bg  guifg=bg      ctermbg=186 guibg=#dfdf87 cterm=none gui=none
-hi diffDelete   ctermfg=bg  guifg=bg      ctermbg=246 guibg=#949494 cterm=none gui=none
-hi diffChange   ctermfg=bg  guifg=bg      ctermbg=181 guibg=#dfafaf
-hi diffText     ctermfg=bg  guifg=bg      ctermbg=174 guibg=#df8787 cterm=none gui=none
+hi diffAdd      ctermfg=bg  guifg=bg ctermbg=71 
+hi diffDelete   ctermfg=bg  guifg=bg ctermbg=88
+hi diffChange   ctermfg=bg  guifg=bg ctermbg=61
+hi diffText     ctermfg=bg  guifg=bg ctermbg=174
 
 """ VimDebug {{{3
 " FIXME
