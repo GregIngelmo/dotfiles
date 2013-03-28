@@ -105,6 +105,18 @@ hi link pythonOperator Identifier
 hi link pythonException Identifier
 hi link pythonExceptions Error
 
+""" Ruby 
+hi link rubyBlock Identifier
+hi link rubyConstant Identifier 
+hi link rubyClass Identifier 
+hi link rubyClassDeclaration Statement 
+hi link rubyFunction Statement
+hi link rubyDefine Identifier
+hi link rubyInclude Identifier
+hi link rubyInstanceVariable Normal
+hi link rubyBlockParameter Normal
+hi link rubyControl Identifier
+
 """ Django
 hi link djangoTagBlock Statement
 hi link djangoStatement Identifier
