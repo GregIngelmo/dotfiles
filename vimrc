@@ -4,9 +4,10 @@ call pathogen#helptags()
 " File types, wikipedia, & json
 autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
-autocmd BufRead,BufNewFile *.json setfiletype javascript
+autocmd BufRead,BufNewFile *.json setfiletype json
+autocmd BufRead,BufNewFile *.md setfiletype markdown
 
-let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Always cd using the active buffers directory
@@ -39,6 +40,9 @@ set foldlevel=1         "this is just what i use
 set number 	        " Enable Line numbers
 set showtabline=2   " Show the tab bar
 set laststatus=2    " Show the status
+
+" Jedi ************************************************************************
+let g:jedi#show_function_definition = "0"
 
 " Other  **********************************************************************
 set smartindent
