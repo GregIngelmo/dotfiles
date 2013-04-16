@@ -56,7 +56,7 @@ hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none g
 hi TabLine      ctermfg=fg  guifg=fg      ctermbg=242 guibg=#666666 cterm=none gui=none
 hi TabLineFill  ctermfg=fg  guifg=fg      ctermbg=237 guibg=#3a3a3a cterm=none gui=none
 hi Title        ctermfg=225 guifg=#ffdfff
-hi Todo         ctermfg=0   guifg=#000000 ctermbg=184 guibg=#dfdf00
+hi Todo         ctermfg=255 ctermbg=0 cterm=underline
 hi Underlined   ctermfg=39  guifg=#00afff                           cterm=underline gui=underline
 hi VertSplit    ctermfg=237 guifg=#3a3a3a ctermbg=237 guibg=#3a3a3a cterm=none gui=none
 " hi VIsualNOS    ctermfg=24  guifg=#005f87 ctermbg=153 guibg=#afdfff cterm=none gui=none
@@ -67,7 +67,7 @@ hi VisualNOS    ctermfg=255 guifg=#eeeeee ctermbg=60  guibg=#5f5f87
 hi WildMenu     ctermfg=0   guifg=#000000 ctermbg=150 guibg=#afdf87 cterm=bold gui=bold
 
 "" Syntax highlighting 
-hi Comment      ctermfg=244 guifg=#666666   " Comments in gray
+hi Comment      ctermfg=238 guifg=#666666   " Comments in gray
 hi Constant     ctermfg=66  guifg=#5a9a77   " Strings in green
 hi Identifier   ctermfg=137 guifg=#b87a41   " Keywords in orange
 hi Ignore       ctermfg=238 guifg=#444444   " Dark gray
@@ -80,6 +80,7 @@ hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
 hi Hyperlink    ctermfg=25
 hi link Conditional Identifier
 hi link Command Conditional
+
 
 """ Javascript
 hi link javaScriptStatement Identifier
@@ -107,7 +108,11 @@ hi link pythonExceptions Error
 
 """ Ruby 
 hi link rubyBlock Identifier
-hi link rubyConstant Identifier 
+hi link rubyDoBlock Identifier
+hi link rubyConstant Statement 
+hi link rubyPseudoVariable Type 
+hi link rubyStringDelimiter Constant 
+hi rubySymbol ctermfg=65
 hi link rubyClass Identifier 
 hi link rubyClassDeclaration Statement 
 hi link rubyFunction Statement
