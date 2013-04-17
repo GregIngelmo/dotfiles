@@ -136,6 +136,7 @@ autoload zmv                    # zsh batch file renamer ex: zmv '(*).txt' '$1.m
 
 # grep (r)ecursive, (i)gnore case, (I)gnore binary files 
 grepr() {grep -iIr --color "$1" *} 
+tname() {echo -ne "\e]1;$1\a"}
 
 # command aliases for different systems (Darwin = Mac)
 if [[ `uname` == "Darwin" ]] then
@@ -206,10 +207,10 @@ function precmd {
     # name in our prompt when we can't actually edit the hostname 
     if [[ -z "$p_hostName" ]]; then
         local p_user_at_host="%{$p_userColor%}%n%{$reset_color%}@%m" 
-        printf "\e]1;$HOST\a"
+        #printf "\e]1;$HOST\a"
     else
         local p_user_at_host="%{$p_userColor%}%n%{$reset_color%}@$p_hostName" 
-        printf "\e]1;$p_hostName\a"
+        #printf "\e]1;$p_hostName\a"
     fi
         
     if [[ -n "$vcs_info_msg_0_" ]]; then
