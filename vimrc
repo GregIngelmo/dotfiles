@@ -10,6 +10,9 @@ autocmd BufRead,BufNewFile *.md setfiletype markdown
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
+let g:slime_python_ipython=1
+let g:slime_target = "tmux"
+
 " Always cd using the active buffers directory
 autocmd BufEnter * lcd %:p:h
 
