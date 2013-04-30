@@ -15,7 +15,7 @@ let g:slime_python_ipython=1
 let g:slime_target = "tmux"
 
 " Always cd using the active buffers directory
-autocmd BufEnter * lcd %:p:h
+"autocmd BufEnter * lcd %:p:h
 
 " Open Nerd tree on start and set focus to the empty buffer
 autocmd VimEnter * NERDTree
