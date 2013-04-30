@@ -53,6 +53,7 @@ set smartindent
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
+set clipboard=unnamed   " requires reattach-to-user-namespace to work inside tmux
 set expandtab           " Use spaces not tabs
 set nowrap
 let g:NERDTreeWinSize = 35  
@@ -67,10 +68,6 @@ set pastetoggle=<F2>
 set history=1000        " save 1000 of the last commands
 set scrolloff=3         " leaves 3 lines before top & bottom when scrolling
 set completeopt=menuone,preview,longest
-
-if $TMUX == ''
-    set clipboard=unnamed
-endif
 
 " ConqueTerm  ****************************************************************
 "let g:ConqueTerm_ReadUnfocused = 1
