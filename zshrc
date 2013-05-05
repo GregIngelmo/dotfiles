@@ -110,7 +110,7 @@ export WORDCHARS='*?_[]~&;!#$%^(){}'        # Remove slash, period, angle bracke
 # X prevents less from clearing screen on quit
 # -P customizes prompt to ex: .zshrc lines 1-47/228 20%
 # -R print control chacters, allows colors to flow through less
-export LESS="X -R -P ?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L. :
+export LESS="-F X -R -P ?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L. :
             byte %bB?s/%s. .?e(END) ?x- Next\: %x.:?pB%pB\%..%t"  
 
 # environment variables for colored man pages, escape code syntax below
