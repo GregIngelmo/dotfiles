@@ -26,6 +26,10 @@ autocmd VimEnter * wincmd p
 " Enables omnicomplete and indent settings for the detected fileype
 filetype plugin indent on
 
+" Command T
+let g:CommandTMaxHeight = 5
+let g:CommandTMinHeight = 5
+
 " Searching *******************************************************************
 set hlsearch	" highlight search term
 set incsearch	" Incremental search, search as you type
