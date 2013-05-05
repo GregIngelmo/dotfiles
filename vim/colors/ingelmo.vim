@@ -69,6 +69,7 @@ hi WildMenu     ctermfg=0   guifg=#000000 ctermbg=150 guibg=#afdf87 cterm=bold g
 "" Syntax highlighting 
 hi Comment      ctermfg=238 guifg=#666666   " Comments in gray
 hi Constant     ctermfg=66  guifg=#5a9a77   " Strings in green
+hi Constant2    ctermfg=65                  " Other Strings 
 hi Identifier   ctermfg=137 guifg=#b87a41   " Keywords in orange
 hi Ignore       ctermfg=238 guifg=#444444   " Dark gray
 hi Number       ctermfg=144 guifg=#d6c895   " Numbers in yellow
@@ -112,7 +113,7 @@ hi link rubyDoBlock Identifier
 hi link rubyConstant Statement 
 hi link rubyPseudoVariable Type 
 hi link rubyStringDelimiter Constant 
-hi rubySymbol ctermfg=65
+hi link rubySymbol Constant2
 hi link rubyClass Identifier 
 hi link rubyClassDeclaration Statement 
 hi link rubyFunction Statement
@@ -120,6 +121,7 @@ hi link rubyDefine Identifier
 hi link rubyInclude Identifier
 hi link rubyInstanceVariable Normal
 hi link rubyBlockParameter Normal
+hi link rubyLocalVariableOrMethod Normal
 hi link rubyControl Identifier
 
 """ Django
