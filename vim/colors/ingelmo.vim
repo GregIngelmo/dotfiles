@@ -40,7 +40,7 @@ hi MatchParen   ctermfg=82 guifg=#5fff00 ctermbg=0   guibg=#000000 cterm=bold gu
 " hi MoreMsg
 hi NonText      ctermfg=247 guifg=#000000 ctermbg=0   guibg=#121212 cterm=bold gui=bold
 hi Pmenu        ctermfg=0   guifg=#000000 ctermbg=250 guibg=#bcbcbc
-hi PmenuSel     ctermfg=255 guifg=#eeeeee ctermbg=243 guibg=#767676
+hi PmenuSel     ctermfg=0   ctermbg=62  
 hi PmenuSbar                              ctermbg=252 guibg=#d0d0d0
 hi PmenuThumb   ctermfg=243 guifg=#767676
 hi Search       ctermfg=0   ctermbg=62 
