@@ -1,6 +1,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+set rtp+=~/.vim/bundle/powerline_new/powerline/bindings/vim
+
 " File types, wikipedia, & json
 autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
@@ -18,7 +20,7 @@ let g:slime_target = "tmux"
 "autocmd BufEnter * lcd %:p:h
 
 " Open Nerd tree on start and set focus to the empty buffer
-autocmd VimEnter * NERDTree
+autocmd vimenter * if !argc() | NERDTree | endif
 autocmd VimEnter * wincmd p
 
 " Enables omnicomplete and indent settings for the detected fileype
