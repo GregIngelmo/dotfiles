@@ -1,0 +1,6 @@
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+"\ed": kill-word
+"\ez": backward-kill-word
+"\e[H": beginning-of-line
+"\e[F": end-of-line
