@@ -34,3 +34,6 @@
 [submodule "vim/bundle/powerline_new"]
 	path = vim/bundle/powerline_new
 	url = http://github.com/Lokaltog/powerline.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = http://github.com/plasticboy/vim-markdown.git
