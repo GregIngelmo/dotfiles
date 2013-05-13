@@ -227,6 +227,7 @@ hi! link SignColumn LineNr
 
 """ Json
 highlight default link jsonBraces Statement
+highlight default link jsonBoolean Constant2
 
 hi diffAdded    ctermfg=150 guifg=#afdf87
 hi diffRemoved  ctermfg=174 guifg=#df8787
