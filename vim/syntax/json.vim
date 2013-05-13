@@ -2,6 +2,7 @@
 " Language:	JSON
 " Maintainer:	Jeroen Ruigrok van der Werven <asmodai@in-nomine.org>
 " Last Change:	2009-06-16
+" Updated to contain key/value highlighting - Lee J 2010-07-27
 " Version:      0.4
 " {{{1
 
@@ -19,7 +20,8 @@ if !exists("main_syntax")
 endif
 
 " Syntax: Strings {{{2
-syn region  jsonString    start=+"+  skip=+\\\\\|\\"+  end=+"+  contains=jsonEscape
+syn region  jsonKey       start=/^\s\+"/   end=/: /  contains=jsonEscape,jsonBraces,jsonTrailingComma1,jsonTrailingComma2
+syn region  jsonValue     start=/"/ skip=+\\\\\|\\"+ end=/"/  contains=jsonEscape
 " Syntax: JSON does not allow strings with single quotes, unlike JavaScript.
 syn region  jsonStringSQ  start=+'+  skip=+\\\\\|\\"+  end=+'+
 
@@ -36,6 +38,10 @@ syn match   jsonNumber    "-\=\<\%(0\|[1-9]\d*\)\%(\.\d\+\)\=\%([eE][-+]\=\d\+\)
 " Syntax: An integer part of 0 followed by other digits is not allowed.
 syn match   jsonNumError  "-\=\<0\d\.\d*\>"
 
+" Syntax: Trailing commas are not allowed in javascript
+syn match   jsonTrailingComma1 /,[\n 	]*[^"{]\+[}\]]/
+syn match   jsonTrailingComma2 /,[}\]]/
+
 " Syntax: Boolean {{{2
 syn keyword jsonBoolean   true false
 
@@ -43,7 +49,7 @@ syn keyword jsonBoolean   true false
 syn keyword jsonNull      null
 
 " Syntax: Braces {{{2
-syn match   jsonBraces	   "[{}\[\]]"
+syn match   jsonBraces	   /[{}\[\]]/
 
 " Define the default highlighting. {{{1
 " For version 5.7 and earlier: only when not done already
@@ -55,14 +61,17 @@ if version >= 508 || !exists("did_json_syn_inits")
   else
     command -nargs=+ HiLink hi def link <args>
   endif
-  HiLink jsonString             String
+  HiLink jsonBraces		Operator
+  HiLink jsonKey                Function
+  HiLink jsonValue              String
   HiLink jsonEscape             Special
   HiLink jsonNumber		Number
-  HiLink jsonBraces		Operator
   HiLink jsonNull		Function
-  HiLink jsonBoolean		Boolean
+  HiLink jsonBoolean		Type
 
   HiLink jsonNumError           Error
+  HiLink jsonTrailingComma1     Error
+  HiLink jsonTrailingComma2     Error
   HiLink jsonStringSQ           Error
   HiLink jsonNoQuotes           Error
   delcommand HiLink
