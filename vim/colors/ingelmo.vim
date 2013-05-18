@@ -69,13 +69,14 @@ hi WildMenu     ctermfg=0   guifg=#000000 ctermbg=150 guibg=#afdf87 cterm=bold g
 "" Syntax highlighting 
 hi Comment      ctermfg=238 guifg=#666666   " Comments in gray
 hi Constant     ctermfg=66  guifg=#5a9a77   " Strings in green
-hi Constant2    ctermfg=65                  " Other Strings 
+hi Constant2    ctermfg=65                  " Other Strings in darker green
 hi Identifier   ctermfg=137 guifg=#b87a41   " Keywords in orange
 hi Ignore       ctermfg=238 guifg=#444444   " Dark gray
 hi Number       ctermfg=144 guifg=#d6c895   " Numbers in yellow
 hi PreProc      ctermfg=150 guifg=#95b576   " Light green
 hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
 hi Statement    ctermfg=67  guifg=#5f87af   " Keywords in blue 
+hi Statement2   ctermfg=68                  " Keywords in alternate blue 
 hi Type         ctermfg=110 guifg=#afafd7   " Type in purple blue 
 hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
 hi Hyperlink    ctermfg=25
@@ -175,6 +176,8 @@ hi link markdownHeadingDelimiter Statement
 hi link markdownListMarker Identifier
 hi link markdownUrl Identifier
 hi link markdownCodeBlock Constant
+hi link mkdURL Hyperlink
+hi link mkdDelimiter Special
 
 """ HTML
 hi link htmlString Constant
@@ -183,6 +186,8 @@ hi link htmlTag Normal
 hi link htmlEndTag Normal
 hi link htmlArg Identifier
 hi link htmlLink Hyperlink
+hi link htmlH1 Statement2
+hi link htmlH3 Statement
 
 """ CSS
 hi link cssClassName Statement
