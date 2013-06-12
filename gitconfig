@@ -38,3 +38,5 @@
 # The include directive requires git 7.10 or greater otherwise it's ignored.
 [include]
     path = .gitconfig.local
+[web]
+	browser = open
