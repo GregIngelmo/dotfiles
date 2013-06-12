@@ -188,6 +188,7 @@ hi link htmlArg Identifier
 hi link htmlLink Hyperlink
 hi link htmlH1 Statement2
 hi link htmlH3 Statement
+hi link djangoVarBlock Constant2
 
 """ CSS
 hi link cssClassName Statement
@@ -209,7 +210,7 @@ hi link javascript Normal
 
 """ Nerdtree
 hi NERDTreeExecFile ctermfg=72  guifg=#d75f00
-hi NERDTreeDir      ctermfg=61  guifg=#d75f00
+hi NERDTreeDir      ctermfg=61  guifg=#6666aa
 hi NERDTreeLink     ctermfg=110 guifg=#d787af
 hi NERDTreeCWD      ctermfg=180 guifg=#d787af
 hi link NERDTreeUp NERDTreeDir
