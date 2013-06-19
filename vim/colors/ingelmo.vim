@@ -76,7 +76,7 @@ hi Number       ctermfg=144 guifg=#d6c895   " Numbers in yellow
 hi PreProc      ctermfg=150 guifg=#95b576   " Light green
 hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
 hi Statement    ctermfg=67  guifg=#5f87af   " Keywords in blue 
-hi Statement2   ctermfg=68                  " Keywords in alternate blue 
+hi Statement2   ctermfg=68  guifg=#6688dd   " Keywords in alternate blue 
 hi Type         ctermfg=110 guifg=#afafd7   " Type in purple blue 
 hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
 hi Hyperlink    ctermfg=25
