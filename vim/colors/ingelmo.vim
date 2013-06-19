@@ -117,7 +117,7 @@ hi link pythonExceptions Error
 
 """ Ruby 
 hi link rubyBlock Identifier
-hi link rubyDoBlock Identifier
+hi link rubyDoBlock Normal
 hi link rubyConstant Statement 
 hi link rubyPseudoVariable Type 
 hi link rubyStringDelimiter Constant 
