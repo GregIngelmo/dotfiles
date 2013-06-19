@@ -83,6 +83,13 @@ hi Hyperlink    ctermfg=25
 hi link Conditional Identifier
 hi link Command Conditional
 
+""" vim-ruby-debugger
+hi link rdebugParent Statement2
+hi link rdebugChild Statement2
+hi link rdebugValue Normal
+hi link rdebugType Statement
+hi link rdebugPart Comment
+hi link rdebugPartFile Comment
 
 """ Javascript
 hi link javaScriptStatement Identifier
