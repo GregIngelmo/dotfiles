@@ -189,12 +189,15 @@ hi link mkdDelimiter Special
 """ HTML
 hi link htmlString Constant
 hi link htmlTitle Normal
-hi link htmlTag Normal
-hi link htmlEndTag Normal
+hi link htmlTag Comment
+hi link htmlEndTag Comment
 hi link htmlArg Identifier
 hi link htmlLink Hyperlink
-hi link htmlH1 Statement2
-hi link htmlH3 Statement
+hi htmlH1 ctermfg=61 guifg=#6666aa
+hi link htmlH2 htmlH1
+hi link htmlH3 htmlH1
+hi link htmlH3 htmlH1
+hi link htmlH4 htmlH1
 hi link djangoVarBlock Constant2
 
 """ CSS
