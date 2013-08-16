@@ -8,7 +8,7 @@ autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.json setfiletype json
 autocmd BufRead,BufNewFile *.md setfiletype markdown
-autocmd BufRead,BufNewFile *.rb,*.yml setlocal shiftwidth=2 tabstop=2
+autocmd BufRead,BufNewFile *.rb,*.yml,*.html setlocal shiftwidth=2 tabstop=2
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
