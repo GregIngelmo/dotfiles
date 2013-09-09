@@ -37,3 +37,6 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = http://github.com/plasticboy/vim-markdown.git
+[submodule "vim/bundle/vim-scala"]
+	path = vim/bundle/vim-scala
+	url = http://github.com/derekwyatt/vim-scala.git
