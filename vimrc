@@ -122,6 +122,7 @@ nnoremap <C-y> 2<C-y>
 " Map custom iTerm escape codes for ctrl-back and ctrl-del to delete-forward-word and delete-back-word
 imap <ESC>z <c-w>
 imap <ESC>d <c-c>ldwi
+map <c-f> :NERDTreeFind<CR><c-w><c-p>
 
 " Allow shift key selection of text in insert mode
 if has("gui_macvim")
