@@ -97,8 +97,8 @@ bindkey "\ez"   backward-delete-word                # esc-z is mapped to ctrl-ba
 # Environment variables. Use printenv to print all terminal variables, unset to delete one
 export EDITOR=vim
 export HISTFILE="$HOME/.history"            # history file path
-export HISTSIZE=10000                       # number of history lines to keep in memory
-export SAVEHIST=10000                       # number of history lines to keep on disk
+export HISTSIZE=20000                       # number of history lines to keep in memory
+export SAVEHIST=20000                       # number of history lines to keep on disk
 export LC_CTYPE=en_US.UTF-8                 # so SVN doesn't shit itself on non-ascii files
 export GREP_OPTIONS='--color'               # always show color with grep
 export GREP_COLORS='fn=38;5;67'
@@ -236,6 +236,8 @@ if [[ -e "$HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]
     ZSH_HIGHLIGHT_STYLES[path]='bold'
     ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=cyan'
     ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
+    ZSH_HIGHLIGHT_STYLES[path_approx]='none'
 fi
 
 # ESC '  Quote the current line; that is, put a `'' character at the beginning and the end, and convert all `'' characters to `'\'''  
