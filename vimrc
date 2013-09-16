@@ -16,6 +16,8 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 let g:slime_python_ipython=1
 let g:slime_target = "tmux"
 
+let g:godef_split = 0
+
 " Always cd using the active buffers directory
 "autocmd BufEnter * lcd %:p:h
 
