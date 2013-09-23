@@ -141,7 +141,17 @@ autoload zmv                    # zsh batch file renamer ex: zmv '(*).txt' '$1.m
 # grep (r)ecursive, (i)gnore case, (I)gnore binary files 
 grepr() {grep -iIr --color "$1" *} 
 tname() {echo -ne "\e]1;$1\a"}
-alias curlperf='curl -w "*********************************\nSummary (values are cumulative)\n*********************************\n  DNS Lookup:      %{time_namelookup} \n  TCP Connecting:  %{time_connect} \n  TTFB             %{time_starttransfer} \n  ----------------------\n  Total time:      %{time_total} \n" -o /dev/null $1'
+alias curlperf='curl -w "*******************************
+Summary (values are cumulative)
+*******************************
+  1. DNS lookup:    %{time_namelookup}
+  2. TCP connected: %{time_connect}
+  3. TTFB           %{time_starttransfer}
+  4. Total time:    [38;5;117m%{time_total} secs [0m
+  -------------------------------
+  HTTP code:        %{http_code}
+  Avg speed:        %{speed_download} Bps
+  Received:         %{size_download} bytes\n" -o /dev/null $1'
 
 # command aliases for different systems (Darwin = Mac)
 if [[ `uname` == "Darwin" ]] then
