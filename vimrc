@@ -54,7 +54,7 @@ set showtabline=2   " Show the tab bar
 set laststatus=2    " Show the status
 
 " Jedi ************************************************************************
-let g:jedi#show_function_definition = "0"
+let g:jedi#show_function_definition = "0"   " hide window after selecting method
 
 " Other  **********************************************************************
 set smartindent
@@ -125,6 +125,8 @@ nnoremap <C-y> 2<C-y>
 imap <ESC>z <c-w>
 imap <ESC>d <c-c>ldwi
 map <c-f> :NERDTreeFind<CR><c-w><c-p>
+nmap <ESC>s :w<CR>
+imap <ESC>s <ESC>:w<CR>li
 
 " Allow shift key selection of text in insert mode
 if has("gui_macvim")
