@@ -87,6 +87,10 @@ bindkey "^[[1;5D" backward-word	                    # ctrl-leftarrow jump backwa
 bindkey "^[[1;5C" forward-word	                    # ctrl-rightarrow jump forward word for iTerm
 bindkey "^[[5D" backward-word	                    # ctrl-leftarrow jump backward word for Terminal
 bindkey "^[[5C" forward-word	                    # ctrl-rightarrow jump forward word for Terminal
+bindkey "^A"    beginning-of-line                   # ctrl-a in tmux 
+bindkey "^[[1~" beginning-of-line                   # home key in tmux 
+bindkey "^E"    end-of-line                         # ctrl-e in tmux 
+bindkey "^[[4~" end-of-line                         # end key in tmux
 bindkey "^[[3~" delete-char                         # delete key
 bindkey '^R'    history-incremental-search-backward # ctrl-r search history
 bindkey "^[[A"  up-line-or-search                   # up through history
