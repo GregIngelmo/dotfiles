@@ -43,3 +43,6 @@
 [submodule "vim/bundle/vim-godef"]
 	path = vim/bundle/vim-godef
 	url = https://github.com/dgryski/vim-godef
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = http://github.com/tpope/vim-surround.git
