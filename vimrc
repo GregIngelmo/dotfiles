@@ -122,7 +122,7 @@ imap <ESC>z <c-w>
 imap <ESC>d <c-c>ldwi
 map <c-f> :NERDTreeFind<CR><c-w><c-p>
 nmap <ESC>s :w<CR>
-imap <ESC>s <ESC>:w<CR>li
+imap <ESC>s <ESC>:w<CR>l
 
 " Allow shift key selection of text in insert mode
 if has("gui_macvim")
