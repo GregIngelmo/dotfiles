@@ -91,19 +91,15 @@ if exists('$ITERM_PROFILE')
     if exists('$TMUX')
         " tmux eates escape codes unless they too are escaped...
         " https://raw.github.com/sjl/vitality.vim/master/doc/vitality.txt
-        let &t_SI = "\ePtmux;\e\e]50;CursorShape=1\x7\e\\"
-        let &t_EI = "\ePtmux;\e\e]50;CursorShape=0\x7\e\\"
-        
-        " When entering/exiting vim make sure to restore the state of the cursor by running a shell command 
-        autocmd VimLeave * silent! :!echo -e -n "\ePtmux;\e\e]50;CursorShape=1\x7\e\\"
-        autocmd VimEnter * silent! :!echo -e -n "\ePtmux;\e\e]50;CursorShape=0\x7\e\\"
+        let &t_SI = "\ePtmux;\e\e]50;CursorShape=1\x7\e\\" " change cursor to ibeam on entering insert mode
+        let &t_EI = "\ePtmux;\e\e]50;CursorShape=0\x7\e\\" " change cursor to ibeam on entering normal mode
+        let &t_te = "\ePtmux;\e\e]50;CursorShape=1\x7\e\\" " change cursor to ibeam on exiting to terminal
+        let &t_ti = "\ePtmux;\e\e]50;CursorShape=0\x7\e\\" " change cursor to block on entering vim
     else
-        let &t_SI = "\e]50;CursorShape=1\x7"
+        let &t_SI = "\e]50;CursorShape=1\x7" 
         let &t_EI = "\e]50;CursorShape=0\x7"
-        
-        " When entering/exiting vim make sure to restore the state of the cursor by running a shell command 
-        autocmd VimLeave * silent! :!echo -e -n "\e]50;CursorShape=1\x7"
-        autocmd VimEnter * silent! :!echo -e -n "\e]50;CursorShape=0\x7"
+        let &t_te = "\e]50;CursorShape=1\x7" " change cursor to ibeam on exiting to terminal
+        let &t_ti = "\e]50;CursorShape=0\x7" " change cursor to block on entering vim
     endif
 endif
 
