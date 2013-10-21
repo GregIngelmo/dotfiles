@@ -4,7 +4,7 @@
 # Symlink dot files into your home directory
 #
 
-pathsToSymlink="zshrc vimrc gvimrc gitignore gitconfig vim tmux.conf ctags zshrc.local ipython pryrc config inputrc gdb_init"
+pathsToSymlink="zshrc vimrc gvimrc gitignore gitconfig vim tmux.conf ctags zshrc.local ipython pryrc config inputrc gdbinit"
 
 keyColor='[38;5;110m' # light blue [0m 
 valColor='[38;5;175m' # coral      [0m 
