@@ -121,8 +121,14 @@ nnoremap <C-y> 2<C-y>
 imap <ESC>z <c-w>
 imap <ESC>d <c-c>ldwi
 map <c-f> :NERDTreeFind<CR><c-w><c-p>
-nmap <ESC>s :w<CR>
-imap <ESC>s <ESC>:w<CR>l
+nmap <ESC>s :call Gorunner()<CR>:w<CR>
+imap <ESC>s <ESC>:call Gorunner()<CR>:w<CR>l
+
+function! Gorunner()
+  if &ft == "go"
+    call system('touch ' . '.gorunner.tmp')
+  endif
+endfunction
 
 " Allow shift key selection of text in insert mode
 if has("gui_macvim")
