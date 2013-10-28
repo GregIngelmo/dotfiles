@@ -110,6 +110,7 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+nmap <C-c><C-c> mzvip:SlimeSend<CR>`z
 " Clear search results w/ ,/ instead of typing /asdfljasdkf
 nmap <silent> ,/ :nohlsearch<CR>
 " Forgot to use sudo? w!! to the rescue
