@@ -242,8 +242,9 @@ highlight default link TagbarHighlight  Search
 hi! link SignColumn LineNr
 
 """ Json
-highlight default link jsonBraces Statement
+highlight default link jsonBraces Identifier
 highlight default link jsonBoolean Constant2
+highlight default link jsonKey Statement
 
 hi diffAdded    ctermfg=150 guifg=#afdf87
 hi diffRemoved  ctermfg=174 guifg=#df8787
