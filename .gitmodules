@@ -1,54 +1,54 @@
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
-	url = https://github.com/Lokaltog/vim-easymotion.git
+	url = git://github.com/Lokaltog/vim-easymotion.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+	url = git://github.com/scrooloose/nerdtree.git
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
-	url = http://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
+	url = git://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
+	url = git://github.com/ervandew/supertab.git
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
-	url = https://github.com/groenewege/vim-less.git
+	url = git://github.com/groenewege/vim-less.git
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
-	url = http://github.com/scrooloose/syntastic.git
+	url = git://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/vim-slime"]
 	path = vim/bundle/vim-slime
-	url = http://github.com/jpalardy/vim-slime.git
+	url = git://github.com/jpalardy/vim-slime.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
-	url = https://github.com/wincent/Command-T.git
+	url = git://github.com/wincent/Command-T.git
 [submodule "vim/bundle/powerline_new"]
 	path = vim/bundle/powerline_new
-	url = http://github.com/Lokaltog/powerline.git
+	url = git://github.com/Lokaltog/powerline.git
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
-	url = http://github.com/plasticboy/vim-markdown.git
+	url = git://github.com/plasticboy/vim-markdown.git
 [submodule "vim/bundle/vim-scala"]
 	path = vim/bundle/vim-scala
-	url = http://github.com/derekwyatt/vim-scala.git
+	url = git://github.com/derekwyatt/vim-scala.git
 [submodule "vim/bundle/vim-godef"]
 	path = vim/bundle/vim-godef
-	url = https://github.com/dgryski/vim-godef
+	url = git://github.com/dgryski/vim-godef
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
-	url = http://github.com/tpope/vim-surround.git
+	url = git://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/vim-tmux-navigator"]
 	path = vim/bundle/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator.git
+	url = git://github.com/christoomey/vim-tmux-navigator.git
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
