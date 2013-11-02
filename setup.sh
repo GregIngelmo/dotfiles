@@ -2,6 +2,7 @@
 
 #
 # Symlink dot files into your home directory
+# This script is meant to be run from a users home folder
 #
 
 pathsToSymlink="zshrc vimrc gvimrc gitignore gitconfig vim tmux.conf ctags zshrc.local ipython pryrc config inputrc gdbinit"
@@ -9,6 +10,33 @@ pathsToSymlink="zshrc vimrc gvimrc gitignore gitconfig vim tmux.conf ctags zshrc
 keyColor='[38;5;110m' # light blue [0m 
 valColor='[38;5;175m' # coral      [0m 
 noColor='[0m'
+
+if [ -f /etc/redhat-release ]; then
+    echo "Installing vim, zsh, ctags, and git"
+    sudo yum install vim zsh ctags git -y
+elif [ -f /etc/lsb-release ]; then
+    # Load the variables
+    . /etc/lsb-release
+
+    if [ "$DISTRIB_ID" == "Ubuntu" ]; then
+        echo "Installing vim, zsh, ctags, git, and ncurses-term"
+        sudo apt-get update
+        sudo apt-get install zsh ctags git ncurses-term vim -y
+    fi
+fi
+
+if [[ $? != 0 ]] ; then
+    echo "Can't install dependencies..."
+    exit $rc
+fi
+
+git clone --recursive git://github.com/kemist/dotfiles
+
+if [[ $? != 0 ]] ; then
+    echo "Can't clone dotfiles repo..."
+    exit $rc
+fi
+cd dotfiles
 
 for pathName in $pathsToSymlink
 do
@@ -29,3 +57,6 @@ done
 
 # Configure global git settings for colors & gitignore
 git config --global core.excludesfile '~/.gitignore'
+
+cd ..
+zsh
