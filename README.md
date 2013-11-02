@@ -38,20 +38,15 @@ Run
 Configure
 ---------
 
-Run `setup.sh`. It will symlink the files into your home directory, don't worry it won't overwrite anything.
+Run `setup.sh`. It will install dependencies, clone the repo, symlink all dotfiles and start an zsh session
 
-	cd ~/
-    chsh -s `which zsh`
-	git clone --recursive http://github.com/kemist/dotfiles
-	cd dotfiles
-	./setup.sh
-	cd..
-	zsh
-
-Or you can be a *manly man* and use a one-liner
-
-	cd ~/ && chsh -s `which zsh` && git clone --recursive http://github.com/kemist/dotfiles && cd dotfiles && ./setup.sh && cd .. && zsh
-
+```
+curl -L https://raw.github.com/kemist/dotfiles/master/setup.sh | bash
+```
+or 
+```
+wget -O - https://raw.github.com/kemist/dotfiles/master/setup.sh | bash
+```
 Terminal features
 -----------------
 
