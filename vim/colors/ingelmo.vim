@@ -93,7 +93,10 @@ hi link rdebugPartFile Comment
 
 """ Javascript
 hi link javaScriptStatement Identifier
-
+hi link javaScriptNumber Number
+hi link javaScriptBraces Statement
+hi link javaScriptBoolean Constant2
+"
 """ vim
 hi link vimHiGroup Statement
 hi link vimHighlight Identifier
@@ -237,6 +240,9 @@ highlight default link TagbarSignature  SpecialKey
 highlight default link TagbarPseudoID   NonText
 highlight default link TagbarFoldIcon   NERDTreeDir
 highlight default link TagbarHighlight  Search
+
+""" INI
+hig default link dosiniHeader Statement
 
 """ vim
 hi! link SignColumn LineNr
