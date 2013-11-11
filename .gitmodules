@@ -62,5 +62,5 @@
 	path = vim/bundle/vim-unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
 [submodule "vim/bundle/vim/bundle/MatchTag"]
-	path = vim/bundle/vim/bundle/MatchTag
+	path = vim/bundle/MatchTag
 	url = git://github.com/gregsexton/MatchTag
