@@ -77,11 +77,21 @@ hi PreProc      ctermfg=150 guifg=#95b576   " Light green
 hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
 hi Statement    ctermfg=67  guifg=#5f87af   " Keywords in blue 
 hi Statement2   ctermfg=68  guifg=#6688dd   " Keywords in alternate blue 
+hi Statement3   ctermfg=33                  " Keywords in alternate purple blue
 hi Type         ctermfg=110 guifg=#afafd7   " Type in purple blue 
 hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
 hi Hyperlink    ctermfg=25
+hi Purple       ctermfg=61
+hi Paren        ctermfg=192
+
 hi link Conditional Identifier
 hi link Command Conditional
+
+""" golang
+hi link goRepeat Identifier
+hi link goRawString Constant
+hi link goDirective Purple
+hi link goDeclType Statement3
 
 """ vim-ruby-debugger
 hi link rdebugParent Statement2
