@@ -5,6 +5,16 @@
 # This script is meant to be run from a users home folder
 #
 
+# autocomplete for js
+# cd vim/bundle/tern_for_vim
+# npm install
+
+# json support for syntastic
+# npm install -g jslint
+
+# js support for syntastic
+# npm install -g jshint
+
 pathsToSymlink="zshrc vimrc gvimrc gitignore gitconfig vim tmux.conf ctags zshrc.local ipython pryrc config inputrc gdbinit"
 
 keyColor='[38;5;110m' # light blue [0m 

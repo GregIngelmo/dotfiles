@@ -76,6 +76,8 @@ set pastetoggle=<F2>
 set history=1000        " save 1000 of the last commands
 set scrolloff=3         " leaves 3 lines before top & bottom when scrolling
 set completeopt=menuone,preview,longest
+set completeopt-=preview
+set wildignore+="node_modules"
 
 " ConqueTerm  ****************************************************************
 "let g:ConqueTerm_ReadUnfocused = 1
