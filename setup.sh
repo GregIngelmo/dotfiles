@@ -160,6 +160,6 @@ cd $PREVPATH
 # auto start zsh if we're not running zsh
 if [ "$SHELL" != "`which zsh`" ]; then
     printMsg "Start zsh!" && echo ""
-    zsh
+    runCmd "zsh"
 fi
 
