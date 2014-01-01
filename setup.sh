@@ -159,7 +159,8 @@ cd $PREVPATH
 
 # auto start zsh if we're not running zsh
 if [ "$SHELL" != "`which zsh`" ]; then
-    printMsg "Start zsh!" && echo ""
+    printMsg "Run zsh!" && echo ""
+    # This wont work when setup.sh is curled and piped to bash :(
     runCmd "zsh"
 fi
 
