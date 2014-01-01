@@ -43,10 +43,6 @@ Run `setup.sh`. It will install dependencies, clone the repo, symlink all dotfil
 ```
 curl -s -L https://raw.github.com/kemist/dotfiles/master/setup.sh | bash
 ```
-or 
-```
-wget -O - https://raw.github.com/kemist/dotfiles/master/setup.sh | bash
-```
 Terminal features
 -----------------
 
