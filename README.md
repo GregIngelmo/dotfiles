@@ -41,7 +41,7 @@ Configure
 Run `setup.sh`. It will install dependencies, clone the repo, symlink all dotfiles and start an zsh session
 
 ```
-curl -L https://raw.github.com/kemist/dotfiles/master/setup.sh | bash
+curl -s -L https://raw.github.com/kemist/dotfiles/master/setup.sh | bash
 ```
 or 
 ```
