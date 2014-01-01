@@ -149,8 +149,6 @@ do
 done
 echo "" >> $DOTFILESLOG
 
-exit 1 
-
 printMsg "Configure global ignore file ~/.gitignore"
 runCmd "git config --global core.excludesfile '~/.gitignore'"
 
