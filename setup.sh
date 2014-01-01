@@ -124,30 +124,32 @@ runCmd "npm install"
 printMsg "Install syntax checker for js (jshint)"
 runCmd "sudo npm install -g jshint"
 
-printMsg "Symlink dotfiles..." && echo ""
+printMsg "Install dotfiles..." && echo ""
 for pathName in $pathsToSymlink
 do
     # if symlink or regular file then skip
     if [ -h "$HOME/.$pathName" ]; then
-        echo "${keyColor}$HOME/$pathName${noColor} is already symlinked" 
-        echo "$HOME/$pathName is already symlinked" >> $DOTFILESLOG 
+        echo "${keyColor}Found $HOME/.$pathName${noColor} [symlink]" 
+        echo "Found $HOME/.$pathName is symlinked" >> $DOTFILESLOG 
     elif [ -f "$HOME/.$pathName" ]; then
-        echo "${keyColor}$HOME/$pathName${noColor} is a regular file" 
-        echo "$HOME/$pathName is a regular file" >> $DOTFILESLOG 
+        echo "${keyColor}Found $HOME/.$pathName${noColor} [file]" 
+        echo "Found $HOME/.$pathName is copied" >> $DOTFILESLOG 
     else
         # .local files shouldn't be linked, they're templates for convenience
         if [ "${pathName#*.}" == "local" ]; then
+            echo -n "${keyColor}Copying $DOTFILESPATH/$pathName${noColor} to ${keyColor}$HOME/.$pathName${noColor}"
             runCmd "cp $DOTFILESPATH/$pathName $HOME/.$pathName"
-            echo "Copied ${keyColor}$DOTFILESPATH/$pathName${noColor} to ${valColor}$HOME/.$pathName${noColor}"
             echo "Copied $DOTFILESPATH/$pathName to $HOME/.$pathName" >> $DOTFILESLOG
         else
+            echo -n "${keyColor}Linking $DOTFILESPATH/$pathName${noColor} to ${keyColor}$HOME/.$pathName${noColor}"
             runCmd "ln -s $DOTFILESPATH/$pathName $HOME/.$pathName"
-            echo "Linked ${keyColor}$DOTFILESPATH/$pathName${noColor} to ${valColor}$HOME/.$pathName${noColor}"
             echo "Linked $DOTFILESPATH/$pathName to $HOME/.$pathName" >> $DOTFILESLOG
         fi
     fi
 done
 echo "" >> $DOTFILESLOG
+
+exit 1 
 
 printMsg "Configure global ignore file ~/.gitignore"
 runCmd "git config --global core.excludesfile '~/.gitignore'"
