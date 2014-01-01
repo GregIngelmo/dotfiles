@@ -18,6 +18,8 @@
 #   Bash    '->>>--'﹏          ---------------'"./_._._-'--
 #             `  `         -----------------------------------
 #-----------------------------------------------------------------       
+# Original (less angry) Dragon 
+# http://www.chris.com/ascii/index.php?art=creatures/dragons
 
 # new session summary
 if [[ -o interactive ]]; then
@@ -239,8 +241,10 @@ ${p_user_at_host} ${p_ret_status} ${p_delim} "
 
 # badass ZSH script that adds live syntax highlighting to command arguments
 # https://github.com/zsh-users/zsh-syntax-highlighting 
-if [[ -e "$HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
-    source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+dotfilesDir=`readlink ~/.zshrc`
+dotfilesDir=`dirname dotfilesDir`
+if [[ -e "$dotfilesDir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
+    source $dotfilesDir/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
     # enable colored braces/parens & custom patterns, great when using zcalc
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
@@ -269,15 +273,16 @@ fi
 # http://lucentbeing.com/blog/that-256-color-thing/
 #
 # print '[01;38;05;50;48;05;100m poop [00'  don't forget the m...
-#        |/ |/       |/       |/___________ dark yellow background color (100)
-#        |  |        |_____________________ aqua foreground color (50)
-#        |  |______________________________ bold text attribute (01) 
-#        |_________________________________ hit ctrl-v then esc to start escape sequence*
+#        || ||       ||       |||__________ dark yellow background color (100)
+#        || ||       ||____________________ aqua foreground color (50)
+#        || ||_____________________________ bold text attribute (01) 
+#        ||________________________________ hit ctrl-v then esc to start escape sequence*
 #
-# * In most cases the escape sequence can also be written as \E or \033, but you must
-#   enable backslash escapes for that to work.
+# * In most cases the escape sequence can also be written as \E, \033, or \x1b, 
+# but you must it doesn't always work b/c of inconsistent escaping of \ through
+# other commands
 #
-# Shortcut to change just the foreground to aqua (50)
+# The same as aboove, shortcut to change foreground to aqua (50)
 # print '[38;05;50m poop [00 '
 # 
 # text attributes
