@@ -161,6 +161,6 @@ cd $PREVPATH
 if [ "$SHELL" != "`which zsh`" ]; then
     printMsg "Run zsh!" && echo ""
     # This wont work when setup.sh is curled and piped to bash :(
-    runCmd "zsh"
+    zsh
 fi
 
