@@ -242,9 +242,9 @@ ${p_user_at_host} ${p_ret_status} ${p_delim} "
 # badass ZSH script that adds live syntax highlighting to command arguments
 # https://github.com/zsh-users/zsh-syntax-highlighting 
 dotfilesDir=`readlink ~/.zshrc`
-dotfilesDir=`dirname dotfilesDir`
+dotfilesDir=`dirname $dotfilesDir`
 if [[ -e "$dotfilesDir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] then
-    source $dotfilesDir/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $dotfilesDir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
     # enable colored braces/parens & custom patterns, great when using zcalc
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
