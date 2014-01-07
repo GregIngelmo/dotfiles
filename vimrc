@@ -52,6 +52,7 @@ set foldlevel=1         "this is just what i use
 set number 	        " Enable Line numbers
 set showtabline=2   " Show the tab bar
 set laststatus=2    " Show the status
+set hidden          " Hide buffers by defaut which perserves their undo history
 
 " Jedi ************************************************************************
 let g:jedi#show_function_definition = "0"   " hide window after selecting method
