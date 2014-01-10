@@ -71,6 +71,7 @@ hi Comment      ctermfg=238 guifg=#666666   " Comments in gray
 hi Constant     ctermfg=66  guifg=#5a9a77   " Strings in green
 hi Constant2    ctermfg=65                  " Other Strings in darker green
 hi Identifier   ctermfg=137 guifg=#b87a41   " Keywords in orange
+hi Identifier2  ctermfg=173                 " Keywords in stronger orange
 hi Ignore       ctermfg=238 guifg=#444444   " Dark gray
 hi Number       ctermfg=144 guifg=#d6c895   " Numbers in yellow
 hi PreProc      ctermfg=150 guifg=#95b576   " Light green
@@ -78,11 +79,28 @@ hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
 hi Statement    ctermfg=67  guifg=#5f87af   " Keywords in blue 
 hi Statement2   ctermfg=68  guifg=#6688dd   " Keywords in alternate blue 
 hi Statement3   ctermfg=33                  " Keywords in alternate purple blue
+hi Statement4   ctermfg=61                  " Keywords in alternate purple blue
 hi Type         ctermfg=110 guifg=#afafd7   " Type in purple blue 
 hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
 hi Hyperlink    ctermfg=25
 hi Purple       ctermfg=61
 hi Paren        ctermfg=192
+
+""" Javascript
+hi link javaScriptStatement Identifier
+hi link javaScriptNumber Number
+hi link javaScriptBraces Statement
+hi link javaScriptBoolean Constant2
+hi link javaScriptFuncKeyword Statement
+hi link javaScriptFuncExp Statement4
+" 95 117 124 130
+hi javaScriptFuncArg ctermfg=95
+hi link javaScriptConditional Identifier
+hi link javaScriptParens Normal
+hi link javaScriptOpSymbols Normal
+hi link javaScriptGlobal Statement3
+hi javaScriptDocTags ctermfg=243
+hi link javaScriptDocParam javaScriptFuncArg
 
 hi link Conditional Identifier
 hi link Command Conditional
@@ -101,12 +119,6 @@ hi link rdebugType Statement
 hi link rdebugPart Comment
 hi link rdebugPartFile Comment
 
-""" Javascript
-hi link javaScriptStatement Identifier
-hi link javaScriptNumber Number
-hi link javaScriptBraces Statement
-hi link javaScriptBoolean Constant2
-"
 """ vim
 hi link vimHiGroup Statement
 hi link vimHighlight Identifier
