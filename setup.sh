@@ -85,7 +85,7 @@ elif [ -f /etc/lsb-release ]; then
     . /etc/lsb-release
 
     if [ "$DISTRIB_ID" == "Ubuntu" ]; then
-        packages="python-software-properties vim-nox zsh ctags git curl ncurses-term"
+        packages="python-software-properties vim-nox zsh ctags git curl ncurses-term build-essential"
 
         printMsg "Ubuntu detected" && echo ""
         aptgetUpdate 
@@ -123,6 +123,16 @@ runCmd "npm install"
 
 printMsg "Install syntax checker for js (jshint)"
 runCmd "sudo npm install -g jshint"
+
+# curl -sSL https://get.rvm.io | bash
+# source ~/.rvm/scripts/rvm
+# rvm install 1.9.3
+# rvm --default use 1.9.3
+#
+# printMsg "Install autocomplete for files (command-t)..."
+# cd ~/.vim/bundle/command-t/ruby/command-t
+# ruby extconf.rb
+# runCmd "make"
 
 printMsg "Install dotfiles..." && echo ""
 for pathName in $pathsToSymlink
