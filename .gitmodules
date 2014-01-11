@@ -79,3 +79,6 @@
 [submodule "vim/bundle/vim-golang"]
 	path = vim/bundle/vim-golang
 	url = git://github.com/jnwhiteh/vim-golang
+[submodule "vim/bundle/vim-javascript-syntax"]
+	path = vim/bundle/vim-javascript-syntax
+	url = git://github.com/jelera/vim-javascript-syntax

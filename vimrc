@@ -52,6 +52,7 @@ set foldlevel=1         "this is just what i use
 set number 	        " Enable Line numbers
 set showtabline=2   " Show the tab bar
 set laststatus=2    " Show the status
+set hidden          " Hide buffers by defaut which perserves their undo history
 
 " Jedi ************************************************************************
 let g:jedi#show_function_definition = "0"   " hide window after selecting method
@@ -126,6 +127,7 @@ imap <ESC>d <c-c>ldwi
 map <c-f> :NERDTreeFind<CR><c-w><c-p>
 nmap <ESC>s :call Gorunner()<CR>:w<CR>
 imap <ESC>s <ESC>:call Gorunner()<CR>:w<CR>l
+map <c-g> <c-a>:w<CR>:colorscheme ingelmo<CR>
 
 function! Gorunner()
   if &ft == "go"
