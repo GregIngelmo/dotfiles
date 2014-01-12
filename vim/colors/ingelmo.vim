@@ -90,7 +90,8 @@ hi Paren        ctermfg=192
 """ Javascript
 hi link javaScriptStatement Identifier
 hi link javaScriptNumber Number
-hi link javaScriptBraces Statement
+" 24 88 166
+hi javaScriptBraces ctermfg=24
 hi link javaScriptBoolean Constant2
 hi link javaScriptFuncKeyword Statement
 hi link javaScriptFuncExp Statement4
