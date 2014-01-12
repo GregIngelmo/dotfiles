@@ -140,9 +140,6 @@ autoload -U colors && colors    # zsh function that loads colors w/ names into '
 autoload zcalc                  # calculator
 autoload zmv                    # zsh batch file renamer ex: zmv '(*).txt' '$1.md'
 
-# grep (r)ecursive, (i)gnore case, (I)gnore binary files 
-grepr() {grep -iIr --color "$1" *} 
-tname() {echo -ne "\e]1;$1\a"}
 alias curlperf='curl -w "*******************************
 Summary (values are cumulative)
 *******************************
@@ -257,6 +254,28 @@ if [[ -e "$dotfilesDir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] t
     ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
     ZSH_HIGHLIGHT_STYLES[path_approx]='none'
 fi
+
+tname() {echo -ne "\e]1;$1\a"}
+
+# Create or attach tmux session, name the current tab, and cd into the directory (if given)
+# If inside a tmux session it wont create nested sessions
+# ex: tm                  <- New/attach tmux session in current directory
+# ex: tm ~/dotfiles       <- New/attach tmux session and cd ~/dotfiles
+# ex: tm ~/dotfiles poop  <- New/attach tmux session named "poop" and cd ~/dotfiles
+tm() {
+    if [[ $#. -eq 2 ]]; then
+        local name=$2
+        local directory=$1
+    elif [[ $#. -eq 1 ]]; then
+        local name=`basename $1`
+        local directory=$1
+    else
+        local name=`basename $PWD`
+        local directory=$PWD
+    fi
+    # rename the current tab, cd into dir, if NOT in tmux session try attaching OR if NOT in tmux session try new session
+    tname "$name" && cd "$directory" && [ -z "$TMUX" ] && tmux attach -d -t $name 2>/dev/null || [ -z "$TMUX" ] && tmux new-session -s $name
+}
 
 # ESC '  Quote the current line; that is, put a `'' character at the beginning and the end, and convert all `'' characters to `'\'''  
 # ^ a    Move to beginning of line
