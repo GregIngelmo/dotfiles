@@ -77,9 +77,10 @@ hi Number       ctermfg=144 guifg=#d6c895   " Numbers in yellow
 hi PreProc      ctermfg=150 guifg=#95b576   " Light green
 hi Special      ctermfg=174 guifg=#df8787   " Sepcial chars in magenta
 hi Statement    ctermfg=67  guifg=#5f87af   " Keywords in blue 
-hi Statement2   ctermfg=68  guifg=#6688dd   " Keywords in alternate blue 
-hi Statement3   ctermfg=33                  " Keywords in alternate purple blue
-hi Statement4   ctermfg=61                  " Keywords in alternate purple blue
+hi Statement2   ctermfg=68  guifg=#6688dd   " Keywords in lighter blue 
+hi Statement3   ctermfg=33                  " Keywords in very bright blue
+hi Statement4   ctermfg=61                  " Keywords in purple
+hi Arguments    ctermfg=95                  " Method arguments in brown
 hi Type         ctermfg=110 guifg=#afafd7   " Type in purple blue 
 hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
 hi Hyperlink    ctermfg=25
@@ -94,7 +95,7 @@ hi link javaScriptBoolean Constant2
 hi link javaScriptFuncKeyword Statement
 hi link javaScriptFuncExp Statement4
 " 95 117 124 130
-hi javaScriptFuncArg ctermfg=95
+hi link javaScriptFuncArg Arguments
 hi link javaScriptConditional Identifier
 hi link javaScriptParens Normal
 hi link javaScriptOpSymbols Normal
@@ -110,6 +111,7 @@ hi link goRepeat Identifier
 hi link goRawString Constant
 hi link goDirective Purple
 hi link goDeclType Statement3
+hi link goDeclaration Statement
 
 """ vim-ruby-debugger
 hi link rdebugParent Statement2
@@ -131,8 +133,8 @@ hi link helpSectionDelim Statement
 hi link helpHeader Statement
 
 """ python 
-hi link pythonFunction Statement
-hi link pythonStatement Identifier
+hi link pythonFunction Statement4
+hi link pythonStatement Statement
 hi link pythonRepeat Identifier
 hi link pythonConditional Identifier
 hi link pythonInclude Identifier
@@ -156,6 +158,9 @@ hi link rubyInstanceVariable Normal
 hi link rubyBlockParameter Normal
 hi link rubyLocalVariableOrMethod Normal
 hi link rubyControl Identifier
+hi link rubyDefine Statement
+hi link rubyMethodNameTag Statement4
+hi link rubyPseudoVariable Statement3
 
 """ Django
 hi link djangoTagBlock Statement
@@ -179,6 +184,10 @@ hi link bufExplorerBufNbr Normal
 """ Shell scripts
 hi shOption ctermfg=110 guifg=#78b3d0  " light cyan to match zsh highlighting
 hi link shLoop Identifier
+hi link zshSubstDelim Special
+hi link zshSubst Constant2
+hi link zshDeref zshSubst
+hi link shFunction Statement4 
 
 """ Git gutter
 hi GitGutterAdd ctermfg=64
@@ -281,9 +290,6 @@ hi diffAdd      ctermfg=bg  guifg=bg ctermbg=71
 hi diffDelete   ctermfg=bg  guifg=bg ctermbg=88
 hi diffChange   ctermfg=bg  guifg=bg ctermbg=61
 hi diffText     ctermfg=bg  guifg=bg ctermbg=174
-
-""" Shell scripts
-hi link shFunction Statement2
 
 """ VimDebug {{{3
 " FIXME
