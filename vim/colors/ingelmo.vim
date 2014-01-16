@@ -284,6 +284,11 @@ highlight default link jsonBraces Identifier
 highlight default link jsonBoolean Constant2
 highlight default link jsonKey Statement
 
+""" Gitv
+hi link gitvGraphEdge0 Statement
+hi link gitvGraphEdge1 Arguments
+hi gitvSubject ctermfg=248
+
 hi diffAdded    ctermfg=150 guifg=#afdf87
 hi diffRemoved  ctermfg=174 guifg=#df8787
 """ vimdiff {{{3
