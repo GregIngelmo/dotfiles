@@ -13,6 +13,7 @@ autocmd BufRead,BufNewFile *.rb,*.yml,*.html setlocal shiftwidth=2 tabstop=2
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
+let g:Gitv_DoNotMapCtrlKey=1
 let g:slime_python_ipython=1
 let g:slime_target = "tmux"
 
