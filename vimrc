@@ -13,6 +13,9 @@ autocmd BufRead,BufNewFile *.rb,*.yml,*.html setlocal shiftwidth=2 tabstop=2
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
+let g:airline_powerline_fonts = 1
+let g:airline_detect_whitespace = 0
+
 let g:Gitv_DoNotMapCtrlKey=1
 let g:slime_python_ipython=1
 let g:slime_target = "tmux"
@@ -66,7 +69,7 @@ set shiftwidth=4
 set clipboard=unnamed   " requires reattach-to-user-namespace to work inside tmux
 set expandtab           " Use spaces not tabs
 set nowrap
-let g:NERDTreeWinSize = 35  
+let g:NERDTreeWinSize = 35
 let NERDTreeIgnore = ['\.pyc$']
 set noswapfile          " Disable the swap file
 set mouse=a             " Let's you use the mouse in a terminal session
@@ -84,13 +87,13 @@ set wildignore+=node_modules
 " ConqueTerm  ****************************************************************
 "let g:ConqueTerm_ReadUnfocused = 1
 "let g:ConqueTerm_InsertOnEnter = 1
-"set updatetime=400  "uptime (ms) is how often vim runs its internal timer (don't set this any lower) 
+"set updatetime=400  "uptime (ms) is how often vim runs its internal timer (don't set this any lower)
 "let g:ConqueTerm_TERM='xterm'
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
 
-" Change the cursor from Block to Ibeam when switching betwen select/insert mode. 
-" iTerm provides a special escape sequence which makes this possible. 
+" Change the cursor from Block to Ibeam when switching betwen select/insert mode.
+" iTerm provides a special escape sequence which makes this possible.
 if exists('$ITERM_PROFILE')
     if exists('$TMUX')
         " tmux eates escape codes unless they too are escaped...
@@ -100,7 +103,7 @@ if exists('$ITERM_PROFILE')
         let &t_te = "\ePtmux;\e\e]50;CursorShape=1\x7\e\\" " change cursor to ibeam on exiting to terminal
         let &t_ti = "\ePtmux;\e\e]50;CursorShape=0\x7\e\\" " change cursor to block on entering vim
     else
-        let &t_SI = "\e]50;CursorShape=1\x7" 
+        let &t_SI = "\e]50;CursorShape=1\x7"
         let &t_EI = "\e]50;CursorShape=0\x7"
         let &t_te = "\e]50;CursorShape=1\x7" " change cursor to ibeam on exiting to terminal
         let &t_ti = "\e]50;CursorShape=0\x7" " change cursor to block on entering vim
@@ -119,7 +122,7 @@ nmap <C-c><C-c> mzvip:SlimeSend<CR>`z
 nmap <silent> ,/ :nohlsearch<CR>
 " Forgot to use sudo? w!! to the rescue
 cmap w!! w !sudo tee % >/dev/null
-" Scroll up & down 2 lines at a time 
+" Scroll up & down 2 lines at a time
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 " Map custom iTerm escape codes for ctrl-back and ctrl-del to delete-forward-word and delete-back-word
@@ -143,7 +146,7 @@ endif
 
 if has('gui_running')
     " set guifont=Inconsolata-dz:h11
-    set guifont=Inconsolata-dz\ for\ Powerline:h11                                    
+    set guifont=Inconsolata-dz\ for\ Powerline:h11
     let g:Powerline_symbols = 'fancy'
 endif
 
