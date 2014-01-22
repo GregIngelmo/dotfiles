@@ -87,6 +87,15 @@ hi Hyperlink    ctermfg=25
 hi Purple       ctermfg=61
 hi Paren        ctermfg=192
 
+""" Tagbar
+hi link TagbarKind       Statement4
+hi link TagbarNestedKind Statement2
+hi link TagbarScope      Statement3
+hi link TagbarSignature  Arguments
+hi TagbarAccessPublic ctermfg=0
+hi link TagbarAccessPrivate TagbarAccessPublic
+hi link TagbarAccessProtected  TagbarAccessPublic
+
 """ Javascript
 hi link javaScriptStatement Identifier
 hi link javaScriptNumber Number
