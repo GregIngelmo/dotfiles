@@ -13,6 +13,10 @@ autocmd BufRead,BufNewFile *.rb,*.yml,*.html setlocal shiftwidth=2 tabstop=2
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
+" Airline 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_whitespace = 0
 
@@ -69,6 +73,7 @@ set shiftwidth=4
 set clipboard=unnamed   " requires reattach-to-user-namespace to work inside tmux
 set expandtab           " Use spaces not tabs
 set nowrap
+let g:NERDTreeShowPressForHelp = 0
 let g:NERDTreeWinSize = 35
 let NERDTreeIgnore = ['\.pyc$']
 set noswapfile          " Disable the swap file
