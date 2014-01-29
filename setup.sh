@@ -89,7 +89,7 @@ printMsg "START" && echo ""
 if [ -f /etc/redhat-release ]; then
     packages="vim, zsh, ctags, git and curl"
     printMsg "Redhat detected..." & echo ""
-    yumInstall packages
+    yumInstall $packages
 elif [ -f /etc/lsb-release ]; then
     # Load system specific environment variables 
     . /etc/lsb-release
