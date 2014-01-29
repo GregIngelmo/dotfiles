@@ -72,14 +72,24 @@ aptgetInstall(){
     done
 }
 
+yumInstall(){
+    local packages=$@
+    
+    # install one at a time to see progress
+    for package in $packages
+    do
+        printMsg "Installing $package..."
+        runCmd "sudo yum install $package -y"
+    done
+}
+
 printMsg "START" && echo ""
 
 # Install dependencies
 if [ -f /etc/redhat-release ]; then
-    printMsg "Redhat detected..."
-    exit 1
-    echo "Installing vim, zsh, ctags, git and curl..."
-    sudo yum install vim zsh ctags git curl -y
+    packages="vim, zsh, ctags, git and curl"
+    printMsg "Redhat detected..." & echo ""
+    yumInstall packages
 elif [ -f /etc/lsb-release ]; then
     # Load system specific environment variables 
     . /etc/lsb-release
@@ -117,12 +127,12 @@ runCmd "git submodule init"
 printMsg "Updating submodules..."
 runCmd "git submodule update"
 
-cd $DOTFILESPATH/vim/bundle/tern_for_vim
-printMsg "Install autocomplete for js (tern_for_vim)..."
-runCmd "npm install"
-
-printMsg "Install syntax checker for js (jshint)"
-runCmd "sudo npm install -g jshint"
+# cd $DOTFILESPATH/vim/bundle/tern_for_vim
+# printMsg "Install autocomplete for js (tern_for_vim)..."
+# runCmd "npm install"
+#
+# printMsg "Install syntax checker for js (jshint)"
+# runCmd "sudo npm install -g jshint"
 
 # curl -sSL https://get.rvm.io | bash
 # source ~/.rvm/scripts/rvm
