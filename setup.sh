@@ -88,7 +88,7 @@ printMsg "START" && echo ""
 # Install dependencies
 if [ -f /etc/redhat-release ]; then
     packages="vim zsh ctags git curl"
-    printMsg "Redhat detected..." & echo ""
+    printMsg "Redhat detected..." && echo ""
     yumInstall $packages
 elif [ -f /etc/lsb-release ]; then
     # Load system specific environment variables 
