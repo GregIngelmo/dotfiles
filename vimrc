@@ -26,6 +26,7 @@ let g:slime_target = "tmux"
 
 let g:godef_split = 0
 
+let g:fugitive_github_domains=["https://git.corp.yahoo.com"]
 " Always cd using the active buffers directory
 "autocmd BufEnter * lcd %:p:h
 
@@ -137,6 +138,8 @@ map <c-f> :NERDTreeFind<CR><c-w><c-p>
 nmap <ESC>s :call Gorunner()<CR>:w<CR>
 imap <ESC>s <ESC>:call Gorunner()<CR>:w<CR>l
 map <c-g> <c-a>:w<CR>:colorscheme ingelmo<CR>
+" Leader q will quit the active buffer without closing the window
+nmap <silent> <leader>q :bp\|bd #<CR>
 
 function! Gorunner()
   if &ft == "go"
