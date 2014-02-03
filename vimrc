@@ -26,6 +26,8 @@ let g:slime_target = "tmux"
 
 let g:godef_split = 0
 
+let g:vim_markdown_folding_disabled=1
+
 let g:fugitive_github_domains=["https://git.corp.yahoo.com"]
 " Always cd using the active buffers directory
 "autocmd BufEnter * lcd %:p:h
