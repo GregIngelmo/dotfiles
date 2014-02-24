@@ -165,7 +165,9 @@ hi link rubyFunction Statement
 hi link rubyDefine Identifier
 hi link rubyInclude Identifier
 hi link rubyInstanceVariable Normal
-hi link rubyBlockParameter Normal
+hi link rubyBlockParameter Arguments
+hi rubyArrayDelimiter ctermfg=24
+hi rubyCurlyBlockDelimiter ctermfg=24
 hi link rubyLocalVariableOrMethod Normal
 hi link rubyControl Identifier
 hi link rubyDefine Statement
