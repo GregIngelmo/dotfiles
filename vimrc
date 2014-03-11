@@ -8,15 +8,15 @@ autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.json setfiletype json
 autocmd BufRead,BufNewFile *.md setfiletype markdown
-autocmd BufRead,BufNewFile *.rb,*.yml,*.html setlocal shiftwidth=2 tabstop=2
+autocmd BufRead,BufNewFile *.yml,*.html setlocal shiftwidth=2 tabstop=2
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Airline 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_whitespace = 0
 
