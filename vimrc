@@ -92,6 +92,7 @@ set scrolloff=3         " leaves 3 lines before top & bottom when scrolling
 set completeopt=menuone,preview,longest
 set completeopt-=preview
 set wildignore+=node_modules
+let g:gofmt_command = "goimports"   "use goimports instead of gofmt for gocode
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
