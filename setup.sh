@@ -45,7 +45,7 @@ printOk(){
 
 runCmd(){
     local cmd=$1
-    local cmdWithLog="$cmd &>> $DOTFILESLOG"
+    local cmdWithLog="$cmd >> $DOTFILESLOG"
     echo "dir: $PWD" >> $DOTFILESLOG
     echo "cmd: $cmd" >> $DOTFILESLOG
     eval $cmdWithLog

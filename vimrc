@@ -50,6 +50,7 @@ set ignorecase	" Ignore case when searching
 set smartcase	" Ignore case when searching lowercase
 
 " Colors **********************************************************************
+set term=xterm-256color
 syntax on	"sytnax highlighting
 colorscheme  ingelmo
 
