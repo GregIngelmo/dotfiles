@@ -86,6 +86,7 @@ hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
 hi Hyperlink    ctermfg=25
 hi Purple       ctermfg=61
 hi Paren        ctermfg=192
+hi BracesBrackets ctermfg=24
 
 """ Tagbar
 hi link TagbarKind       Statement4
@@ -100,7 +101,7 @@ hi link TagbarAccessProtected  TagbarAccessPublic
 hi link javaScriptStatement Identifier
 hi link javaScriptNumber Number
 " 24 88 166
-hi javaScriptBraces ctermfg=24
+hi link javaScriptBraces BracesBrackets
 hi link javaScriptBoolean Constant2
 hi link javaScriptFuncKeyword Statement
 hi link javaScriptFuncExp Statement4
@@ -291,9 +292,9 @@ hig default link dosiniHeader Statement
 hi! link SignColumn LineNr
 
 """ Json
-highlight default link jsonBraces Identifier
 highlight default link jsonBoolean Constant2
 highlight default link jsonKey Statement
+highlight default link jsonBraces BracesBrackets
 
 """ Gitv
 hi link gitvGraphEdge0 Statement
