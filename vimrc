@@ -133,7 +133,7 @@ nnoremap <C-y> 2<C-y>
 " Map custom iTerm escape codes for ctrl-back and ctrl-del to delete-forward-word and delete-back-word
 imap <ESC>z <c-w>
 imap <ESC>d <c-c>ldwi
-map <c-f> :NERDTreeFind<CR><c-w><c-p>
+map <silent> <c-f> :NERDTreeFind<CR><c-w><c-p>
 nmap <ESC>s :call Gorunner()<CR>:w<CR>
 imap <ESC>s <ESC>:call Gorunner()<CR>:w<CR>l
 map <c-g> <c-a>:w<CR>:colorscheme ingelmo<CR>
