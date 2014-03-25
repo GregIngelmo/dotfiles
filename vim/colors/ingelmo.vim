@@ -310,6 +310,10 @@ hi diffChange   ctermfg=bg  guifg=bg ctermbg=61
 hi diffText     ctermfg=bg  guifg=bg ctermbg=174
 hi link diffFile Statement4
 
+""" Quickfix window
+hi link qfFileName Statement2
+hi link qfLineNr Comment
+"
 """ VimDebug {{{3
 " FIXME
 " you may want to set SignColumn highlight in your .vimrc
