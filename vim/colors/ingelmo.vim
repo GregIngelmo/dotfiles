@@ -101,6 +101,7 @@ hi goStatement ctermfg=167 " 124 130  161 167
 hi link goType Arguments
 hi link goSignedInts Arguments
 hi link goFloats Arguments 
+hi link goUnsignedInts Arguments
 hi link goDeclType Arguments
 hi link goRepeat Identifier2 
 
