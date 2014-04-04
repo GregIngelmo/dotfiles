@@ -88,6 +88,22 @@ hi Purple       ctermfg=61
 hi Paren        ctermfg=192
 hi BracesBrackets ctermfg=24
 
+""" Go
+hi link goRawString Constant2
+hi link goDirective Statement4
+hi link goStruct Statement3
+hi link goStructDef Statement3
+hi link goMethod Statement2
+hi link goFunction Statement2
+hi link goOperator Normal
+hi goBuiltins ctermfg=24
+hi goStatement ctermfg=167 " 124 130  161 167
+hi link goType Arguments
+hi link goSignedInts Arguments
+hi link goFloats Arguments 
+hi link goDeclType Arguments
+hi link goRepeat Identifier2 
+
 """ Tagbar
 hi link TagbarKind       Statement4
 hi link TagbarNestedKind Statement2
@@ -116,13 +132,6 @@ hi link javaScriptDocParam javaScriptFuncArg
 
 hi link Conditional Identifier
 hi link Command Conditional
-
-""" golang
-hi link goRepeat Identifier
-hi link goRawString Constant
-hi link goDirective Purple
-hi link goDeclType Statement3
-hi link goDeclaration Statement
 
 """ vim-ruby-debugger
 hi link rdebugParent Statement2
