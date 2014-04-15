@@ -1,7 +1,7 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-set rtp+=~/.vim/bundle/powerline_new/powerline/bindings/vim
+" set rtp+=~/.vim/bundle/powerline_new/powerline/bindings/vim
 
 " File types, wikipedia, & json
 autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
@@ -9,6 +9,7 @@ autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.json setfiletype json
 autocmd BufRead,BufNewFile *.md setfiletype markdown
 autocmd BufRead,BufNewFile *.yml,*.html setlocal shiftwidth=2 tabstop=2
+autocmd FileType go nmap gd <Plug>(go-def)
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
@@ -92,6 +93,7 @@ set scrolloff=3         " leaves 3 lines before top & bottom when scrolling
 set completeopt=menuone,preview,longest
 set completeopt-=preview
 set wildignore+=node_modules
+set wildignore+=Godeps
 let g:gofmt_command = "goimports"   "use goimports instead of gofmt for gocode
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
