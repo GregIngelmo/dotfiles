@@ -103,8 +103,10 @@ hi link goSignedInts Arguments
 hi link goFloats Arguments 
 hi link goUnsignedInts Arguments
 hi link goDeclType Arguments
-hi link goRepeat Identifier2 
-
+hi link goRepeat Identifier 
+hi goConstants ctermfg=7 " 217
+hi link goLabel Identifier
+hi link goDeclaration Statement4
 """ Tagbar
 hi link TagbarKind       Statement4
 hi link TagbarNestedKind Statement2
