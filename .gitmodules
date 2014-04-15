@@ -70,9 +70,6 @@
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat
-[submodule "vim/bundle/vim-golang"]
-	path = vim/bundle/vim-golang
-	url = git://github.com/jnwhiteh/vim-golang
 [submodule "vim/bundle/vim-javascript-syntax"]
 	path = vim/bundle/vim-javascript-syntax
 	url = git://github.com/jelera/vim-javascript-syntax
