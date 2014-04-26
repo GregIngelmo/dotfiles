@@ -94,7 +94,7 @@ hi link goDirective Statement4
 hi link goStruct Statement3
 hi link goStructDef Statement3
 hi link goMethod Statement2
-hi link goFunction Statement2
+hi link goFunction Normal
 hi link goOperator Normal
 hi goBuiltins ctermfg=24
 hi goStatement ctermfg=167 " 124 130  161 167
