@@ -95,6 +95,7 @@ set completeopt-=preview
 set wildignore+=node_modules
 set wildignore+=Godeps
 let g:gofmt_command = "goimports"   "use goimports instead of gofmt for gocode
+let g:go_fmt_fail_silently = 0      "don't show quickfix window for formatting errors
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
