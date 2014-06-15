@@ -220,10 +220,8 @@ function precmd {
     # name in our prompt when we can't actually edit the hostname 
     if [[ -z "$p_hostName" ]]; then
         local p_user_at_host="%{$p_userColor%}%n%{$reset_color%}@%m" 
-        #printf "\e]1;$HOST\a"
     else
         local p_user_at_host="%{$p_userColor%}%n%{$reset_color%}@$p_hostName" 
-        #printf "\e]1;$p_hostName\a"
     fi
         
     if [[ -n "$vcs_info_msg_0_" ]]; then
