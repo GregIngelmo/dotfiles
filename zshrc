@@ -199,7 +199,6 @@ fi
 # custom prompt
 # %{ ... %} tells zsh to disregard the contained characters when calculating the length of the prompt 
 # (in order correctly position the cursor)
-local p_ret_status="[%?]"                               # last command return code
 local p_delim="%{[38;5;130m%}>%{$reset_color%}"       # > as a delimiter
 
 # dynamic prompt customization point, precmd gets called just before every command prompt
@@ -230,6 +229,8 @@ function precmd {
     if [[ -n "$vcs_info_msg_0_" ]]; then
         local p_vcs="%{[38;5;180m%}${vcs_info_msg_0_}%{$reset_color%}"
     fi
+
+    local p_ret_status="[%(?.%?.%{[38;5;124m%}%?%{$reset_color%})]"
 
     PROMPT="${p_cwd}${p_vcs}
 ${p_user_at_host} ${p_ret_status} ${p_delim} "
