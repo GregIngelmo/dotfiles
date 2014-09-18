@@ -141,7 +141,13 @@ nmap <ESC>s :w<CR>
 imap <ESC>s <ESC>:w<CR>l
 map <c-g> <c-a>:w<CR>:colorscheme ingelmo<CR>
 " Leader q will quit the active buffer without closing the window
-nmap <silent> <leader>q :bp\|bd #<CR>
+nmap <silent> <leader>q [b:bd #<CR>
+
+" function! GoJumpToDef()
+"   if &ft == "go"
+"     call system('touch ' . '.gorunner.tmp')
+"   endif
+" endfunction
 
 function! Gorunner()
   if &ft == "go"
