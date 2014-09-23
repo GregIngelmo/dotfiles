@@ -314,12 +314,13 @@ hi link gitvGraphEdge1 Arguments
 hi gitvSubject ctermfg=248
 
 """ Diff
-hi diffAdded    ctermfg=150 guifg=#afdf87
-hi diffRemoved  ctermfg=174 guifg=#df8787
+hi diffAdded    ctermfg=71 guifg=#afdf87
+hi diffRemoved  ctermfg=88 guifg=#df8787
 hi diffAdd      ctermfg=bg  guifg=bg ctermbg=71 
 hi diffDelete   ctermfg=bg  guifg=bg ctermbg=88
 hi diffChange   ctermfg=bg  guifg=bg ctermbg=61
 hi diffText     ctermfg=bg  guifg=bg ctermbg=174
+hi link diffSubname Normal
 hi link diffFile Statement4
 
 """ Quickfix window
