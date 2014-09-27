@@ -14,18 +14,24 @@ autocmd FileType go nmap gd <Plug>(go-def)
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
-" Airline 
+" vim-airline 
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#fnamemod = ':t'" 
+let g:airline#extensions#tabline#left_sep = ' '
 " let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_whitespace = 0
+
+" vim-go
+let g:go_auto_type_info=1
+let g:gofmt_command = "goimports"   "use goimports instead of gofmt for gocode
+let g:go_fmt_fail_silently = 0      "don't show quickfix window for formatting errors
 
 let g:Gitv_DoNotMapCtrlKey=1
 let g:slime_python_ipython=1
 let g:slime_target = "tmux"
 
-let g:godef_split = 0
+" let g:godef_split = 0
 
 let g:vim_markdown_folding_disabled=1
 
@@ -79,6 +85,7 @@ set clipboard=unnamed   " requires reattach-to-user-namespace to work inside tmu
 set expandtab           " Use spaces not tabs
 set nowrap
 let g:NERDTreeShowPressForHelp = 0
+let NERDTreeChDirMode=0  " Do not cwd when a file is in another dir that's not open in NT. Prevents gd and then Nerdtreefind flakiness
 let g:NERDTreeWinSize = 35
 let NERDTreeIgnore = ['\.pyc$']
 set noswapfile          " Disable the swap file
@@ -94,8 +101,6 @@ set completeopt=menuone,preview,longest
 set completeopt-=preview
 set wildignore+=node_modules
 set wildignore+=Godeps
-let g:gofmt_command = "goimports"   "use goimports instead of gofmt for gocode
-let g:go_fmt_fail_silently = 0      "don't show quickfix window for formatting errors
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
