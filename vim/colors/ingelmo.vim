@@ -323,6 +323,9 @@ hi diffText     ctermfg=bg  guifg=bg ctermbg=174
 hi link diffSubname Normal
 hi link diffFile Statement4
 
+""" Fugitive
+hi link FugitiveblameDelimiter Normal
+
 """ Quickfix window
 hi link qfFileName Statement2
 hi link qfLineNr Comment
