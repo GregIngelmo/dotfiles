@@ -8,3 +8,13 @@ security/
 #other
 *.sqlite
 *.local
+
+# config dirs
+config/pudb
+config/transmission-daemon
+config/configstore
+
+# vim plugins
+vim/bundle/vim-ruby
+vim/bundle/YouCompleteMe
+
