@@ -147,6 +147,8 @@ imap <ESC>s <ESC>:w<CR>l
 map <c-g> <c-a>:w<CR>:colorscheme ingelmo<CR>
 " Leader q will quit the active buffer without closing the window
 nmap <silent> <leader>q [b:bd #<CR>
+nmap ]r :tabn<CR>
+nmap [r :tabp<CR>
 
 " function! GoJumpToDef()
 "   if &ft == "go"
