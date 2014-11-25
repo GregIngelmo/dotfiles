@@ -6,7 +6,7 @@
 # Installs ruby which is used by vim for filename completion (command-t)
 
 # Each of these will be linked from ~/dotfiles/ to ~/
-pathsToSymlink="zshrc vimrc gvimrc gitignore gitconfig vim tmux.conf ctags zshrc.local ipython pryrc config inputrc gdbinit"
+pathsToSymlink="zshrc vimrc gvimrc gitignore gitconfig vim tmux.conf ctags zshrc.local ipython pryrc config inputrc gdbinit tmux.conf.local"
 
 # Print pretty colors 
 keyColor='[38;5;67m' # light blue [0m 
