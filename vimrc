@@ -24,7 +24,7 @@ let g:airline_detect_whitespace = 0
 
 " vim-go
 let g:go_auto_type_info=1
-let g:gofmt_command = "goimports"   "use goimports instead of gofmt for gocode
+let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 0      "don't show quickfix window for formatting errors
 
 let g:Gitv_DoNotMapCtrlKey=1
@@ -91,7 +91,7 @@ let NERDTreeIgnore = ['\.pyc$']
 set noswapfile          " Disable the swap file
 set mouse=a             " Let's you use the mouse in a terminal session
 set tags=tags;/         " look for tags file in any folder (ctags)
-let g:tagbar_left = 1   " Tagbar will open a window on the left
+" let g:tagbar_left = 1   " Tagbar will open a window on the left
 let mapleader=","       " Changed leader to comma
 set backspace=indent,eol,start   " fix for homebrew vim backspace not working
 set pastetoggle=<F2>
@@ -149,6 +149,7 @@ map <c-g> <c-a>:w<CR>:colorscheme ingelmo<CR>
 nmap <silent> <leader>q [b:bd #<CR>
 nmap ]r :tabn<CR>
 nmap [r :tabp<CR>
+au FileType go nmap <Leader>i <Plug>(go-info)
 
 " function! GoJumpToDef()
 "   if &ft == "go"
