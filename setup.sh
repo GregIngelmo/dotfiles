@@ -127,6 +127,8 @@ runCmd "git submodule init"
 printMsg "Updating submodules..."
 runCmd "git submodule update"
 
+touch ~/.vimtags
+
 # cd $DOTFILESPATH/vim/bundle/tern_for_vim
 # printMsg "Install autocomplete for js (tern_for_vim)..."
 # runCmd "npm install"
