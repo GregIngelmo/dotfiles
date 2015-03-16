@@ -44,5 +44,11 @@
 [alias]
     localcommits = !git fetch && git --no-pager log --pretty=format:'- %h %s (%cn)' origin/HEAD..HEAD
     origcommits = !git fetch && git --no-pager log --pretty=format:'- %h %s (%cn, %ar)' HEAD..origin/HEAD
+
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
