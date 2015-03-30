@@ -23,9 +23,10 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 
 " vim-go
-let g:go_auto_type_info=1
+let g:go_auto_type_info=0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 0      "don't show quickfix window for formatting errors
+let g:go_highlight_methods = 1
 
 let g:Gitv_DoNotMapCtrlKey=1
 let g:slime_python_ipython=1
