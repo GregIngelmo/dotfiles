@@ -107,6 +107,8 @@ hi link goRepeat Identifier
 hi goConstants ctermfg=7 " 217
 hi link goLabel Identifier
 hi link goDeclaration Statement4
+hi link goBoolean Constant2
+
 """ Tagbar
 hi link TagbarKind       Statement4
 hi link TagbarNestedKind Statement2
