@@ -103,12 +103,12 @@ elif [ -f /etc/lsb-release ]; then
 
         # install this after the deps above b/c the
         # add-apt-respository command relies on python-software-properites  
-        printMsg "Adding up-to-date node.js repo..."
-        runCmd "sudo add-apt-repository ppa:chris-lea/node.js -y"
+        # printMsg "Adding up-to-date node.js repo..."
+        # runCmd "sudo add-apt-repository ppa:chris-lea/node.js -y"
 
         # update apt-get again to get the latest nodejs
-        aptgetUpdate
-        aptgetInstall nodejs
+        # aptgetUpdate
+        # aptgetInstall nodejs
     fi
 fi
 
