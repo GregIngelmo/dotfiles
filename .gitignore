@@ -13,6 +13,8 @@ security/
 config/pudb
 config/transmission-daemon
 config/configstore
+config/hub
+config/minidlna
 
 # vim plugins
 vim/bundle/vim-ruby
