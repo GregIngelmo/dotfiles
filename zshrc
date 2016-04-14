@@ -22,19 +22,19 @@
 # http://www.chris.com/ascii/index.php?art=creatures/dragons
 
 # new session summary
-if [[ -o interactive ]]; then
-  
-    local key_color='[38;5;117m'
-    local value_color='[38;5;189m'
-
-    uptime=$(uptime 2>/dev/null | awk '{print $3 " " $4}' | cut -d"," -f1)     
-    loadAverages=$(uptime 2>/dev/null | awk '{print $(NF-2) " " $(NF-1) " " $(NF) }')
-    longDate=$(date "+%a, %b %_d %Y @[00m ${value_color}%I:%M %p (%Z %z)")
-    
-    print "${key_color}Host[00m ${value_color}$HOST[00m ${key_color}up for[00m ${value_color}$uptime"
-    print "${key_color}Date[00m ${value_color}$longDate[00m"
-    print "${key_color}Load[00m ${value_color}$loadAverages[00m"
-fi
+# if [[ -o interactive ]]; then
+#   
+#     local key_color='[38;5;117m'
+#     local value_color='[38;5;189m'
+#
+#     uptime=$(uptime 2>/dev/null | awk '{print $3 " " $4}' | cut -d"," -f1)     
+#     loadAverages=$(uptime 2>/dev/null | awk '{print $(NF-2) " " $(NF-1) " " $(NF) }')
+#     longDate=$(date "+%a, %b %_d %Y @[00m ${value_color}%I:%M %p (%Z %z)")
+#     
+#     print "${key_color}Host[00m ${value_color}$HOST[00m ${key_color}up for[00m ${value_color}$uptime"
+#     print "${key_color}Date[00m ${value_color}$longDate[00m"
+#     print "${key_color}Load[00m ${value_color}$loadAverages[00m"
+# fi
 
 # zsh Options
 setopt APPEND_HISTORY               # append to history file

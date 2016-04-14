@@ -11,6 +11,9 @@ autocmd BufRead,BufNewFile *.md setfiletype markdown
 autocmd BufRead,BufNewFile *.yml,*.html setlocal shiftwidth=2 tabstop=2
 autocmd FileType go nmap gd <Plug>(go-def)
 
+" markdown Github-style syntax highlighting
+let g:markdown_github_languages = ['ruby', 'erb=eruby', 'go', 'erlang', 'bash', 'sh']
+
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
