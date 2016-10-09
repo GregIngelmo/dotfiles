@@ -9,6 +9,7 @@ autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
 autocmd BufRead,BufNewFile *.json setfiletype json
 autocmd BufRead,BufNewFile *.md setfiletype markdown
 autocmd BufRead,BufNewFile *.yml,*.html setlocal shiftwidth=2 tabstop=2
+autocmd BufRead,BufNewFile Gruntfile.js setlocal shiftwidth=2 tabstop=2
 autocmd FileType go nmap gd <Plug>(go-def)
 
 " markdown Github-style syntax highlighting
@@ -106,6 +107,7 @@ set completeopt=menuone,preview,longest
 set completeopt-=preview
 set wildignore+=node_modules
 set wildignore+=Godeps
+set wildignore+=dist
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 "let python_highlight_all = 1
