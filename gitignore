@@ -14,5 +14,3 @@ Thumbs.db
 # Logs, swap files, dbs, utilities, etc...
 *.swp
 tags
-.ruby-gemset
-.ruby-version
