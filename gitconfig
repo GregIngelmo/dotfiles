@@ -45,8 +45,5 @@
     localcommits = !git fetch &> /dev/null && git --no-pager log --pretty=format:'- %h %s (%cn)' FETCH_HEAD..HEAD
     origcommits = !git fetch &> /dev/null && git --no-pager log --pretty=format:'- %h %s (%cn, %ar)' HEAD..FETCH_HEAD
 
-[url "git@github.com:"]
-	insteadOf = https://github.com/
-
 [push]
 	default = simple
