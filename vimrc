@@ -110,7 +110,7 @@ set wildignore+=Godeps
 set wildignore+=dist
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
-"let python_highlight_all = 1
+let python_highlight_all = 1
 
 " Change the cursor from Block to Ibeam when switching betwen select/insert mode.
 " iTerm provides a special escape sequence which makes this possible.
