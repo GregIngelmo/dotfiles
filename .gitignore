@@ -10,11 +10,7 @@ security/
 *.local
 
 # config dirs
-config/pudb
-config/transmission-daemon
-config/configstore
-config/hub
-config/minidlna
+config/
 
 # vim plugins
 vim/bundle/vim-ruby
