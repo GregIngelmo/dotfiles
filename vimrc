@@ -11,6 +11,7 @@ autocmd BufRead,BufNewFile *.md setfiletype markdown
 autocmd BufRead,BufNewFile *.yml,*.html setlocal shiftwidth=2 tabstop=2
 autocmd BufRead,BufNewFile Gruntfile.js setlocal shiftwidth=2 tabstop=2
 autocmd FileType go nmap gd <Plug>(go-def)
+autocmd FileType python setl nosmartindent
 
 " markdown Github-style syntax highlighting
 let g:markdown_github_languages = ['ruby', 'erb=eruby', 'go', 'erlang', 'bash', 'sh']
@@ -19,10 +20,11 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " vim-airline 
+" Enables to top 'tabline' that shows open buffers
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'" 
 let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 
@@ -31,6 +33,9 @@ let g:go_auto_type_info=0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 0      "don't show quickfix window for formatting errors
 let g:go_highlight_methods = 1
+let g:go_highlight_types = 1
+" let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
 
 let g:Gitv_DoNotMapCtrlKey=1
 let g:slime_python_ipython=1
@@ -40,6 +45,8 @@ let g:slime_target = "tmux"
 
 let g:vim_markdown_folding_disabled=1
 
+" vim-fugitive
+set previewheight=15
 let g:fugitive_github_domains=["https://git.corp.yahoo.com"]
 " Always cd using the active buffers directory
 "autocmd BufEnter * lcd %:p:h
@@ -51,9 +58,13 @@ autocmd VimEnter * wincmd p
 " Enables omnicomplete and indent settings for the detected fileype
 filetype plugin indent on
 
+" Syntastic
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_exec = 'python3'
+let g:syntastic_python_flake8_args = ['-m', 'flake8', '--ignore=E501']
 " Command T
-let g:CommandTMaxHeight = 5
-let g:CommandTMinHeight = 5
+let g:CommandTMaxHeight = 10
+let g:CommandTMinHeight = 10
 let g:CommandTTraverseSCM = "pwd"
 " Searching *******************************************************************
 set hlsearch	" highlight search term
@@ -92,7 +103,7 @@ set nowrap
 let g:NERDTreeShowPressForHelp = 0
 let NERDTreeChDirMode=0  " Do not cwd when a file is in another dir that's not open in NT. Prevents gd and then Nerdtreefind flakiness
 let g:NERDTreeWinSize = 35
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', '__init__.py', 'node_modules']
 set noswapfile          " Disable the swap file
 set mouse=a             " Let's you use the mouse in a terminal session
 set tags=tags;/         " look for tags file in any folder (ctags)
@@ -108,6 +119,8 @@ set completeopt-=preview
 set wildignore+=node_modules
 set wildignore+=Godeps
 set wildignore+=dist
+set wildignore+=__pycache__
+set wildignore+=vendor
 
 " More sytnax highlighting for python, see ~/vim/syntax/python3.0.vim
 let python_highlight_all = 1
