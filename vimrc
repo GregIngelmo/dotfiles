@@ -170,6 +170,7 @@ nmap <silent> <leader>q [b:bd #<CR>
 nmap ]r :tabn<CR>
 nmap [r :tabp<CR>
 au FileType go nmap <Leader>i <Plug>(go-info)
+nmap <silent> <leader>s :GoDeclsDir ~/go/src/github.com/heroku/go-getting-started<CR>
 
 " function! GoJumpToDef()
 "   if &ft == "go"
