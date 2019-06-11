@@ -71,7 +71,7 @@ hi Comment      ctermfg=238 guifg=#666666   " Comments in gray
 hi Constant     ctermfg=66  guifg=#5a9a77   " Strings in green
 hi Constant2    ctermfg=65                  " Other Strings in darker green
 hi Identifier   ctermfg=137 guifg=#b87a41   " Keywords in orange
-hi Identifier2  ctermfg=173                 " Keywords in stronger orange
+hi Identifier2  ctermfg=173 guifg=#d7875f   " Keywords in stronger orange
 hi Ignore       ctermfg=238 guifg=#444444   " Dark gray
 hi Number       ctermfg=144 guifg=#d6c895   " Numbers in yellow
 hi PreProc      ctermfg=150 guifg=#95b576   " Light green
@@ -80,7 +80,7 @@ hi Statement    ctermfg=67  guifg=#5f87af   " Keywords in blue
 hi Statement2   ctermfg=68  guifg=#6688dd   " Keywords in lighter blue 
 hi Statement3   ctermfg=33                  " Keywords in very bright blue
 hi Statement4   ctermfg=61                  " Keywords in purple
-hi Arguments    ctermfg=95                  " Method arguments in brown
+hi Arguments    ctermfg=95  guifg=#875f5f   " Method arguments in brown
 hi Type         ctermfg=110 guifg=#afafd7   " Type in purple blue 
 hi Error        ctermfg=88  guifg=#af0000 ctermbg=0   guibg=#000000
 hi Hyperlink    ctermfg=25
