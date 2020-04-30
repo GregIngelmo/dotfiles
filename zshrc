@@ -208,7 +208,7 @@ function precmd {
     fi 
 
     # current working dir
-    local p_cwd="%{[38;5;180m%}$PWD%{$reset_color%}"        
+    local p_cwd="%{[38;5;180m%}%3~%{$reset_color%}"        
     local p_userColor='[38;5;70m'
     
     # if $EUID is zero then we're running as root, change the color of the username from purple to red

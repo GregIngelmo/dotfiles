@@ -10,6 +10,7 @@ autocmd BufRead,BufNewFile *.json setfiletype json
 autocmd BufRead,BufNewFile *.md setfiletype markdown
 autocmd BufRead,BufNewFile *.yml,*.html setlocal shiftwidth=2 tabstop=2
 autocmd BufRead,BufNewFile Gruntfile.js setlocal shiftwidth=2 tabstop=2
+autocmd BufRead,BufNewFile *.js setlocal shiftwidth=2 tabstop=2
 autocmd FileType go nmap gd <Plug>(go-def)
 autocmd FileType python setl nosmartindent
 
